@@ -1,0 +1,51 @@
+
+        
+    .section2__screenshot{
+        text-align: center;
+        margin-top:-15%; 
+      
+    }
+    .section2__screenshot  img{
+        margin:0 auto;
+        width:41.5%;
+    }
+    .section2__inform{
+        display: flex;
+        align-items: center;
+        margin: 7% auto 0 auto;
+    }              
+        .section2__header{
+            display: block;
+            margin-left: 20.41666%;
+            /* // margin-right: 8.59375%; */
+            width:60%;
+        }
+        .section2__header  h3{
+                font-size: 2.5rem;
+                line-height: 3rem;
+                font-family: "NebasNeue";
+                /* // width:219px; */
+                display: inline-block;
+            }
+        
+        .section2__text{
+            margin-right: 20.41666%;
+            margin-left: 8.59375%;
+        }
+            .section2__text  p{
+                display: inline-block;
+               text-align: justify;
+                margin-top: 0;
+                font-family: "SourceSans-regular";
+                font-size:1rem;
+                line-height: 1.5rem
+            }
+        
+    
+    .section2__walkboy{
+        margin-top: 8.541666%;
+    }
+        .section2__walkboy  img{
+        width: 100%;
+       }
+    

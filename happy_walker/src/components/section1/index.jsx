@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import "./style.css";
 
 export default class Section1 extends Component {
   render() {
     return (
-        <div>
+        <div className="section1">
             <div className="logo">
-                <img src="./img/logo-light.png" alt="logo"/>
-                <img src="./img/logo-lasoft2.png" alt="lasoft powered"/>
+                <img src={require("../../img/logo.png")} alt="logo"/>
+                <img src={require("../../img/logo-lasoft2.png")} alt="lasoft powered"/>
             </div>
 
             <div className="section1__header">
