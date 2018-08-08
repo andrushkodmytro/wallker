@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from "../../button";
 import "./style.css";
 
 export default class Section5 extends Component {
@@ -9,16 +10,15 @@ export default class Section5 extends Component {
                 <h3>
                     Ready to start?  Sign up for free!
                 </h3>
-                <button className="boardbtn">
-                        Get Started for Free
-                </button>
+                <Button title="Get Started for Free" handler={this.props.handler}/>
+
             </div>
             <div className="section5__logo">
-                <img src={require("../../img/logo.png")} alt="logo hapy walker"/>
+                <img src="/assets/img/logo.png" alt="logo hapy walker"/>
                 <p>
                     Coryright © 2018 Happy Walkers
                 </p>
-                <img src={require("../../img/logo-lasoft.png")} alt="logo lasoft"/>
+                <img src="/assets/img/logo-lasoft.png" alt="logo lasoft"/>
             </div>
     </div>
     )

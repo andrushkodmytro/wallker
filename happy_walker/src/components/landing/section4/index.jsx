@@ -10,7 +10,7 @@ export default class Section4 extends Component {
             </div>
             <div className="section4__text">
                 <div className="section4__text__button">
-                    <img src={require("../../img/group-7-copy.png")} alt="arrow"/>
+                    <img src="/assets/img/group-7-copy.png" alt="arrow"/>
 
                 </div>
                 <div className="section4__text__main">
@@ -23,7 +23,7 @@ export default class Section4 extends Component {
                         I walk anywhere from 3-9 miles on a given day, about 5-7 times a week.
                     </p>
                     <div className="section4__text__user">
-                        <img src={require("../../img/oval.png")} alt="user_foto"/>
+                        <img src="/assets/img/oval.png" alt="user_foto"/>
                         <div>
                             <p>Oscar Davis</p>
                             <p>Runned 1,324.73 km</p>
@@ -32,7 +32,7 @@ export default class Section4 extends Component {
                        
                 </div>
                 <div className="section4__text__button">
-                    <img src={require("../../img/group-7.png")} alt="arrow"/>
+                    <img src="/assets/img/group-7.png" alt="arrow"/>
                 </div>
             </div>
             <div className="section4__dot dot">

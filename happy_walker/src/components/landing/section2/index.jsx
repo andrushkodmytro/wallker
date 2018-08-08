@@ -6,7 +6,7 @@ export default class Section2 extends Component {
     return (
       <div>
           <div className="section2__screenshot">
-                <img src={require("../../img/browser.png")} alt="screenshot"/>
+                <img src="/assets/img/browser.png" alt="screenshot"/>
             </div>
             <div className="section2__inform">
                 <div className="section2__header">
@@ -31,7 +31,7 @@ export default class Section2 extends Component {
                     
             </div>
             <div className="section2__walkboy">
-                <img src={require("../../img/rectangle-2.png")} alt="walkboy"/>
+                <img src="/assets/img/rectangle-2.png" alt="walkboy"/>
             </div>
       </div>
     )

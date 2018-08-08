@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import Button from "../../button";
 import "./style.css";
 
 export default class Section1 extends Component {
   render() {
+    console.log(this.props.handler)
+
     return (
         <div className="section1">
             <div className="logo">
-                <img src={require("../../img/logo.png")} alt="logo"/>
-                <img src={require("../../img/logo-lasoft2.png")} alt="lasoft powered"/>
+                <img src="/assets/img/logo.png" alt="logo"/>
+                <img src="/assets/img/logo-lasoft2.png" alt="lasoft powered"/>
             </div>
 
             <div className="section1__header">
@@ -26,9 +29,7 @@ export default class Section1 extends Component {
             </div>
 
             <div className="section1__button">
-                <button>
-                    GET STARTED FOR FREE
-                </button>
+                <Button title="GET STARTED FOR FREE" handler={this.props.handler}/>
             </div>
         </div>
     )

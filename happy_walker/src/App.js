@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
-import Section1 from "./components/section1";
-import Section2 from "./components//section2/";
-import Section3 from "./components/section3";
-import Section4 from "./components/section4";
-import Section5 from "./components/section5";
-import "./style.css";
-
+import LandingPage from "./components/landing/landing_page";
+import SignIn from "./components/signin/signin_page";
+ 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={view:"Landing"};
+   
+  }
   render() {
+    let handler=(page)=>{
+      this.setState({view:page})
+      }
+    let currentPage=val=>{
+        switch(val){
+          case "Landing":
+           return <LandingPage handler={handler}/>;
+          case "SignIn":
+         return <SignIn handler={handler}/>
+        default: 
+        return <LandingPage handler={handler}/>
+        }
+      }
+      
+      
     return (
-      <div className="container">
-        <Section1/>
-        <Section2/>
-        <Section3/>
-        <Section4/>
-        <Section5/>
+      <div className="app">
+    {/* {this.state.view==="Landing"?<LandingPage handler={handler}/>:<SignIn/>} */}
+     { currentPage(this.state.view)}
       </div>
     );
   }

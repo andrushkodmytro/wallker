@@ -13,32 +13,32 @@ export default class Section3 extends Component {
             <div className="section3__function">
                 <div className="section3__function__item">
                     <div>
-                        <img src={require("../../img/ico/001-trainers.png")} alt="treiners"/>
+                        <img src="/assets/img/ico/001-trainers.png" alt="treiners"/>
                     </div>
                    <p>Track how much you walked during a day, week, year</p>
                 </div>
                 <div className="section3__function__item">
                     <div>
-                        <img src={require("../../img/ico/002-burn.png")} alt="burn"/>
+                        <img src="/assets/img/ico/002-burn.png" alt="burn"/>
                     </div>
                     <p>Review how much calories you burned during the day </p>
                     </div>
                 <div className="section3__function__item">
                     <div>
-                         <img src={require("../../img/ico/003-wristwatch.png")} alt="watch"/>
+                         <img src="/assets/img/ico/003-wristwatch.png" alt="watch"/>
                     </div>
                     <p>Set and achieve walking and running goals</p>
                 </div>
                 <div className="section3__function__item">
                     <div>
-                        <img src={require("../../img/ico/004-relationship.png")} alt="relationchip"/>
+                        <img src="/assets/img/ico/004-relationship.png" alt="relationchip"/>
                     </div>
                     <p>Be a part of your local walking community</p>
 
                 </div>
                 <div className="section3__function__item">
                     <div>
-                        <img src={require("../../img/ico/005-crown.png")} alt=""/>
+                        <img src="/assets/img/ico/005-crown.png" alt=""/>
                     </div>
                     <p>See your local ratings, country, global rating</p>
                 </div>
