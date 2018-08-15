@@ -22,11 +22,10 @@ class App extends Component {
         return <LandingPage handler={handler}/>
         }
       }
-      
-      
+  
+
     return (
       <div className="app">
-    {/* {this.state.view==="Landing"?<LandingPage handler={handler}/>:<SignIn/>} */}
      { currentPage(this.state.view)}
       </div>
     );

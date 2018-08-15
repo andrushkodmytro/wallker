@@ -1,0 +1,15 @@
+.error {
+  margin: 0 0 20px 0;
+  background-color: #ffd1d8;
+  border-radius: 4px;
+  position: relative;
+  height: 11%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .error p {
+    color: #df203d;
+    position: absolute;
+    font-size: 0.625rem;
+    margin: 0.5% 1%; }

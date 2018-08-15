@@ -10,7 +10,7 @@ export default class Section5 extends Component {
                 <h3>
                     Ready to start?  Sign up for free!
                 </h3>
-                <Button title="Get Started for Free" handler={this.props.handler}/>
+                <Button title="Get Started for Free" handler={this.props.handler} val="SignIn"/>
 
             </div>
             <div className="section5__logo">

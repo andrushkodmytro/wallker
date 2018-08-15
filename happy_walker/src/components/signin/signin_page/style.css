@@ -1,113 +1,100 @@
-.container__signin{
-    max-width: 1920px;
+.container__signin {
+  max-width: 1920px;
+  display: flex;
+  width: 100%;
+  background-color: #fff; }
+
+.signin {
+  width: 50%; }
+  .signin .signin__logo {
+    width: 100%;
+    margin: 6.25% 0 0 20%; }
+    .signin .signin__logo .signin__logo {
+      width: 24.7%; }
+
+form > div > label {
+  color: #868e95;
+  text-transform: uppercase; }
+
+form {
+  margin: 40% 0 0 20%;
+  display: flex;
+  width: 50%;
+  margin-top: auto;
+  flex-direction: column; }
+  form h1 {
+    margin-bottom: 3.75%;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-family: "NebasNeue";
+    color: #222529; }
+  form .inputElem {
     display: flex;
-    width:100%;
-    background-color: #fff;
-}
-.signin{
-    width:50%;
-}
-    .signin__logo{
-        width:100%;
-        margin:6.25% 0 0 20%;
-    }
-       .signin__logo img{
-            width: 24.7%
-        }
-    
-    form>label{
-        color:#868e95;
-        text-transform: uppercase;
-    }
-    form{
-        margin:18.75% 0 0 20%;
-        display: flex;
-        width:50%;
-        height: 50%;
-        flex-direction: column;
-    }
-       form h1{
-            margin-bottom: 3.75%;
-            font-size: 3rem;
-            line-height: 4rem;
-            font-family: "NebasNeue";
-        }
+    flex-direction: column;
+    position: relative; }
+  form input[type="email"], form input[type="text"], form input[type="submit"], form input[type="password"] {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 8px 16px;
+    margin-bottom: 25px;
+    border: none; }
+  form input[type="email"], form input[type="password"], form input[type="text"] {
+    background-color: #f1f3f5;
+    font-family: "SourceSans-regular";
+    border-radius: 4px; }
+  form input[type="submit"] {
+    background-color: #01ce9f;
+    border-radius: 4px;
+    color: #fff; }
+  form label {
+    font-family: "SourceSans-semibold";
+    font-size: 1rem; }
 
-        input[type="email"],input[type="button"],input[type="password"]{
-            height: 10%;
-            margin-bottom: 3.85%;
-            border:none;
-        }
-        input[type="email"],input[type="password"]{
-            background-color: #f1f3f5;
-            padding: 0 16px;
-            font-family: "SourceSans-regular";
-            border-radius: 4px;
-        }
-        input[type="button"]{
-            background-color: #01ce9f;
-            border-radius: 4px;
-            color: #fff;
-        }
-        label{
-            font-family: "SourceSans-semibold";
-            font-size: 1rem;
-        }
+.remember {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3.85%; }
 
-        .remember{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 3.85%;
-        }
-            .check input{
-                    display: none;
-                }
-              .check  label{
-                    position: relative;
-                    padding-left: 25px;
-                    display: inline-block;
-                    font-family: "SourceSans-regular";
-                }
-               .check label:before{
-                    content: "";
-                    display: inline-block;
-                    height: 16px;
-                    width: 16px;
-                    position: absolute;
-                    background-color: #f1f3f5;
-                    left: 0;
-                    border-radius: 0.25em;
-                }
-               .check input:checked + label:before{
-                    content:"\2713";
-                    text-align: center;
-                    color: #fff;
-                    background-color:#01ce9f;
-                }
-           .remember p{
-                color:#01ce9f;
-                font-family: "SourceSans-semibold";
-            }
+.check input {
+  display: none; }
 
-        
-        .signup{
-            display: flex;
-        }
-            .signup a{
-                color:#01ce9f;
-                margin-left: 5px;
-            }
+.check label {
+  position: relative;
+  padding-left: 25px;
+  display: inline-block;
+  font-family: "SourceSans-regular"; }
 
-        
-    
-    
+.check label:before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  background-color: #f1f3f5;
+  left: 0;
+  border-radius: 0.25em; }
 
-.section2{
-    text-align: right;
-    width: 50%;
-    overflow: hidden;
-}
-  .section2  img{
-        height: 100vh;
-        
-    }
+.check input:checked + label:before {
+  content: "\2713";
+  text-align: center;
+  color: #fff;
+  background-color: #01ce9f; }
+
+.remember p {
+  color: #01ce9f;
+  font-family: "SourceSans-semibold"; }
+
+.signup {
+  display: flex; }
+
+.signup a {
+  color: #01ce9f;
+  margin-left: 5px; }
+
+.section2 {
+  text-align: right;
+  width: 50%;
+  overflow: hidden; }
+
+.section2 img {
+  height: 100vh; }

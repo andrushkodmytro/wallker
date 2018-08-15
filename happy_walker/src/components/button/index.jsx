@@ -6,7 +6,7 @@ export default class Button extends Component {
   render() {
     console.log(this.props.handler)
    let handler=()=>{
-     this.props.handler("SignIn")
+     this.props.handler(this.props.val)
    }
     return (
      <button onClick={handler}>

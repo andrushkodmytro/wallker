@@ -1,36 +1,39 @@
 import React, { Component } from 'react';
+import SignInForm from "../signInForm";
+import SignUpForm from "../signUpForm";
 import "./style.css";
 
 export default class Signin extends Component {
-  render() {
-      let handler=()=>{
-          this.props.handler("Landing")
+  constructor(props){
+    super(props);
+    this.state={page:"SIGNIN"};
+    this.currentView=()=>{
+      if(this.state.page==="SIGNIN")
+      return <SignInForm handler={this.changSignUp}/>
+      else if(this.state.page==="SIGNUP"){
+        return <SignUpForm/>
       }
+    }
+    this.changSignUp=function(){
+      this.setState({
+        page:"SIGNUP"
+      })
+    }.bind(this)
+
+  }
+     
+  render() {
+    
     return (
       <div className="container__signin">
          <div className="signin">
             <div className="signin__logo">
-                <img src="/assets/img/logo1.png" alt="Logo" onClick={handler}/>
+                <img src="/assets/img/logo1.png" alt="Logo" onClick={this.props.handler}/>
             </div>
-            <form action="#">
-                <h1>SIGN IN</h1>
-                <label for="email">Email or nickname</label>
-                <input type="email" id="email" />
-                <label for="password">Password</label>
-                <input type="password" id="password"/>
-                <div className="remember">
-                    <div className="check">
-                        <input type="checkbox" id="check"/>
-                        <label for="check">Remember me</label>
-                    </div>
-                    <p>Forgot password?</p>
-                </div>
-                <input type="button" value="SIGN IN"/>
-                <div className="signup">
-                    <p>Don’t have an account? </p>
-                    <a >Sign up</a>
-                </div>
-            </form>
+          <div className="form__container">
+          {this.currentView()}
+
+          </div>
         </div>
         <div className="section2">
             <img src="/assets/img/rectangle-copy.png" alt="walker"/>

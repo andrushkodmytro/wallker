@@ -29,7 +29,7 @@ export default class Section1 extends Component {
             </div>
 
             <div className="section1__button">
-                <Button title="GET STARTED FOR FREE" handler={this.props.handler}/>
+                <Button title="GET STARTED FOR FREE" val="SignIn" handler={this.props.handler}/>
             </div>
         </div>
     )
