@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Section1 from "../section1";
-import Section2 from "../section2";
-import Section3 from "../section3";
-import Section4 from "../section4";
-import Section5 from "../section5";
+import LandingHeader from "../landing_header";
+import Community from "../community";
+import BeHealthy from "../be_healthy";
+import LandingExpirience from "../landing_expirience";
+import LandingFooter from "../landing_footer";
 import "./style.css";
 
 class LandingPage extends Component {
@@ -12,11 +12,11 @@ class LandingPage extends Component {
 
     return (
       <div className="container__landing">
-        <Section1 handler={this.props.handler}/>
-        <Section2/>
-        <Section3/>
-        <Section4/>
-        <Section5 handler={this.props.handler}/>
+        <LandingHeader handler={this.props.handler}/>
+        <Community/>
+        <BeHealthy/>
+        <LandingExpirience/>
+        <LandingFooter handler={this.props.handler}/>
       </div>
     );
   }

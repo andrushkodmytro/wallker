@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from "../../button";
 import "./style.css";
 
-export default class Section1 extends Component {
+export default class LandingHeader extends Component {
   render() {
     console.log(this.props.handler)
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LandingPage from "./components/landing/landing_page";
-import SignIn from "./components/signin/signin_page";
+import LandingPage from "../landing/landing_page";
+import SignIn from "../signin/signin_page";
  
 class App extends Component {
   constructor(props){

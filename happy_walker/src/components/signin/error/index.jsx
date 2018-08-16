@@ -6,7 +6,7 @@ export default class ErrorSignIn extends Component {
     return (
         <div className="error">
             <p>
-                Wrong email/password. Try again or click Forgot password to reset it.
+                {this.props.error}
             </p>
         </div>
     )
