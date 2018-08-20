@@ -1,0 +1,11 @@
+export default{
+    appView:"Landing",
+    signUp:{
+        nickName:"", firstName:"", lastName:"", email:"", password:"", nickNameError:"", firstNameError:"", lastNameError:"",
+        emailError:"", passwordError:"", firstNameValid:false, lastNameValid:false, emailValid: false, passwordValid: false,formValid: false, showError:false
+      },
+    signIn:{
+        email:"", emailError:"",passwordError:"",  password:"", emailValid: false, passwordValid: false, formValid: false, showError:false
+    }
+
+}

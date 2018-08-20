@@ -4,7 +4,6 @@ import "./style.css";
 
 export default class LandingHeader extends Component {
   render() {
-    console.log(this.props.handler)
 
     return (
         <div className="section1">

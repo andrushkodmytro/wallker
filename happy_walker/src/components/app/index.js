@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
 import LandingPage from "../landing/landing_page";
 import SignIn from "../signin/signin_page";
+import {connect} from "react-redux";
+import {appChangeView} from "../../action";
+// import store from '../../store/index.js';
  
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={view:"Landing"};
-   
-  }
   render() {
-    let handler=(page)=>{
-      this.setState({view:page})
-      }
     let currentPage=val=>{
         switch(val){
           case "Landing":
-           return <LandingPage handler={handler}/>;
+           return <LandingPage handler={this.props.appChangeView}/>;
           case "SignIn":
-         return <SignIn handler={handler}/>
+         return <SignIn handler={this.props.appChangeView}/>
         default: 
-        return <LandingPage handler={handler}/>
+        return <LandingPage handler={this.props.appChangeView}/>
         }
       }
   
 
     return (
       <div className="app">
-     { currentPage(this.state.view)}
+     { currentPage(this.props.reducer.appView)}
       </div>
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    reducer: state
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    appChangeView: view => {
+      dispatch(appChangeView(view));
+    }
+  };
+};
 
-export default App;
+export default connect(mapStateToProps,mapDispatchToProps)(App);

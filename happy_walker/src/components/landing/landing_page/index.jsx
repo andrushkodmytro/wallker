@@ -8,7 +8,6 @@ import "./style.css";
 
 class LandingPage extends Component {
   render() {
-    console.log(this.props.handler)
 
     return (
       <div className="container__landing">
