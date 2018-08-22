@@ -7,6 +7,7 @@ import Today from './components/today/Today';
 import TopHW from './components/topHappyWalkers/TopHW';
 import Footer from './components/footer/Footer';
 import SettingsPassword from './components/settings/settingsPassword/SettingsPassword';
+import {Route} from "react-router-dom";
 
 export default class Dashboard extends Component {
   render() {
@@ -15,11 +16,19 @@ export default class Dashboard extends Component {
     return (
       <div className="container">
         <Header />
-        <Summary text={ settings }/>
+        <Summary text={ summary }/>
+
+
         {/* <SettingsProfile />
         <SettingsPassword /> */}
-        <Today />
-        <TopHW />
+        <Route exact path="/dashboard" render= {()=><Today/>}/>
+        <Route exact path="/dashboard" render= {()=><TopHW/>}/>
+        <Route exact path="/dashboard/settings" render= {()=><SettingsProfile/>}/>
+        <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/>
+
+
+        {/* <Today />
+        <TopHW /> */}
         <Footer />
       </div>
     );

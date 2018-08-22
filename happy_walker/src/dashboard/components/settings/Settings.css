@@ -63,7 +63,7 @@
 
 .first_name__input, 
 .last_name__input,
-.email__input, 
+.emaill__input, 
 .location__input,
 .password__input {
     display: flex;

@@ -12,6 +12,7 @@ class Form extends Component {
         alert("Hello")}
         this.inputHandler=inputHandler.bind(this)
         this.resetValidation=resetValidationSignIn
+        
         this.submitHandler=(e)=>{
             let target=e.target;
             e.preventDefault();

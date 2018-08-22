@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 import '../Header.css';
 import '../../../assets/fonts/fonts.css';
 
@@ -11,13 +12,15 @@ export default class HeaderRight extends Component {
       return (
         <div className="header__right">
             <div>
+                <Link to="/dashboard">  
                 <img className="header__photo" src={ header__photo } alt="header img"/>
+                </Link>
             </div>
             <div>
                 <p className="header__hello">Hi, { this.props.name }!</p>
             </div>
             <div>
-                <a><img className="header__settings" src={ header__settings } alt="settings"/></a>
+                <Link to="/dashboard/settings"><img className="header__settings" src={ header__settings } alt="settings"/></Link>
             </div>
             <div>
                 <a><img className="header__sign-out" src={ header__signout } alt="signout"/></a>

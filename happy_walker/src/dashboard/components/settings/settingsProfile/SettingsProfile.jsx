@@ -23,7 +23,7 @@ export default class SettingsProfile extends Component {
                 </div>
                 <div class="email">
                   <label class="email__label">Email</label>
-                  <input class="email__input" type="email"/>
+                  <input class="emaill__input" type="email"/>
                 </div>
                 <div class="location">
                   <label class="location__label">Location</label>

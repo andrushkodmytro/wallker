@@ -6,7 +6,7 @@ import {appChangeView} from "../../action";
 import ForgotPassword from "../forgot_password/forgotPasswordMain/ForgotPassFirstSection";
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import signUpForm from '../signin/signUpForm';
-import Dashboard from "../../src/Dashboard"
+import Dashboard from "../../dashboard/Dashboard"
  
 class App extends Component {
   render() {
