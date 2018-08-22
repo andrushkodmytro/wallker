@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #273570;
+    height: 56px;
+    width: 100%;
+  }
+  
+  .header__logo {
+    margin: 12px 24px;
+  }
+ 
+  .header__right {
+    display: flex;
+  }
+ 
+ .header__photo {
+    margin: 12px 0;
+    width: 32px;
+    height: 32px;
+  }
+
+ .header__hello {
+    width: 59px;
+    font-size: 16px;
+    color: #ffffff;
+    margin: 16px;
+    font-family: "SourceSansPro-Semibold";
+  }
+ 
+  .header__settings, .header__sign-out {
+    width: 24px;
+    height: 24px;
+    margin: 16px 24px 16px 0;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 425px) {
+    .header__hello {
+      display: none;
+    }
+    .header__photo {
+      display: none;
+    }
+  }

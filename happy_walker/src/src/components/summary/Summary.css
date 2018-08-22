@@ -1,0 +1,15 @@
+  .summary {
+    background-color: #ffffff;
+    height: 88px;
+    width: 100%;
+  }
+
+  .summary__text {
+    margin: 0;
+    padding: 24px 0 16px 24px;
+    text-transform: uppercase;
+    font-family: "BebasNeueBold";
+    width: 110px;
+    height: 48px;
+    font-size: 36px;
+  }

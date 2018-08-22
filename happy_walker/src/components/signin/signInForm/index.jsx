@@ -3,11 +3,13 @@ import Error from "../errorSignIn";
 import {connect} from "react-redux";
 import {formSignIn} from "../../../action";
 import {inputHandler,resetValidationSignIn} from "../form_handler";
+import {Link, Redirect} from "react-router-dom";
 
 class Form extends Component {
     constructor(props){
         super(props);
-
+        this.dashboard=()=>{this.props.history.push('/dashboard');
+        alert("Hello")}
         this.inputHandler=inputHandler.bind(this)
         this.resetValidation=resetValidationSignIn
         this.submitHandler=(e)=>{
@@ -22,12 +24,14 @@ class Form extends Component {
                 target.submit.value="SIGN IN";
                 if(this.props.state.emailValid&&this.props.state.passwordValid){
                     this.props.formSignIn(true,"formValid")
-                    alert("You are sign in")
+                    alert("You are sign in");
                     this.resetValidation();
+                    this.dashboard()
                   }        
             },3000)
             
         }
+       
         this.errorShow=(name,error,textError)=>{
             name.style.border="1px solid #d0021b";
             this.props.formSignIn(textError,error)
@@ -62,6 +66,7 @@ class Form extends Component {
         }
     }
     render() {
+        console.log(this.props)
     return (
         <form onSubmit={this.submitHandler} noValidate>
             <h1>SIGN IN</h1>
@@ -79,12 +84,12 @@ class Form extends Component {
                     <input type="checkbox" id="check"/>
                     <label htmlFor="check">Remember me</label>
                 </div>
-                <p>Forgot password?</p>
+                <Link to="/forgot">Forgot password?</Link>
             </div>
             <input type="submit" value="SIGN IN" name="submit"/>
             <div className="signup">
                 <p>Don’t have an account? </p>
-                <a onClick={this.props.handler}>Sign up</a>
+                <Link to="/signup">Sign up</Link>
             </div>
         </form>
     )
@@ -93,7 +98,7 @@ class Form extends Component {
 
 const mapStateToProps=(state)=>{
     return{
-        state:state.signIn
+        state:state.reducer.signIn
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -101,6 +106,7 @@ const mapDispatchToProps=(dispatch)=>{
         formSignIn: (error,nameError) => {
             dispatch(formSignIn(error,nameError));
         }
+        
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Form)

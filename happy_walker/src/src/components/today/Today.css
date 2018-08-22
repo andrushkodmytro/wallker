@@ -1,0 +1,178 @@
+  .today {
+    width: 96.25%;
+    display: flex;
+    background-color: #ffffff;
+    height: auto;
+    margin: 24px 0 16px 0;
+  }
+  
+  .today__profile {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    align-items: flex-start;
+  }
+ 
+  .today__text {
+    display: flex;
+    margin: 0;
+    padding: 24px 0 0 24px;
+    text-transform: uppercase;
+    font-family: "BebasNeueBold";
+    width: 48px;
+    height: 32px;
+    font-size: 24px;
+  }
+  
+  .today__profile_info {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0 40px 24px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .today__profile_info img {
+    width: 160px;
+    height: auto;
+  }
+
+  .today__name_edit {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+ 
+  .today__name_edit p {
+    height: 32px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-family: "BebasNeue";
+    font-size: 24px;
+    font-weight: bold;
+    color: #222529;
+    text-transform: uppercase;
+  }
+
+  .today__name_edit a {
+    text-decoration: none;
+    color: #01ce9f;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "SourceSansPro-Semibold";
+  }
+
+  .results {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    padding-top: 72px;
+  }
+
+  .steps, .distance, .kcal {
+    display: flex;
+    flex-direction: row;
+    height: 72px;
+    margin-bottom: 16px;
+  }
+
+  .steps img, .distance img, .kcal img {
+    width: 96px;
+    height: auto;
+    padding: 8px 16px 8px 3px;
+  }
+
+  .info, .info, .info {
+    display: flex;
+    flex-direction: column;
+    color: #222529;
+  }
+ 
+  .info p, .info p, .info p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .count_value {
+    font-size: 48px;
+    font-family: "BebasNeue";
+    text-transform: uppercase;
+  }
+
+  .info__steps, .info__distance, .info__kcal {
+    color: #868e95;
+    text-transform: uppercase;
+    font-family: "SourceSansPro-Regular";
+    margin-top: -6px;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 425px) {
+    .count_value {
+      font-size: 34px;
+    }
+    .info__steps, .info__distance, .info__kcal {
+      font-size: 22px;
+    }
+  }
+  
+  .map {
+    width: 50%;
+    height: auto;
+    padding: 72px 24px 24px 0;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 425px) {
+    .today {
+      display: flex;
+      flex-direction: column;
+    }
+    .today__profile {
+      width: 100%;
+      align-items: center;
+    }
+    .today__text {
+      padding-left: 0;
+    }
+    .today__profile_info {
+      margin-left: 0;
+    }
+    .results {
+      width: 100%;
+      padding-top: 0;
+      align-items: center;
+    }
+    .map {
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+  @media only screen and (min-width: 426px) and (max-width: 930px) {
+    .today {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .today__profile {
+      display: flex;
+      align-items: center;
+    }
+    .today__text {
+      padding-left: 0;
+    }
+    .today__profile_info {
+      margin-left: 0;
+    }
+    .results {
+      padding-top: 0;
+      align-items: center;
+      width: 100%;
+    }
+    .map {
+      margin-top: 24px;
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+    }
+  }

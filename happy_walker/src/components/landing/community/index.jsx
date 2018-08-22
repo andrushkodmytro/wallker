@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Screenshot from '../../../assets/img/browser.png';
+import Walkboy from '../../../assets/img/rectangle-2.png';
+
 import "./style.css";
 
 export default class Section2 extends Component {
@@ -6,7 +9,7 @@ export default class Section2 extends Component {
     return (
       <div>
           <div className="section2__screenshot">
-                <img src="/assets/img/browser.png" alt="screenshot"/>
+                <img src={Screenshot} alt="screenshot"/>
             </div>
             <div className="section2__inform">
                 <div className="section2__header">
@@ -31,7 +34,7 @@ export default class Section2 extends Component {
                     
             </div>
             <div className="section2__walkboy">
-                <img src="/assets/img/rectangle-2.png" alt="walkboy"/>
+                <img src={Walkboy} alt="walkboy"/>
             </div>
       </div>
     )

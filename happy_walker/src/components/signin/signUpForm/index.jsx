@@ -79,7 +79,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
 }
 const mapStateToProps=(state)=>{
   return{
-    state:state.signUp
+    state:state.reducer.signUp
   }
 }
 const mapDispatchToProps=(dispatch)=>{
