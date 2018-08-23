@@ -11,7 +11,7 @@ export default class LandingHeader extends Component {
 
     return (
         <div className="section1">
-            <div className="logo">
+            <div className="logo-header">
                 <img src={Logo} alt="logo"/>
                 <img src={LogoLasoft} alt="lasoft powered"/>
             </div>

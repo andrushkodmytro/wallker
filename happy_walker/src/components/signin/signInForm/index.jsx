@@ -3,7 +3,7 @@ import Error from "../errorSignIn";
 import {connect} from "react-redux";
 import {formSignIn} from "../../../action";
 import {inputHandler,resetValidationSignIn} from "../form_handler";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Form extends Component {
     constructor(props){
@@ -85,7 +85,9 @@ class Form extends Component {
                     <input type="checkbox" id="check"/>
                     <label htmlFor="check">Remember me</label>
                 </div>
+
                 <Link to="/forgot">Forgot password?</Link>
+                
             </div>
             <input type="submit" value="SIGN IN" name="submit"/>
             <div className="signup">

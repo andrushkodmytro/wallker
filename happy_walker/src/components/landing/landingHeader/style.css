@@ -6,12 +6,13 @@
 }    
 
 
-.logo{
+.logo-header{
     margin-top: 2%;
+    align-items: center;
 }
-     .logo img{
+     .logo-header img{
          display: block;
-         width: 10%;
+         /* width: 100%; */
          margin: 1% auto;
      }
  

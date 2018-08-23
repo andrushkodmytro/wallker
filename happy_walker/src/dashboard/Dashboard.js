@@ -18,17 +18,11 @@ export default class Dashboard extends Component {
         <Header />
         <Summary text={ summary }/>
 
-
-        {/* <SettingsProfile />
-        <SettingsPassword /> */}
         <Route exact path="/dashboard" render= {()=><Today/>}/>
         <Route exact path="/dashboard" render= {()=><TopHW/>}/>
         <Route exact path="/dashboard/settings" render= {()=><SettingsProfile/>}/>
         <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/>
-
-
-        {/* <Today />
-        <TopHW /> */}
+        
         <Footer />
       </div>
     );

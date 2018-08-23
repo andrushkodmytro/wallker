@@ -44,7 +44,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
 }
   render() {
     return (
-        <form onSubmit={this.submitHandler} noValidate>
+        <form onSubmit={this.submitHandler} noValidate className="signUp">
             <h1>SIGN UP</h1>
             <div className="inputElem">
               <label htmlFor="nickName">nickName <span>*</span></label>

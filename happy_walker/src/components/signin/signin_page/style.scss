@@ -18,11 +18,15 @@
         color:#868e95;
         text-transform: uppercase;
     }
+    .signUp{
+        margin-top:7%;
+
+    }
     form{
         margin:40% 0 0 20%;
         display: flex;
         width:50%;
-        margin-top:10%;
+        margin-top:20%;
         flex-direction: column;
         h1{
             margin-bottom: 3.75%;
@@ -93,18 +97,25 @@
                     color: #fff;
                     background-color:#01ce9f;
                 }
-           .remember p{
+           .remember a{
                 color:#01ce9f;
                 font-family: "SourceSans-semibold";
+                text-decoration: none;
             }
 
         
         .signup{
             display: flex;
+            p{
+                font-family: "SourceSans-regular";
+                font-size: 1rem;
+            }
         }
             .signup a{
                 color:#01ce9f;
                 margin-left: 5px;
+                font-family: "SourceSans-semibold";
+                text-decoration: none;
             }
 
         
