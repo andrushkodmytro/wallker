@@ -4,7 +4,7 @@ import SignIn from "../signin/signin_page";
 import {connect} from "react-redux";
 import {appChangeView} from "../../action";
 import {BrowserRouter as Router, Route} from "react-router-dom"
-import Dashboard from "../../dashboard/Dashboard"
+import Dashboard from "../dashboard/Dashboard";
  
 class App extends Component {
   render() {
@@ -21,7 +21,6 @@ class App extends Component {
 
 
         </div>
-      
     </Router>
       
     )
