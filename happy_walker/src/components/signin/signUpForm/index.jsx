@@ -8,28 +8,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
  class SignUpForm extends Component {
   constructor(props){
     super(props)
-  // Обробник події Submit
-    this.submitHandler=(e)=>{
-      e.preventDefault();
-      let target=e.target;
-      target.submit.value="SIGNING UP";
-      target.submit.style.opacity= 0.5;
-      setTimeout(()=>{
-        this.nickNameValidation(target);
-        this.firstNameValidation(target);
-        this.lastNameValidation(target);
-        this.emailValidation(target);
-        this.passwordValidation(target);
-        target.submit.style.opacity= 1;
-        target.submit.value="SIGN UP";
-        this.props.formErrorChange("","password");
-        if(this.props.state.nickNameValid&&this.props.state.firstNameValid&&this.props.state.lastNameValid&&this.props.state.emailValid&&this.props.state.passwordValid){
-          this.props.formErrorChange(true,"formValid")
-          alert("You are sign up")
-          this.resetValidation();
-        }
-      },3000)
-    }
+
     this.resetValidation=resetValidation
     this.errorShow=errorShow
     this.errorHide=errorHide
@@ -41,10 +20,42 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
     this.passwordValidation=passwordValidation
     this.inputHandler = inputHandler.bind(this)
 
+   this.resetValidation()
+  // Обробник події Submit
+    this.submitHandler=(e)=>{
+      e.preventDefault();
+      const target=e.target;
+      target.submit.value="SIGNING UP";
+      target.submit.style.opacity= 0.5;
+     
+      this.passwordValidation(target);
+      this.nickNameValidation(target);
+      this.firstNameValidation(target);
+      this.lastNameValidation(target);
+      this.emailValidation(target);
+      
+      setTimeout(()=>{
+        const {nickNameValid,firstNameValid,lastNameValid,emailValid,passwordValid}=this.props.state
+        console.log(nickNameValid,firstNameValid,lastNameValid,emailValid,passwordValid)
+        target.submit.style.opacity= 1;
+        target.submit.value="SIGN UP";
+        // this.props.formErrorChange("","password");
+        if(nickNameValid && firstNameValid && lastNameValid && emailValid && passwordValid){
+          this.props.formErrorChange(true,"formValid")
+          alert("You are sign up")
+          this.resetValidation();
+          this.props.history.push("/signup/confirm")
+        }
+        
+      },1000)
+    }
+    
+    
 }
   render() {
+    let {nickName,firstName,lastName,email,password}=this.props.state
     return (
-        <form onSubmit={this.submitHandler} noValidate className="signUp">
+        <form onSubmit={this.submitHandler}  noValidate className="signUp">
             <h1>SIGN UP</h1>
             <div className="inputElem">
               <label htmlFor="nickName">nickName <span>*</span></label>
@@ -71,11 +82,14 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
               <input type="password" name="password" value={this.props.state.password} onChange={this.inputHandler}/>
               {this.props.state.passwordError?<ErrorSpan error={this.props.state.passwordError}/>:""}
             </div>
-            <input type="submit" value="SIGN UP" name="submit"/>
+            <input type="submit"
+              value="SIGN UP"
+              name="submit" 
+              disabled={!nickName||!firstName||!lastName||!email||!password}
+            />
         </form>
     )
-  }
-  
+  }  
 }
 const mapStateToProps=(state)=>{
   return{

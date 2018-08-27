@@ -45,10 +45,14 @@ form {
     background-color: #f1f3f5;
     font-family: "SourceSans-regular";
     border-radius: 4px; }
+  form input[type="email"], form input[type="password"], form input[type="text"]:focus {
+    outline-color: #01ce9f; }
   form input[type="submit"] {
     background-color: #01ce9f;
     border-radius: 4px;
     color: #fff; }
+  form input[type="submit"]:disabled {
+    opacity: 0.6; }
   form label {
     font-family: "SourceSans-semibold";
     font-size: 1rem; }
