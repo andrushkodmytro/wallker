@@ -1,14 +1,19 @@
 @font-face {
-    font-family: "SourceSans-semibold"; 
-    src: url("./SourceSansPro-Semibold.otf"); 
+    font-family: "BebasNeue"; /* Гарнитура шрифта */
+    src: url("./BebasNeue.ttf"); /* Путь к файлу со шрифтом */
 }
+
 @font-face {
-    font-family: "NebasNeue"; 
-    src: url("./9114.otf"); 
-}
-@font-face{
-    font-family: "SourceSans-regular"; 
-    src: url("./Source\ Sans\ Pro\ Regular.ttf"); 
+    font-family: "BebasNeueBold"; /* Гарнитура шрифта */
+    src: url("./BebasNeue\ Bold.ttf"); /* Путь к файлу со шрифтом */
 }
 
+@font-face {
+    font-family: "SourceSansPro-Semibold"; /* Гарнитура шрифта */
+    src: url("./SourceSansPro-Semibold.ttf"); /* Путь к файлу со шрифтом */
+}
 
+@font-face {
+    font-family: "SourceSansPro-Regular"; /* Гарнитура шрифта */
+    src: url("./Source\ Sans\ Pro\ Regular.ttf"); /* Путь к файлу со шрифтом */
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import '../Header.css';
-import '../../../../../assets/fonts1/fonts.css';
+import '../../../../../assets/fonts/fonts.css';
 
 import header__photo from '../../../../../assets/img/oval-3-copy.png';
 import header__settings from '../../../../../assets/img/settings.png';

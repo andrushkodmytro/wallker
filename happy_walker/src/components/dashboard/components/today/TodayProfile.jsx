@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Today.css';
-import '../../../../assets/fonts1/fonts.css';
+import '../../../../assets/fonts/fonts.css';
 
 import TodayProfileInfo from './TodayProfileInfo';
 

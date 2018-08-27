@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TopHW.css';
-import '../../../../assets/fonts1/fonts.css';
+import '../../../../assets/fonts/fonts.css';
 
 import TopFirst from './TopFirst.jsx';
 import TopSecond from './TopSecond.jsx';
