@@ -3,7 +3,7 @@ import Iframe from './Iframe.jsx';
 import TodayProfile from './TodayProfile.jsx';
 import TodayResults from './TodayResults.jsx';
 import './Today.css';
-import '../../../../assets/fonts1/fonts.css';
+import '../../../../assets/fonts/fonts.css';
 
 export default class Today extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Summary.css';
-import '../../../../assets/fonts1/fonts.css';
+import '../../../../assets/fonts/fonts.css';
 
 export default class Summary extends Component {
     render() {

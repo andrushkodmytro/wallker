@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Footer.css';
-import '../../../../assets/fonts1/fonts.css';
+import '../../../../assets/fonts/fonts.css';
 
 import logo_lasoft from '../../../../assets/img/logo-lasoft1.png';
 

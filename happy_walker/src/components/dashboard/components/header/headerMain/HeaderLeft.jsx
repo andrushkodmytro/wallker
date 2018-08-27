@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../Header.css';
-import '../../../../../assets/fonts1/fonts.css';
+import '../../../../../assets/fonts/fonts.css';
 
 import header__logo from '../../../../../assets/img/logo-light.png';
 

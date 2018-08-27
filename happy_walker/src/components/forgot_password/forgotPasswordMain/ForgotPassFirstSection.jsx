@@ -4,21 +4,6 @@ import {Link} from "react-router-dom";
 import '../../../assets/fonts/fonts.css';
 
 export default class ForgotPassword extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            onClickButton : false
-        }
-
-        this.handleClickButton = this.handleClickButton.bind(this);
-    }
-    
-    handleClickButton() {
-        this.setState ({
-            onClickButton : true,
-        });
-    }
     render() {
         const withoutButton = <div>
                                 <p className="form__text">We have sent you an email with reset <br></br> instructions. If the email does not arrive soon, <br></br> check your spam folder.</p>

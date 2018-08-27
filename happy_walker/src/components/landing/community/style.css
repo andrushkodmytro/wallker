@@ -23,7 +23,7 @@
         .section2__header  h3{
                 font-size: 2.5rem;
                 line-height: 3rem;
-                font-family: "NebasNeue";
+                font-family: "BebasNeue";
                 /* // width:219px; */
                 display: inline-block;
             }
@@ -36,7 +36,7 @@
                 display: inline-block;
                text-align: justify;
                 margin-top: 0;
-                font-family: "SourceSans-regular";
+                font-family: "SourceSansPro-Regular";
                 font-size:1rem;
                 line-height: 1.5rem
             }

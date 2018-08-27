@@ -10,17 +10,16 @@ import SettingsPassword from './components/settings/settingsPassword/SettingsPas
 import {Route} from "react-router-dom";
 
 export default class Dashboard extends Component {
-  
   render() {
-    const { path } = this.props.match.path;
-    const summary = "Summary";
-    const settings = "Settings";
-
-    // console.log(path==='/dashboard'?summary:settings );
+    const summary = "summary";
+    const settings = "settings";
+    const d = "dd";
+    
     return (
       <div className="container">
         <Header />
-        <Summary text={ summary }/>
+        <Route exact path="/dashboard" render= {()=><Summary text={ summary }/>}/>
+        <Route exact path="/dashboard/settings" render= {()=><Summary text={ settings }/>}/>
         <Route exact path="/dashboard" render= {()=><Today/>}/>
         <Route exact path="/dashboard" render= {()=><TopHW/>}/>
         <Route exact path="/dashboard/settings" render= {()=><SettingsProfile/>}/>
