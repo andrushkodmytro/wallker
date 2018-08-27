@@ -1,24 +1,10 @@
-.container-reset {
-  display: flex;
-}
 
-.section-first {
-  width: 45%;
-}
 
-.logo {
+.form_forgot {
   display: flex;
   flex-direction: column;
-  width: 158px;
-  height: 40px;
-  margin: 40px 458px 0 128px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin-left: 128px;
   width: 320px;
+  margin-top:25%;
 }
 
 .form__title {
@@ -26,14 +12,13 @@
   width: 256px;
   height: 64px;
   font-size: 48px;
-  margin-top: 130px;
   margin-bottom: 0;
   color: #222529;
 }
 
 .form__text {
   height: 48px;
-  margin-top: 24px;
+  margin-bottom: 24px;
   font-size: 16px;
   font-family: "SourceSansPro-Regular";
   color: #222529;
@@ -65,7 +50,7 @@
 }
 
 .button {
-  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .button__send {
@@ -89,11 +74,10 @@
 }
 
 .button__send:active {
-  background-color: white;
-  color: #222529;
+ opacity: 0.5;
 }
 
-.back-to {
+.form_forgot .back_to {
   margin-top: 24px;
   text-decoration: none;
   color: #01ce9f;
@@ -106,7 +90,10 @@
 a.back-to:hover {
   color: #868e95;
 }
+a:back_to:visited{
+  color: #01ce9f;
 
+}
 a.back-to:active {
   color: #01ce9f;
 }

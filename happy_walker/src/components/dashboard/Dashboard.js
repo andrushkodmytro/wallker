@@ -24,6 +24,7 @@ export default class Dashboard extends Component {
         <Route exact path="/dashboard" render= {()=><TopHW/>}/>
         <Route exact path="/dashboard/settings" render= {()=><SettingsProfile/>}/>
         <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/>
+        
         <Footer />
       </div>
     );

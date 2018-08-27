@@ -3,7 +3,7 @@ import SignInForm from "../signInForm";
 import SignUpForm from "../signUpForm";
 import Logo from "../../../assets/img/logo1.png";
 import Backgroun from "../../../assets/img/rectangle-copy.png";
-import ForgotPassword from "../../forgot_password/forgotPasswordMain/ForgotPassFirstSection";
+import ForgotPassword from "../forgot_password/ForgotPass";
 import {Route} from "react-router-dom";
 import {Link} from "react-router-dom";
 
