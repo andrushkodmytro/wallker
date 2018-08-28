@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../Header.css';
 import '../../../../../assets/fonts/fonts.css';
 
@@ -23,7 +23,7 @@ export default class HeaderRight extends Component {
                 <Link to="/dashboard/settings"><img className="header__settings" src={ header__settings } alt="settings"/></Link>
             </div>
             <div>
-                <a><img className="header__sign-out" src={ header__signout } alt="signout"/></a>
+                <Link to="/signin"><img className="header__sign-out" src={ header__signout } alt="signout"/></Link>
             </div>
         </div>
       );

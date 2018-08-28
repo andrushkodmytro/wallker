@@ -188,6 +188,7 @@
     color: black;
     padding: 8px 0 8px 56px;
     border: none;
+    outline-color: #01ce9f;
     border-radius: 4px;
     margin: 24px 24px 0 24px;
     line-height: 1.5;
