@@ -1,6 +1,6 @@
-import initialState from "../store"
+import initialState from "../store/initialStateToReducer"
  const reducer=(state=initialState,action)=>{
-    // console.log(action.propChange)
+    
 
     switch(action.type){
         case "APPCHANGEVIEW":

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Error from "../errorSignIn";
+import Error from "../errorSignIn/ErrorSignIn";
 import {connect} from "react-redux";
 import {formSignIn} from "../../../action";
-import {inputHandler,resetValidationSignIn} from "../form_handler";
+import {inputHandler,resetValidationSignIn} from "../formHandler/formHandler";
 import {Link} from "react-router-dom";
 
 class Form extends Component {
@@ -77,7 +77,7 @@ class Form extends Component {
                 <input type="email" name="email" value={this.props.state.email} onChange={this.inputHandler} />
             </div>
             <div className="inputElem">
-              <label htmlFor="password">Password<span>*</span></label>
+              <label htmlFor="password">Password</label>
               <input type="password" name="password" value={this.props.state.password} onChange={this.inputHandler}/>
             </div>
             <div className="remember">

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import App from './components/app/App';
 import {applyMiddleware,createStore,combineReducers} from "redux";
 import {Provider} from "react-redux";
-import reducer from "./reducer";
+import reducer from "./reducer/reducer";
 import WalkersRedusers from "./components/dashboard/redusers/walkers";
 // import logger from "redux-logger";
 

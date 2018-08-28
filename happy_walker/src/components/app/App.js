@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LandingPage from "../landing";
-import SignIn from "../signin/signin_page";
+import SignIn from "../signin/signinPage/SignInPage";
 import {connect} from "react-redux";
 import {appChangeView} from "../../action";
 import {BrowserRouter as Router, Route} from "react-router-dom"

@@ -15,7 +15,7 @@ export default class ConfirmEmail extends Component {
 
 }
   render() {
-    const Message=<div class="message"><p>The email confirmation was resent to your email</p> </div>
+    const Message=<div className="message"><p>The email confirmation was resent to your email</p> </div>
     return (
       <div className="confirmEmail">
         <h1>

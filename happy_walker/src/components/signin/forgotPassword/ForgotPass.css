@@ -11,7 +11,8 @@
   font-family: "BebasNeueBold";
   width: 256px;
   height: 64px;
-  font-size: 48px;
+  font-size: 3rem;
+  line-height: 4rem;
   margin-bottom: 0;
   color: #222529;
 }
@@ -19,7 +20,7 @@
 .form__text {
   height: 48px;
   margin-bottom: 24px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "SourceSansPro-Regular";
   color: #222529;
   line-height: 1.5;
@@ -35,8 +36,8 @@
   height: 24px;
   font-family: "SourceSansPro-Regular";
   color: #868e95;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -83,8 +84,8 @@
   color: #01ce9f;
   width: 102px;
   height: 24px;
-  font-size: 16px;
-  font-family: "SourceSansPro-Regular";
+  font-size: 1rem;
+  font-family: "SourceSansPro-Semibold";
 }
 
 a.back-to:hover {

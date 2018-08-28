@@ -17,7 +17,7 @@
        .section5__board h3{
             font-size: 2.25rem;
             line-height: 3rem;
-            font-family: "BebasNeue";
+            font-family: "BebasNeueBold";
             color:#fff;
             text-align: center;
             margin-left: 12%;
@@ -45,7 +45,8 @@
         height: 2.083333vw;
     }
     .section5__logo p{
-        font-size: 1rem
+        font-size: 1rem;
+        font-family: "SourceSansPro-Regular"
     }
         
     

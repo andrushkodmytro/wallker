@@ -25,7 +25,7 @@
          line-height: 5rem;
          text-align: center;
          color: #fff;
-         font-family: "NebasNeue";
+         font-family: "BebasNeueBold";
      }
  
  .section1__text{
@@ -34,7 +34,7 @@
      color:#fff;
      margin: 0.833333% auto 2% auto;
      text-align: center;
-     /* font-family: $link__font; */
+     font-family: "SourceSansPro-Regular";
  }
  .section1__button{
      text-align: center;
@@ -42,7 +42,7 @@
  }
      button{
          color: #fff;
-         font-family:"SourceSans-regular" ;
+         font-family:"SourceSansPro-Regular" ;
          background-color: #01ce9f;
          border:none;
      }

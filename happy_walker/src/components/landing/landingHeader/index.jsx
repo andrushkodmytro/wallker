@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from "../../../sharedComponents/button";
+import Button from "../../../sharedComponents/button/Button";
 import Logo from '../../../assets/img/logo-light.png';
 import LogoLasoft from '../../../assets/img/logo-lasoft2.png';
 import {Link} from "react-router-dom";

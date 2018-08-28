@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./style.css";
+import "./ErrorSignIn.css";
 
 export default class ErrorSignIn extends Component {
   render() {

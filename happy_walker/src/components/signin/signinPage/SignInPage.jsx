@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import SignInForm from "../signInForm";
-import SignUpForm from "../signUpForm";
+import SignInForm from "../signInForm/SignInForm";
+import SignUpForm from "../signUpForm/SignUpForm";
 import Logo from "../../../assets/img/logo1.png";
 import Backgroun from "../../../assets/img/rectangle-copy.png";
-import ForgotPassword from "../forgot_password/ForgotPass";
+import ForgotPassword from "../forgotPassword/ForgotPass";
 import ConfirmEmail from "../confirmEmail/ConfirmEmail";
 import {Route} from "react-router-dom";
 import {Link} from "react-router-dom";
-import "./style.css";
+import "./SignInPage.css";
 
 export default class Signin extends Component {   
   render() {

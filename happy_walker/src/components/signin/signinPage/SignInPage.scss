@@ -32,8 +32,9 @@ form{
         margin-bottom: 3.75%;
         font-size: 3rem;
         line-height: 4rem;
-        font-family: "NebasNeue";
+        font-family: "BebasNeueBold";
         color:#222529;
+        text-align: left;
         
     }
     .inputElem{
@@ -52,7 +53,7 @@ form{
     input[type="email"],input[type="password"], input[type="text"]{
         
         background-color: #f1f3f5;
-        font-family: "SourceSans-regular";
+        font-family: "SourceSansPro-Regular";
         border-radius: 4px;
     }
     input[type="email"],input[type="password"], input[type="text"]:focus{
@@ -69,7 +70,7 @@ form{
     }
 
     label{
-        font-family: "SourceSans-semibold";
+        font-family: "SourceSansPro-Semibold";
         font-size: 1rem;
     }
 }
@@ -87,7 +88,7 @@ form{
     position: relative;
     padding-left: 25px;
     display: inline-block;
-    font-family: "SourceSans-regular";
+    font-family: "SourceSansPro-Regular";
 }
 .check label:before{
     content: "";
@@ -97,6 +98,7 @@ form{
     position: absolute;
     background-color: #f1f3f5;
     left: 0;
+    top:2px;
     border-radius: 0.25em;
 }
 .check input:checked + label:before{
@@ -107,7 +109,7 @@ form{
 }
 .remember a{
     color:#01ce9f;
-    font-family: "SourceSans-semibold";
+    font-family: "SourceSansPro-Semibold";
     text-decoration: none;
 }
 
@@ -115,15 +117,18 @@ form{
 .signup{
     display: flex;
     p{
-        font-family: "SourceSans-regular";
+        font-family: "SourceSansPro-Regular";
         font-size: 1rem;
     }
 }
 .signup a{
     color:#01ce9f;
     margin-left: 5px;
-    font-family: "SourceSans-semibold";
+    font-family: "SourceSansPro-Semibold";
     text-decoration: none;
+}
+.inputElem label span{
+    color:#df203d;
 }
 .section2{
     text-align: right;

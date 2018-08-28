@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ErrorSpan from "../errorSignUp";
+import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
 import {formErrorChange} from "../../../action"
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
-  emailValidation,passwordValidation,inputHandler} from "../form_handler";
+  emailValidation,passwordValidation,inputHandler} from "../formHandler/formHandler"
 
  class SignUpForm extends Component {
   constructor(props){
