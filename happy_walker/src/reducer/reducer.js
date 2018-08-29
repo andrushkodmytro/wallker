@@ -28,6 +28,7 @@ import initialState from "../store/initialStateToReducer"
                 }
             }
             break
+            default: return state
     }
     return state
 }

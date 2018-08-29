@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import reducer from "./reducer/reducer";
 import WalkersRedusers from "./components/dashboard/redusers/walkers";
 // import logger from "redux-logger";
+import thunk from 'redux-thunk';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -13,7 +14,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 
-const store=createStore(combineReducers({reducer, walkers : WalkersRedusers}) , applyMiddleware());
+const store=createStore(combineReducers({reducer, walkers : WalkersRedusers}) , applyMiddleware(thunk));
 console.log(store.getState())
 store.subscribe(()=>(console.log(store.getState())))
 

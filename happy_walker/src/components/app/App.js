@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import LandingPage from "../landing";
 import SignIn from "../signin/signinPage/SignInPage";
-import {connect} from "react-redux";
-import {appChangeView} from "../../action";
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import Dashboard from "../dashboard/Dashboard";
  
@@ -26,17 +24,6 @@ class App extends Component {
     )
   }
 }
-const mapStateToProps = state => {
-  return {
-    reducer: state
-  };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-    appChangeView: view => {
-      dispatch(appChangeView(view));
-    }
-  };
-};
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+export default App;

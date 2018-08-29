@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
-import {formErrorChange} from "../../../action"
+import {formErrorChange} from "../../../action/actions"
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
   emailValidation,passwordValidation,inputHandler} from "../formHandler/formHandler"
 

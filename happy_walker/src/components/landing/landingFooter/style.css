@@ -10,9 +10,9 @@
         justify-content: space-between;
         align-items: center;
         background-color: #01ce9f;
-        width: 59%;
-        margin-top:-5%;
-        padding:4.166666% 0;
+        width: 50%;
+        margin-top:-100px;
+        padding:80px 192px;
     }   
        .section5__board h3{
             font-size: 2.25rem;
@@ -20,13 +20,13 @@
             font-family: "BebasNeueBold";
             color:#fff;
             text-align: center;
-            margin-left: 12%;
+            /* margin-left: 12%; */
         }
       .section5__board  button{
             background-color:#273570;
             color: #fff;
             font-family: "SourceSansPro-Regular";
-            margin-right: 12%;
+            /* margin-right: 12%; */
             border:none;
             text-transform: uppercase;
         }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Error from "../errorSignIn/ErrorSignIn";
 import {connect} from "react-redux";
-import {formSignIn} from "../../../action";
+import {formSignIn,signInAction} from "../../../action/actions";
 import {inputHandler,resetValidationSignIn} from "../formHandler/formHandler";
 import {Link} from "react-router-dom";
+
+
 
 class Form extends Component {
     constructor(props){
@@ -18,19 +20,20 @@ class Form extends Component {
             e.preventDefault();
             target.submit.value="SIGNING IN..."
             target.submit.style.opacity= 0.5;
-            setTimeout(()=>{
-                this.emailValidation(target);
-                this.passwordValidation(target);
-                target.submit.style.opacity= 1;
-                target.submit.value="SIGN IN";
-                if(this.props.state.emailValid&&this.props.state.passwordValid){
-                    this.props.formSignIn(true,"formValid")
-                    alert("You are sign in");
-                    this.resetValidation();
-                    this.dashboard()
-                  }        
-            },3000)
-            
+            // setTimeout(()=>{
+            //     this.emailValidation(target);
+            //     this.passwordValidation(target);
+            //     target.submit.style.opacity= 1;
+            //     target.submit.value="SIGN IN";
+            //     if(this.props.state.emailValid&&this.props.state.passwordValid){
+            //         this.props.formSignIn(true,"formValid")
+            //         alert("You are sign in");
+            //         this.resetValidation();
+            //         this.dashboard()
+            //       }        
+            // },3000)
+            const user={email:target.email.value,password:target.password.value};
+            this.props.signIn(user)
         }
        
         this.errorShow=(name,error,textError)=>{
@@ -108,6 +111,9 @@ const mapDispatchToProps=(dispatch)=>{
     return{
         formSignIn: (error,nameError) => {
             dispatch(formSignIn(error,nameError));
+        },
+        signIn: (user) => {
+            dispatch(signInAction(user));
         }
         
     }

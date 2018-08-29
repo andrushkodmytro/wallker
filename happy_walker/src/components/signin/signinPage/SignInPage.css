@@ -52,6 +52,8 @@ form {
     background-color: #01ce9f;
     border-radius: 4px;
     color: #fff; }
+  form input[type="submit"]:hover {
+    cursor: pointer; }
   form input[type="submit"]:disabled {
     opacity: 0.6; }
   form label {

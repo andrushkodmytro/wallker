@@ -1,3 +1,5 @@
+import axios from "axios"
+
 export  function appChangeView(view) {
     return {
       type: "APPCHANGEVIEW",
@@ -17,4 +19,15 @@ export  function appChangeView(view) {
       payload:error,
       propChange:nameError
     }
+  } 
+  export const signInAction=(user)=> dispatch => {
+    console.log(user)
+    axios.post("http://httpbin.org/post",user)
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
+  
