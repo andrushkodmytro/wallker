@@ -28,7 +28,7 @@ export default class TopRows extends Component {
           <div className="table_row-item1">
             <div className={`${ className } ${ className }-${ count }`}>{ count }</div>
             <div className="star">
-              <img 
+              <img
                 onClick={ this.handleStarChange }
                 src={ star ? require('../../../../assets/img/yellow-star.png') : require('../../../../assets/img/grey-star.png')}
                 alt="star"/>
