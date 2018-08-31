@@ -22,7 +22,7 @@ export default class TopSecond extends Component {
       return (
         <div className="top__second">
             <button className="button__fav" onClick={ () => handleBtnClick('FAW') }>Favorites</button>
-            <div className="calendar">
+            {/* <div className="calendar">
                 <p className="calendar__text">{ today }</p>
                 <div className="arrow_down">
                     <img 
@@ -32,7 +32,8 @@ export default class TopSecond extends Component {
                 <div className="hidden">
                     <Calendar />
                 </div>
-            </div>
+            </div> */}
+            <Calendar />
         </div>    
       );
     }
