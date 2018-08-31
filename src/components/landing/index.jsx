@@ -9,10 +9,19 @@ import "./style.css";
 class LandingPage extends Component {
 
   render() {
-    // console.log(this.props)
+    console.log(this.props)
     return (
       <div className="container__landing">
         <LandingHeader handler={this.props.handler}/>
+
+
+
+
+
+
+
+
+        
         <Community/>
         <BeHealthy/>
         <LandingExpirience/>

@@ -40,4 +40,10 @@ export  function appChangeView(view) {
         console.log(error);
       });
   }
+  export function goLogIn(value){
+    return{
+      type:"LOGIN",
+      payload:value
+    }
+  } 
   

@@ -28,6 +28,7 @@ export default{
         passwordValid: false,
         formValid: false,
         showError:false
-    }
+    },
+    logIn:""
 
 }

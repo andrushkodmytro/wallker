@@ -21,13 +21,13 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
     this.inputHandler = inputHandler.bind(this)
 
    this.resetValidation()
+
   // Обробник події Submit
     this.submitHandler=(e)=>{
       e.preventDefault();
       const target=e.target;
       target.submit.value="SIGNING UP";
-      // target.submit.style.opacity= 0.5;
-      const {nickNameValid,firstNameValid,lastNameValid,emailValid,passwordValid,nickName,firstName,lastName,email,password}=this.props.state ;       
+      const {nickName,firstName,lastName,email,password}=this.props.state ;       
       this.nickNameValidation(target)
       this.firstNameValidation(target)
       this.lastNameValidation(target) 
@@ -52,23 +52,10 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
           password: password
         }
         this.props.signUp(user)
-        
         this.props.formErrorChange(true,"formValid")
-        
         this.resetValidation();
-
         this.props.history.push("/signup/confirm")
       }
-
-    //   target.submit.style.opacity= 1;
-      // setTimeout(()=>{
-    
-      //   target.submit.value="SIGN UP";
-      //   // this.props.formErrorChange("","password");
-       
-        
-      // },1000)
-      
     }
     
     

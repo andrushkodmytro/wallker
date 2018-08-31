@@ -28,6 +28,13 @@ import initialState from "../store/initialStateToReducer"
                 }
             }
             break
+        case "LOGIN":
+        state={
+            ...state,
+            logIn:action.payload
+            
+        }
+        break
             default: return state
     }
     return state

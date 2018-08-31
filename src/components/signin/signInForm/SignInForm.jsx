@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Error from "../errorSignIn/ErrorSignIn";
 import {connect} from "react-redux";
-import {formSignIn,signInAction} from "../../../action/actions";
+import {formSignIn,signInAction, goLogIn} from "../../../action/actions";
 import {inputHandler,resetValidationSignIn} from "../formHandler/formHandler";
 import {Link} from "react-router-dom";
 
@@ -25,10 +25,12 @@ class Form extends Component {
             target.submit.value="SIGN IN";
             if( this.emailValidation(target) && this.passwordValidation(target)){
                 this.props.formSignIn(true,"formValid")
+                this.props.getSignIn(user)
                 this.resetValidation();
+                this.props.logInAction("A am login")
                 this.getDashboard()
                 const user={email:target.email.value,password:target.password.value};
-                this.props.getSignIn(user)
+                
               }
         }
        
@@ -67,6 +69,7 @@ class Form extends Component {
         }
     }
     render() {
+        console.log(this.props)
         let {email,password}=this.props.state
     return (
         <form onSubmit={this.submitHandler} noValidate>
@@ -104,7 +107,8 @@ class Form extends Component {
 
 const mapStateToProps=(state)=>{
     return{
-        state:state.reducer.signIn
+        state:state.reducer.signIn,
+        login:state.reducer.logIn
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -114,6 +118,9 @@ const mapDispatchToProps=(dispatch)=>{
         },
         getSignIn: (user) => {
             dispatch(signInAction(user));
+        },
+        logInAction:(value)=>{
+            dispatch(goLogIn(value))
         }
         
     }
