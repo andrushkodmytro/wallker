@@ -11,7 +11,7 @@ export default class TodayProfile extends Component {
             <img src={ this.props.src } alt="profile img"/>
             <div className="today__name_edit">
                 <p>{ this.props.name }</p>
-                <Link to="/dashboard/settings"><a>Edit profile</a></Link>
+                <Link to="/dashboard/settings">Edit profile</Link>
             </div> 
         </div>
       );

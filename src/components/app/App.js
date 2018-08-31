@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import LandingPage from "../landing";
 import SignIn from "../signin/signinPage/SignInPage";
-import {BrowserRouter as Router, Route} from "react-router-dom"
+import {BrowserRouter as Router, Route,Switch} from "react-router-dom"
 import Dashboard from "../dashboard/Dashboard";
+import NotFound from "../notFound/NotFound";
  
 class App extends Component {
   render() {
@@ -10,11 +11,15 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={LandingPage}/>
-          <Route path="/signin" component={SignIn}/>
-          <Route path="/forgot" component={SignIn}/>
-          <Route path="/signup" component={SignIn}/>
-          <Route path="/dashboard" component={Dashboard}/>
+          <Switch>
+            <Route exact path="/" component={LandingPage}/>
+            <Route path="/signin" component={SignIn}/>
+            <Route path="/forgot" component={SignIn}/>
+            <Route path="/signup" component={SignIn}/>
+            <Route path="/dashboard" component={Dashboard}/>
+            <Route component={NotFound}/>
+          </Switch>
+          
 
 
 

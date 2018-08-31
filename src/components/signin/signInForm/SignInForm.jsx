@@ -10,30 +10,26 @@ import {Link} from "react-router-dom";
 class Form extends Component {
     constructor(props){
         super(props);
-        this.dashboard=()=>{this.props.history.push('/dashboard');
-        alert("Hello")}
+        this.getDashboard=()=>{this.props.history.push('/dashboard')}
         this.inputHandler=inputHandler.bind(this)
         this.resetValidation=resetValidationSignIn
         
         this.submitHandler=(e)=>{
             let target=e.target;
             e.preventDefault();
-            target.submit.value="SIGNING IN..."
-            target.submit.style.opacity= 0.5;
-            // setTimeout(()=>{
-            //     this.emailValidation(target);
-            //     this.passwordValidation(target);
-            //     target.submit.style.opacity= 1;
-            //     target.submit.value="SIGN IN";
-            //     if(this.props.state.emailValid&&this.props.state.passwordValid){
-            //         this.props.formSignIn(true,"formValid")
-            //         alert("You are sign in");
-            //         this.resetValidation();
-            //         this.dashboard()
-            //       }        
-            // },3000)
-            const user={email:target.email.value,password:target.password.value};
-            this.props.signIn(user)
+            // target.submit.value="SIGNING IN..."
+            // target.submit.style.opacity= 0.5;
+            this.emailValidation(target);
+            this.passwordValidation(target);
+            target.submit.style.opacity= 1;
+            target.submit.value="SIGN IN";
+            if( this.emailValidation(target) && this.passwordValidation(target)){
+                this.props.formSignIn(true,"formValid")
+                this.resetValidation();
+                this.getDashboard()
+                const user={email:target.email.value,password:target.password.value};
+                this.props.getSignIn(user)
+              }
         }
        
         this.errorShow=(name,error,textError)=>{
@@ -54,7 +50,7 @@ class Form extends Component {
             }
             else {
                 this.props.formSignIn(true,"emailValid")
-                return
+                return true
             }
         }
         this.passwordValidation=function(form){
@@ -66,11 +62,12 @@ class Form extends Component {
             }
             else{
                 this.props.formSignIn(true,"passwordValid")
+                return true
             }
         }
     }
     render() {
-        console.log(this.props)
+        let {email,password}=this.props.state
     return (
         <form onSubmit={this.submitHandler} noValidate>
             <h1>SIGN IN</h1>
@@ -92,7 +89,10 @@ class Form extends Component {
                 <Link to="/forgot">Forgot password?</Link>
                 
             </div>
-            <input type="submit" value="SIGN IN" name="submit"/>
+            <input type="submit" 
+                value="SIGN IN" 
+                name="submit"
+                disabled={!email||!password}/>
             <div className="signup">
                 <p>Don’t have an account? </p>
                 <Link to="/signup">Sign up</Link>
@@ -112,7 +112,7 @@ const mapDispatchToProps=(dispatch)=>{
         formSignIn: (error,nameError) => {
             dispatch(formSignIn(error,nameError));
         },
-        signIn: (user) => {
+        getSignIn: (user) => {
             dispatch(signInAction(user));
         }
         

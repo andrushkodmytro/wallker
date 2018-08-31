@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
-import {formErrorChange} from "../../../action/actions"
+import {formErrorChange,signUpAction} from "../../../action/actions"
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
   emailValidation,passwordValidation,inputHandler} from "../formHandler/formHandler"
 
@@ -26,28 +26,49 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
       e.preventDefault();
       const target=e.target;
       target.submit.value="SIGNING UP";
-      target.submit.style.opacity= 0.5;
-     
-      this.passwordValidation(target);
-      this.nickNameValidation(target);
-      this.firstNameValidation(target);
-      this.lastNameValidation(target);
-      this.emailValidation(target);
-      
-      setTimeout(()=>{
-        const {nickNameValid,firstNameValid,lastNameValid,emailValid,passwordValid}=this.props.state
-        console.log(nickNameValid,firstNameValid,lastNameValid,emailValid,passwordValid)
-        target.submit.style.opacity= 1;
-        target.submit.value="SIGN UP";
-        // this.props.formErrorChange("","password");
-        if(nickNameValid && firstNameValid && lastNameValid && emailValid && passwordValid){
-          this.props.formErrorChange(true,"formValid")
-          alert("You are sign up")
-          this.resetValidation();
-          this.props.history.push("/signup/confirm")
+      // target.submit.style.opacity= 0.5;
+      const {nickNameValid,firstNameValid,lastNameValid,emailValid,passwordValid,nickName,firstName,lastName,email,password}=this.props.state ;       
+      this.nickNameValidation(target)
+      this.firstNameValidation(target)
+      this.lastNameValidation(target) 
+      this.emailValidation(target)
+      this.passwordValidation(target)
+
+
+      if(this.nickNameValidation(target)
+      &&      
+        this.firstNameValidation(target)
+      && 
+        this.lastNameValidation(target) 
+      && 
+        this.emailValidation(target)
+      && 
+        this.passwordValidation(target)){
+        const user={
+          first_name: nickName,
+          last_name: firstName,
+          nickname: lastName,
+          email: email,
+          password: password
         }
+        this.props.signUp(user)
         
-      },1000)
+        this.props.formErrorChange(true,"formValid")
+        
+        this.resetValidation();
+
+        this.props.history.push("/signup/confirm")
+      }
+
+    //   target.submit.style.opacity= 1;
+      // setTimeout(()=>{
+    
+      //   target.submit.value="SIGN UP";
+      //   // this.props.formErrorChange("","password");
+       
+        
+      // },1000)
+      
     }
     
     
@@ -100,7 +121,10 @@ const mapDispatchToProps=(dispatch)=>{
   return {
     formErrorChange: (error,nameError) => {
       dispatch(formErrorChange(error,nameError));
-    }
+    },
+    signUp: (user) => {
+      dispatch(signUpAction(user));
+  }
   };
 }
 

@@ -22,7 +22,17 @@ export  function appChangeView(view) {
   } 
   export const signInAction=(user)=> dispatch => {
     console.log(user)
-    axios.post("http://httpbin.org/post",user)
+    axios.post("https://httpbin.org/post",user)
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+  export const signUpAction=(user)=> dispatch => {
+    console.log(user)
+    axios.post("https://httpbin.org/post",user)
       .then(function(response) {
         console.log(response);
       })

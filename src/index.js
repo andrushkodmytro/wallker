@@ -16,7 +16,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store=createStore(combineReducers({reducer, walkers : WalkersRedusers}) , applyMiddleware(thunk));
 console.log(store.getState())
-store.subscribe(()=>(console.log(store.getState())))
+// store.subscribe(()=>(console.log(store.getState())))
 
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
 registerServiceWorker();
