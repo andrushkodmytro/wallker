@@ -1,6 +1,7 @@
 
 
 (function ($) {
+    
     $(function() {
         $.DateRangePicker({
             container: '#date_range_picker'
@@ -62,7 +63,7 @@
 
 
         // Create a calendar
-        function createCalendar(year, month, direction, max_m = 4) {
+        function createCalendar(year, month, direction, max_m = 2) {
 
             var html;
 
@@ -105,14 +106,14 @@
                     containerCalendar.find('table:last').remove();
                     containerCalendarContainer.animate({
                         left: '10px',
-                    }, 200, function(){
+                    }, 0, function(){
                         containerCalendarContainer.css('left', '-'+width+'px').prepend(html);
                     });
                 } else if(direction == 'next') {
                     var width = containerCalendarContainer.find('table').innerWidth() + 10;
                     containerCalendarContainer.animate({
                         right: '-'+(width * 2 + 10)+'px',
-                    }, 200, function(){
+                    }, 0, function(){
                         containerCalendar.find('table:first').fadeOut(0, function(){
                             $(this).remove();
                             containerCalendarContainer.css('right', '-'+width+'px');
@@ -357,7 +358,7 @@
         inactive: true,
 
         date_at: '2018-09-01',
-        date_to: '2018-12-31',
+        date_to: '2018-09-30',
 
         locale: 'en-US',
         l: {
