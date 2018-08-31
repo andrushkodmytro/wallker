@@ -12,7 +12,7 @@ export default class TopSearchWalkers extends Component {
         <div className="search">
             <input value={ this.props.inputText }  
               onChange={ onUserInput } 
-              style={{ backgroundImage: 'url('+ search_loupe +')' }} 
+              style={{ backgroundImage: 'url('+ search_loupe +')'  }} 
               type="search" placeholder="Search Happy Walkers"
             />
         </div>
