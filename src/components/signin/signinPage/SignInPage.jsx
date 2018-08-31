@@ -26,7 +26,7 @@ export default class Signin extends Component {
             <Route path="/signup/confirm" component={ConfirmEmail}/>
           </div>
         </div>
-        <div className="section2">
+        <div className="signPageSection2">
             <img src={Backgroun} alt="walker"/>
         </div>
       </div>

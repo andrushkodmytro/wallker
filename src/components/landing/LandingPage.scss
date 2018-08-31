@@ -1,0 +1,211 @@
+.container__landing {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; 
+}
+
+.section1{
+    background:url("../../assets/img/rectangle.jpg") center no-repeat;
+    background-size:  auto 100%;
+    display: flex;
+    flex-direction: column;
+}    
+    
+    
+.logo-header{
+    margin-top: 2%;
+    align-items: center;
+}
+.logo-header img{
+    display: block;
+    /* width: 100%; */
+    margin: 1% auto;
+}
+     
+.section1__header{
+    margin:4% auto 0 auto;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    color: #fff;
+    font-family: "BebasNeueBold";
+}
+     
+.section1__text{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color:#fff;
+    margin: 0.833333% auto 2% auto;
+    text-align: center;
+    font-family: "SourceSansPro-Regular";
+}
+.section1__button{
+    text-align: center;
+    margin:0 auto 20% auto;
+}
+button{
+    color: #fff;
+    font-family:"SourceSansPro-Regular" ;
+    background-color: #01ce9f;
+    border:none;
+}
+     
+
+        
+.section2__screenshot{
+    text-align: center;
+    margin-top:-15%; 
+    
+}
+.section2__screenshot  img{
+    margin:0 auto;
+    width:41.5%;
+}
+.section2__inform{
+    display: flex;
+    align-items: center;
+    margin: 7% auto 0 auto;
+}              
+.section2__header{
+    display: block;
+    margin-left: 20.41666%;
+    /* // margin-right: 8.59375%; */
+    width:60%;
+}
+.section2__header  h3{
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-family: "BebasNeueBold";
+    /* // width:219px; */
+    display: inline-block;
+}
+
+.section2__text{
+    margin-right: 20.41666%;
+    margin-left: 8.59375%;
+}
+.section2__text  p{
+    display: inline-block;
+    text-align: justify;
+    margin-top: 0;
+    font-family: "SourceSansPro-Regular";
+    font-size:1rem;
+    line-height: 1.5rem
+}
+
+
+.section2__walkboy{
+    margin-top: 8.541666%;
+}
+.section2__walkboy  img{
+    width: 100%;
+}
+
+.section3__header{
+    text-align: center;
+    margin-top: 8.333333%;
+}
+    .section3__header h3{
+        font-size: 2.25rem;
+        font-family:"BebasNeueBold";
+    }
+
+.section3__function{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:4.166666% auto 8.28125% 0;
+    padding: 0 20.416666%;
+}
+    .section3__function__item{
+       width: 25%;
+        height: 15vw;
+        margin:20px 10px;
+        transition: 0.4s;
+        border-radius: 5px;
+    }          
+        .section3__function__item div{
+            height: 60%;
+            width:100%;
+            display: flex;
+            align-items: center;
+            margin:0 auto;
+        }
+        .section3__function__item  img{
+                width: 25%;
+               display: block;
+               margin:0 auto;
+            }
+        
+            .section3__function__item   p{
+            margin: 7% auto;
+            text-align: center;
+            font-family: "SourceSansPro-Regular";
+            font-size: 1rem;
+        } 
+    
+    .section3__function__item:hover{
+        background-color: rgba(129, 129, 129, 0.253);
+        transition: .5s;
+    }
+
+    .section5{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        
+    
+        .section5__board{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #01ce9f;
+            width: 50%;
+            margin-top:-100px;
+            padding:80px 192px;
+        }   
+           .section5__board h3{
+                font-size: 2.25rem;
+                line-height: 3rem;
+                font-family: "BebasNeueBold";
+                color:#fff;
+                text-align: center;
+                /* margin-left: 12%; */
+            }
+          .section5__board  button{
+                background-color:#273570;
+                color: #fff;
+                font-family: "SourceSansPro-Regular";
+                /* margin-right: 12%; */
+                border:none;
+                text-transform: uppercase;
+            }
+        
+        .section5__logo{
+            width: 59%;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4.114583%;
+            margin-bottom: 4.166666%;
+                display: flex;
+                justify-content: space-between;
+        }
+        .section5__logo  img{
+            height: 2.083333vw;
+        }
+        .section5__logo p{
+            font-size: 1rem;
+            font-family: "SourceSansPro-Regular"
+        }
+            
+        
+    
+

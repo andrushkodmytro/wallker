@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import LandingPage from "../landing";
+import LandingPage from "../landing/LandingPage";
 import SignIn from "../signin/signinPage/SignInPage";
-import {BrowserRouter as Router, Route,Switch} from "react-router-dom"
-import Dashboard from "../dashboard/Dashboard";
+import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
 import PrivateRoutDashboard from "../privateRoutDashboard/PrivateRoutDashboard";
 import NotFound from "../notFound/NotFound";
  
