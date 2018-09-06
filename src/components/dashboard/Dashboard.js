@@ -8,12 +8,14 @@ import TopHW from './components/topHappyWalkers/TopHW';
 import Footer from './components/footer/Footer';
 import SettingsPassword from './components/settings/settingsPassword/SettingsPassword';
 import {Route} from "react-router-dom";
+import {connect} from "react-redux"
 
-export default class Dashboard extends Component {
+ class Dashboard extends Component {
   render() {
     const summary = "summary";
     const settings = "settings";
     const d = "dd";
+    console.log(this.props)
     
     return (
       <div className="container">
@@ -30,3 +32,9 @@ export default class Dashboard extends Component {
     );
   }
 }
+const mapStateToProps=state=>{
+  return {
+    user:state.reducer.user
+  }
+}
+export default connect(mapStateToProps)(Dashboard)

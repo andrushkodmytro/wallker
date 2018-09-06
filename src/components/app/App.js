@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
 import PrivateRoutDashboard from "../privateRoutDashboard/PrivateRoutDashboard";
 import Dashboard from "../dashboard/Dashboard";
 import NotFound from "../notFound/NotFound";
+import EmailConfirm from "../emailConfirm/EmailConfirm"
  
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/signin" component={SignIn}/>
             <Route path="/forgot" component={SignIn}/>
             <Route path="/signup" component={SignIn}/>
+            <Route path="/confirmation_email" component={EmailConfirm}/>
             {/* <Route path="/dashboard" component={PrivateRoutDashboard}/> */}
             <Route path="/dashboard" component={Dashboard}/>
             <Route component={NotFound}/>

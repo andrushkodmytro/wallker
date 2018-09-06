@@ -1,11 +1,11 @@
 export default{
     appView:"Landing",
     signUp:{
-        nickName:"", 
-        firstName:"",
-        lastName:"", 
-        email:"", 
-        password:"", 
+        nickName:"dima", 
+        firstName:"dima",
+        lastName:"dima", 
+        email:"andrushkodima@gmail.com", 
+        password:"123456789", 
         nickNameError:"", 
         firstNameError:"", 
         lastNameError:"",
@@ -20,15 +20,17 @@ export default{
         showError:false
       },
     signIn:{
-        email:"",
+        email:"a@gmail.com",
         emailError:"",
         passwordError:"", 
-        password:"", 
+        password:"qwertyuiop", 
         emailValid: false, 
         passwordValid: false,
         formValid: false,
         showError:false
     },
-    logIn:""
+    logIn:"",
+    signUpStatus:"",
+    user:{}
 
 }
