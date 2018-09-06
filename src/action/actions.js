@@ -43,7 +43,7 @@ var request = axios.create({
   }
   // action для реєстрації
   // export const signUpAction=(user)=> dispatch => {
-  //   return axios.post("http://localhost:8000/users/register",user)
+  //   return axios.post("http://localhost:8000/users/register",user),{witchCredentials: true}
   //    .then(function(response) {
   //      console.log(response)
   //       if(response.status===201){

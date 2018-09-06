@@ -44,7 +44,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
         this.emailValidation(target)
       && 
         this.passwordValidation(target)){
-        const user=JSON.stringify({
+        const user={
           first_name:firstName ,
           last_name: lastName,
           // username: nickName,
@@ -53,7 +53,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
           password: password
           ,
           password_confirmation: password
-        })
+        }
         console.log(user)
         this.props.signUp(user)
         
