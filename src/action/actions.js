@@ -58,41 +58,22 @@ var request = axios.create({
         console.log(error);
       
       })
-    // fetch('http://localhost:8000/users/register', { method: 'POST', body: JSON.stringify(user) })
-    // .then(res => res.json())
-    // .then(json => console.log(json));
 }
 
-  // export const signUpAction=(user)=> dispatch => {
-  //   return axios.post("https://b-qa-backend-happy-walker.herokuapp.com/api/v1/users",user)
-  //    .then(function(response) {
-  //      console.log(response)
-  //       if(response.status===201){
-  //         dispatch( goSignUp("201"))
-  //       }      
-  //     }     
-  //   )
-  //     .catch(function(error) {
-  //       console.log(error);
-      
-  //     })
-  // }
+
   export const confirmEmail=(confirm)=> dispatch => {
-    // return axios.post("http://localhost:8000/users/confirm_email",confirm)
-    //  .then(function(response) {
-    //    console.log(response)
-    //     if(response.status===200){
-    //       dispatch( loginUser(response.data))
-    //     }      
-    //   }     
-    // )
-    //   .catch(function(error) {
-    //     console.log(error);
+    return axios.post("http://localhost:8000/users/confirm_email",confirm)
+     .then(function(response) {
+       console.log(response)
+        if(response.status===200){
+          dispatch( loginUser(response.data))
+        }      
+      }     
+    )
+      .catch(function(error) {
+        console.log(error);
       
-    //   })
-    fetch('http://localhost:8000/users/confirm_email', { method: 'POST', body: JSON.stringify(confirm) })
-    .then(res => res.json())
-    .then(json => console.log(json));
+      })
   }
 
   export const getUser=(id)=> dispatch => {
