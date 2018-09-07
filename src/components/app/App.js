@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import LandingPage from "../landing/LandingPage";
 import SignIn from "../signin/signinPage/SignInPage";
 import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
-import PrivateRoutDashboard from "../privateRoutDashboard/PrivateRoutDashboard";
+// import PrivateRoutDashboard from "../privateRoutDashboard/PrivateRoutDashboard";
 import Dashboard from "../dashboard/Dashboard";
 import NotFound from "../notFound/NotFound";
 import EmailConfirm from "../emailConfirm/EmailConfirm"

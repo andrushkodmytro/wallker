@@ -32,7 +32,7 @@ export default class SettingsProfile extends Component {
             </div>
             <div className="photo_upload">
               <div className="photo_upload__photo">
-                <img src={ photo } alt="account-photo"/>
+                <img src={ photo } alt="account"/>
               </div>
               <div className="photo_upload__details">
                 <label className="photo__label">Your&nbsp;Photo</label>

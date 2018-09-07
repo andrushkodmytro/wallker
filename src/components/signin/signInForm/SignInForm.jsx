@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { signInAction, goLogIn, formChangeActionSignIn } from "../../../action/actions";
 import { inputHandler,resetValidationSignIn } from "../formHandler/formHandler";
 import { Link } from "react-router-dom";
-import axios from "axios"
 
 
 
@@ -46,6 +45,7 @@ class Form extends Component {
         }
         this.emailValidation=function(form){
             this.errorHide(form.email,"emailError")
+            // eslint-disable-next-line
             if((/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/).test(String(this.props.state.email).toLowerCase())===false){
               this.errorShow(form.email,"emailError","Wrong email. Try again or click Forgot password to reset it. ")
               return false

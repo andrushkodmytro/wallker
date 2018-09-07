@@ -32,6 +32,7 @@ export const  errorShow=function(name,error,textError){
   }
 // Валідація email
 export const validateEmail=function(email) {
+  // eslint-disable-next-line
   var re = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/;
   return re.test(String(email).toLowerCase());
   

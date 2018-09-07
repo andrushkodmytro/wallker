@@ -1,16 +1,15 @@
 import axios from "axios";
-import fetch from 'node-fetch';
 import Cookies from 'universal-cookie';
 
-var request = axios.create({
-  baseURL: 'http://localhost:8000/',
-  timeout: 5000,
-  headers: {
-    // 'X-Custom-Header': 'foobar'
-  // "accept": "application/json" , 
-  "Content-Type": "application/json"
-}
-});
+// var request = axios.create({
+//   baseURL: 'http://localhost:8000/',
+//   timeout: 5000,
+//   headers: {
+//     // 'X-Custom-Header': 'foobar'
+//   // "accept": "application/json" , 
+//   "Content-Type": "application/json"
+// }
+// });
 
 //  action для sign up форми
   export function formChangeActionSignUp(value,stateName){

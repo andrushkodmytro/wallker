@@ -1,5 +1,4 @@
 export default{
-    appView:"Landing",
     signUp:{
         nickName:"dima", 
         firstName:"dima",

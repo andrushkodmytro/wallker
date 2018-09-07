@@ -14,7 +14,7 @@ import {connect} from "react-redux"
   render() {
     const summary = "summary";
     const settings = "settings";
-    const d = "dd";
+    // const d = "dd";
     console.log(this.props)
     
     return (

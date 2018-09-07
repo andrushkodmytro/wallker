@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {confirmEmail,getUser} from "../../action/actions";
 import { connect} from "react-redux";
-import axios from "axios";
 
  class emailConfirm extends Component {
    componentDidMount(){
