@@ -25,7 +25,7 @@ class Form extends Component {
             target.submit.value="SIGN IN";
             if( this.emailValidation(target) && this.passwordValidation(target)){
                 this.props.formChangeActionSignIn(true,"formValid")
-                const user={email:target.email.value,password:target.password.value};
+                const user={username_or_email:target.email.value,password:target.password.value};
                 this.props.getSignIn(user)
                 
                 
@@ -71,10 +71,10 @@ class Form extends Component {
         }
     }
     componentWillReceiveProps(NewProps){
-        if(NewProps.logIn==="200"){
+        if(NewProps.logIn==="230"){
             this.resetValidation();
             this.props.logInAction("")
-            this.getDashboard()
+            // this.getDashboard()
             
         }
         if(NewProps.logIn==="400"){

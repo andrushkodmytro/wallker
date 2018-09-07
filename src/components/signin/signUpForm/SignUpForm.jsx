@@ -47,12 +47,12 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
         const user={
           first_name:firstName ,
           last_name: lastName,
-          // username: nickName,
-          nickname:nickName,
+          username: nickName,
+          // nickname:nickName,
           email: email,
           password: password
-          ,
-          password_confirmation: password
+          // ,
+          // password_confirmation: password
         }
         console.log(user)
         this.props.signUp(user)

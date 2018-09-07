@@ -1,4 +1,7 @@
-import axios from "axios"
+import axios from "axios";
+import fetch from 'node-fetch';
+import Cookies from 'universal-cookie';
+
 var request = axios.create({
   baseURL: 'http://localhost:8000/',
   timeout: 5000,
@@ -28,12 +31,12 @@ var request = axios.create({
     }
   } 
   export const signInAction=(user)=> dispatch => {
-    axios.post("http://localhost:8080/sign_in",user)
+    axios.post("http://localhost:8000/users/sign_in",user)
       .then(function(response) {
         console.log(response);
-        if(response.data[0]._id){
-          dispatch(goLogIn("200"))
-          console.log(response.data[0])
+        if(response.status===230){
+          dispatch(goLogIn("230"))
+          console.log(response.data)
           dispatch(loginUser(response.data[0]))
         }        
       })
@@ -42,8 +45,26 @@ var request = axios.create({
       });
   }
   // action для реєстрації
+  export const signUpAction=(user)=> dispatch => {
+    return axios.post("http://localhost:8000/users/register",user)
+     .then(function(response) {
+       console.log(response)
+        if(response.status===201){
+          dispatch( goSignUp("201"))
+        }      
+      }     
+    )
+      .catch(function(error) {
+        console.log(error);
+      
+      })
+    // fetch('http://localhost:8000/users/register', { method: 'POST', body: JSON.stringify(user) })
+    // .then(res => res.json())
+    // .then(json => console.log(json));
+}
+
   // export const signUpAction=(user)=> dispatch => {
-  //   return axios.post("http://localhost:8000/users/register",user),{witchCredentials: true}
+  //   return axios.post("https://b-qa-backend-happy-walker.herokuapp.com/api/v1/users",user)
   //    .then(function(response) {
   //      console.log(response)
   //       if(response.status===201){
@@ -56,40 +77,30 @@ var request = axios.create({
       
   //     })
   // }
-
-  export const signUpAction=(user)=> dispatch => {
-    return axios.post("https://b-qa-backend-happy-walker.herokuapp.com/users",user)
-     .then(function(response) {
-       console.log(response)
-        if(response.status===201){
-          dispatch( goSignUp("201"))
-        }      
-      }     
-    )
-      .catch(function(error) {
-        console.log(error);
-      
-      })
-  }
   export const confirmEmail=(confirm)=> dispatch => {
-    return axios.post("http://localhost:8000/users/confirm_email",confirm)
-     .then(function(response) {
-       console.log(response)
-        if(response.status===200){
-          dispatch( loginUser(response.data))
-        }      
-      }     
-    )
-      .catch(function(error) {
-        console.log(error);
+    // return axios.post("http://localhost:8000/users/confirm_email",confirm)
+    //  .then(function(response) {
+    //    console.log(response)
+    //     if(response.status===200){
+    //       dispatch( loginUser(response.data))
+    //     }      
+    //   }     
+    // )
+    //   .catch(function(error) {
+    //     console.log(error);
       
-      })
+    //   })
+    fetch('http://localhost:8000/users/confirm_email', { method: 'POST', body: JSON.stringify(confirm) })
+    .then(res => res.json())
+    .then(json => console.log(json));
   }
 
   export const getUser=(id)=> dispatch => {
-    return axios.get(`http://localhost:8000/users/${id}`)
+    return axios.get(`http://localhost:8000/users/sign_in`)
      .then(function(response) {
        console.log(response)
+       const cookies = new Cookies();
+        cookies.set('sesionid', response.data, { path: '/' });
         if(response.status===200){
           dispatch( loginUser(response.data))
         }      

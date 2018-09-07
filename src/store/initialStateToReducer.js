@@ -20,7 +20,7 @@ export default{
         showError:false
       },
     signIn:{
-        email:"a@gmail.com",
+        email:"andrushkodima@gmail.com",
         emailError:"",
         passwordError:"", 
         password:"qwertyuiop", 
