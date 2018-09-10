@@ -1,38 +1,38 @@
   export const resetValidation=function(){
-    // console.log(this)
-    this.props.formErrorChange("","nickName")
-    this.props.formErrorChange("","firstName")
-    this.props.formErrorChange("","lastName")
-    this.props.formErrorChange("","email")
-    this.props.formErrorChange("","password")
-    this.props.formErrorChange("","nickNameError")
-    this.props.formErrorChange("","firstNameError")
-    this.props.formErrorChange("","lastNameError")
-    this.props.formErrorChange("","emailError")
-    this.props.formErrorChange("","passwordError")
-    this.props.formErrorChange(false,"firstNameValid")
-    this.props.formErrorChange(false,"lastNameValid")
-    this.props.formErrorChange(false,"emailValid")
-    this.props.formErrorChange(false,"passwordValid")
-    this.props.formErrorChange(false,"formValid")
-    this.props.formErrorChange(false,"showError")
+    this.props.formChangeActionSignUp("","nickName")
+    this.props.formChangeActionSignUp("","firstName")
+    this.props.formChangeActionSignUp("","lastName")
+    this.props.formChangeActionSignUp("","email")
+    this.props.formChangeActionSignUp("","password")
+    this.props.formChangeActionSignUp("","nickNameError")
+    this.props.formChangeActionSignUp("","firstNameError")
+    this.props.formChangeActionSignUp("","lastNameError")
+    this.props.formChangeActionSignUp("","emailError")
+    this.props.formChangeActionSignUp("","passwordError")
+    this.props.formChangeActionSignUp(false,"firstNameValid")
+    this.props.formChangeActionSignUp(false,"lastNameValid")
+    this.props.formChangeActionSignUp(false,"emailValid")
+    this.props.formChangeActionSignUp(false,"passwordValid")
+    this.props.formChangeActionSignUp(false,"formValid")
+    this.props.formChangeActionSignUp(false,"showError")
 
   }
 
 // Показує повідомлення з відповідною помилкою
 export const  errorShow=function(name,error,textError){
-    this.props.formErrorChange(textError,error)
+    this.props.formChangeActionSignUp(textError,error)
     name.style.border="1px solid #d0021b";
     return
   }
    // Ховає повідомлення про помилку
   export const errorHide=function(name,error){
     name.style.border="none";
-    this.props.formErrorChange("",[error])
+    this.props.formChangeActionSignUp("",[error])
     return
   }
 // Валідація email
 export const validateEmail=function(email) {
+  // eslint-disable-next-line
   var re = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/;
   return re.test(String(email).toLowerCase());
   
@@ -49,7 +49,7 @@ export const  nickNameValidation=function(form){
     return
   }
   else {
-    this.props.formErrorChange(true,"nickNameValid")
+    this.props.formChangeActionSignUp(true,"nickNameValid")
     return true
     
   }
@@ -67,7 +67,7 @@ export const  nickNameValidation=function(form){
     return
   }
   else {
-    this.props.formErrorChange(true,"firstNameValid")
+    this.props.formChangeActionSignUp(true,"firstNameValid")
     return true
 
   }
@@ -85,7 +85,7 @@ export const lastNameValidation = function (form) {
     return
   }
   else {
-    this.props.formErrorChange(true,"lastNameValid")
+    this.props.formChangeActionSignUp(true,"lastNameValid")
     return true
 
   }
@@ -99,7 +99,7 @@ export const lastNameValidation = function (form) {
         return
       }
       else {
-        this.props.formErrorChange(true,"emailValid")
+        this.props.formChangeActionSignUp(true,"emailValid")
         return true
 
       }
@@ -111,12 +111,12 @@ export const lastNameValidation = function (form) {
         this.errorShow(form.password, "passwordError", "Password should be between 8 and 16 characters")
         return
       }
-      if ((/[^A-Za-z]/g).test(this.props.state.password) === true) {
+      if ((/[^A-Za-z0-9]/g).test(this.props.state.password) === true) {
         this.errorShow(form.password, "passwordError", "Must contain only letters and numbers","passwordError")
         return;
       }
       else {
-        this.props.formErrorChange(true,"passwordValid")
+        this.props.formChangeActionSignUp(true,"passwordValid")
         return true
 
       }
@@ -126,17 +126,17 @@ export const lastNameValidation = function (form) {
    
       const name=e.target.name;
       const value=e.target.value;
-      this.props.formErrorChange? this.props.formErrorChange(value,[name]):this.props.formSignIn(value,[name])
+      this.props.formChangeActionSignUp? this.props.formChangeActionSignUp(value,[name]):this.props.formChangeActionSignIn(value,[name])
     }
     export const resetValidationSignIn=function(){
-      this.props.formSignIn("","email")
-      this.props.formSignIn("","emailError")
-      this.props.formSignIn("","passwordError")
-      this.props.formSignIn("","password")
-      this.props.formSignIn(false, "emailValid")
-      this.props.formSignIn(false, "passwordValid")
-      this.props.formSignIn(false, "showError")
-      this.props.formSignIn(false, "formValid")
+      this.props.formChangeActionSignIn("","email")
+      this.props.formChangeActionSignIn("","emailError")
+      this.props.formChangeActionSignIn("","passwordError")
+      this.props.formChangeActionSignIn("","password")
+      this.props.formChangeActionSignIn(false, "emailValid")
+      this.props.formChangeActionSignIn(false, "passwordValid")
+      this.props.formChangeActionSignIn(false, "showError")
+      this.props.formChangeActionSignIn(false, "formValid")
 
 
     }

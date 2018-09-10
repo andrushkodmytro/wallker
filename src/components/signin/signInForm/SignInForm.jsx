@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Error from "../errorSignIn/ErrorSignIn";
-import {connect} from "react-redux";
-import {formSignIn,signInAction, goLogIn} from "../../../action/actions";
-import {inputHandler,resetValidationSignIn} from "../formHandler/formHandler";
-import {Link} from "react-router-dom";
+import { connect } from "react-redux";
+import { signInAction, goLogIn, formChangeActionSignIn,getUser } from "../../../action/actions";
+import { inputHandler,resetValidationSignIn } from "../formHandler/formHandler";
+import { Link } from "react-router-dom";
 
 
 
@@ -24,48 +24,66 @@ class Form extends Component {
             target.submit.style.opacity= 1;
             target.submit.value="SIGN IN";
             if( this.emailValidation(target) && this.passwordValidation(target)){
-                this.props.formSignIn(true,"formValid")
+                this.props.formChangeActionSignIn(true,"formValid")
+                const user={username_or_email:target.email.value,password:target.password.value};
                 this.props.getSignIn(user)
-                this.resetValidation();
-                this.props.logInAction("A am login")
-                this.getDashboard()
-                const user={email:target.email.value,password:target.password.value};
+                
                 
               }
         }
        
         this.errorShow=(name,error,textError)=>{
             name.style.border="1px solid #d0021b";
-            this.props.formSignIn(textError,error)
-            this.props.formSignIn(true,"showError")
+            this.props.formChangeActionSignIn(textError,error)
+            this.props.formChangeActionSignIn(true,"showError")
         }
         this.errorHide=(name,error)=>{
+            // console.log("Hello")
+
             name.style.border="none";
-            this.props.formSignIn("",[error])
+            this.props.formChangeActionSignIn("",[error])
         }
         this.emailValidation=function(form){
             this.errorHide(form.email,"emailError")
-            if(this.props.state.email==="") return this.errorShow(form.email,"emailError","emailError","Email or login is required!")
-            if((/[^\w@-_\.]/g).test(this.props.state.email)===true){
-              this.errorShow(form.email,"emailError","Wrong email/password. Try again or click Forgot password to reset it.")
-              return
+            // eslint-disable-next-line
+            if((/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/).test(String(this.props.state.email).toLowerCase())===false){
+              this.errorShow(form.email,"emailError","Wrong email. Try again or click Forgot password to reset it. ")
+              return false
             }
             else {
-                this.props.formSignIn(true,"emailValid")
+                this.props.formChangeActionSignIn(true,"emailValid")
                 return true
             }
         }
         this.passwordValidation=function(form){
             this.errorHide(form.password,"passwordError")
-            if(this.props.state.password==="") return this.errorShow(form.password,"passwordError","Password is required!")
+            if (this.props.state.password.length < 8 || this.props.state.password.length > 16) {
+                this.errorShow(form.password,"passwordError","Password should be between 8 and 16 characters. ")
+                return 
+              }
             if((/[^\w]/g).test(this.props.state.password)===true){
-              this.errorShow(form.password,"Wrong email/password. Try again or click Forgot password to reset it.")
-              return
+              this.errorShow(form.password,"Wrong email/password. Try again or click Forgot password to reset it. ")
+              return false
             }
             else{
-                this.props.formSignIn(true,"passwordValid")
+                this.props.formChangeActionSignIn(true,"passwordValid")
                 return true
             }
+        }
+    }
+    componentWillReceiveProps(NewProps){
+        if(NewProps.logIn==="230"){
+            this.resetValidation();
+            this.props.logInAction("");
+            this.props.getUser()
+            // this.getDashboard()
+            
+            
+        }
+        if(NewProps.logIn==="400"){
+            this.props.logInAction("")
+            this.resetValidation();
+            alert("login or email is incorect")
         }
     }
     render() {
@@ -89,8 +107,7 @@ class Form extends Component {
                     <label htmlFor="check">Remember me</label>
                 </div>
 
-                <Link to="/forgot">Forgot password?</Link>
-                
+                <Link to="/forgot">Forgot password?</Link>  
             </div>
             <input type="submit" 
                 value="SIGN IN" 
@@ -108,19 +125,23 @@ class Form extends Component {
 const mapStateToProps=(state)=>{
     return{
         state:state.reducer.signIn,
-        login:state.reducer.logIn
+        logIn:state.reducer.logIn,
+        user:state.reducer.user
     }
 }
 const mapDispatchToProps=(dispatch)=>{
     return{
-        formSignIn: (error,nameError) => {
-            dispatch(formSignIn(error,nameError));
+        formChangeActionSignIn: (error,nameError) => {
+            dispatch(formChangeActionSignIn(error,nameError));
         },
         getSignIn: (user) => {
             dispatch(signInAction(user));
         },
         logInAction:(value)=>{
             dispatch(goLogIn(value))
+        },
+        getUser:()=>{
+            dispatch(getUser())
         }
         
     }

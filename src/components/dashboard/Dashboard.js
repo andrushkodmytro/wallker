@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import '../../assets/css/App.css';
-import Header from './components/header/Header';
-import Summary from './components/summary/Summary';
-import SettingsProfile from './components/settings/settingsProfile/SettingsProfile';
-import Today from './components/today/Today';
-import TopHW from './components/topHappyWalkers/TopHW';
-import Footer from './components/footer/Footer';
-import SettingsPassword from './components/settings/settingsPassword/SettingsPassword';
+import Header from './header/Header';
+import Summary from './summary/Summary';
+import SettingsProfile from './settings/settingsProfile/SettingsProfile';
+import Today from './today/Today';
+import TopHW from './topHappyWalkers/TopHW';
+import Footer from './footer/Footer';
+import SettingsPassword from './settings/settingsPassword/SettingsPassword';
 import {Route} from "react-router-dom";
+import {connect} from "react-redux"
 
-export default class Dashboard extends Component {
+ class Dashboard extends Component {
   render() {
     const summary = "summary";
     const settings = "settings";
-    const d = "dd";
+    // const d = "dd";
+    console.log(this.props)
     
     return (
       <div className="container">
@@ -30,3 +32,9 @@ export default class Dashboard extends Component {
     );
   }
 }
+const mapStateToProps=state=>{
+  return {
+    user:state.reducer.user
+  }
+}
+export default connect(mapStateToProps)(Dashboard)

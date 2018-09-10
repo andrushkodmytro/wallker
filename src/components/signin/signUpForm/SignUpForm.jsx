@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
-import {formErrorChange,signUpAction} from "../../../action/actions"
+import {formChangeActionSignUp,signUpAction,goSignUp} from "../../../action/actions"
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
   emailValidation,passwordValidation,inputHandler} from "../formHandler/formHandler"
 
@@ -20,7 +20,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
     this.passwordValidation=passwordValidation
     this.inputHandler = inputHandler.bind(this)
 
-   this.resetValidation()
+  //  this.resetValidation()
 
   // Обробник події Submit
     this.submitHandler=(e)=>{
@@ -45,23 +45,42 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
       && 
         this.passwordValidation(target)){
         const user={
-          first_name: nickName,
-          last_name: firstName,
-          nickname: lastName,
+          first_name:firstName ,
+          last_name: lastName,
+          username: nickName,
+          // nickname:nickName,
           email: email,
           password: password
+          // ,
+          // password_confirmation: password
         }
+        console.log(user)
         this.props.signUp(user)
-        this.props.formErrorChange(true,"formValid")
-        this.resetValidation();
-        this.props.history.push("/signup/confirm")
+        
+        // this.props.formChangeActionSignUp(true,"formValid")
+        
+        
+        // this.props.history.push("/signup/confirm")
       }
     }
-    
-    
+}
+componentWillReceiveProps(NewProps){
+  if(NewProps.signUpStatus==="201"){
+    console.log(document.cookie)
+    this.props.goSignUp("")
+    this.resetValidation();
+    this.props.history.push("/signup/confirm")
+  }
+  if(NewProps.signUpStatus==="400"){
+    this.props.goSignUp("")
+    this.resetValidation();
+    alert("Nickname and email must be unique")
+  }
+ 
 }
   render() {
     let {nickName,firstName,lastName,email,password}=this.props.state
+
     return (
         <form onSubmit={this.submitHandler}  noValidate className="signUp">
             <h1>SIGN UP</h1>
@@ -101,17 +120,21 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
 }
 const mapStateToProps=(state)=>{
   return{
-    state:state.reducer.signUp
+    state:state.reducer.signUp,
+    signUpStatus:state.reducer.signUpStatus
   }
 }
 const mapDispatchToProps=(dispatch)=>{
   return {
-    formErrorChange: (error,nameError) => {
-      dispatch(formErrorChange(error,nameError));
+    formChangeActionSignUp: (error,nameError) => {
+      dispatch(formChangeActionSignUp(error,nameError));
     },
     signUp: (user) => {
       dispatch(signUpAction(user));
-  }
+  },
+    goSignUp:(status)=>{
+      dispatch(goSignUp(status))
+    }
   };
 }
 
