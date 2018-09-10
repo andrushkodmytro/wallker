@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Error from "../errorSignIn/ErrorSignIn";
 import { connect } from "react-redux";
-import { signInAction, goLogIn, formChangeActionSignIn } from "../../../action/actions";
+import { signInAction, goLogIn, formChangeActionSignIn,getUser } from "../../../action/actions";
 import { inputHandler,resetValidationSignIn } from "../formHandler/formHandler";
 import { Link } from "react-router-dom";
 
@@ -74,7 +74,8 @@ class Form extends Component {
     componentWillReceiveProps(NewProps){
         if(NewProps.logIn==="230"){
             this.resetValidation();
-            this.props.logInAction("")
+            this.props.logInAction("");
+            this.props.getUser()
             // this.getDashboard()
             
             
@@ -138,6 +139,9 @@ const mapDispatchToProps=(dispatch)=>{
         },
         logInAction:(value)=>{
             dispatch(goLogIn(value))
+        },
+        getUser:()=>{
+            dispatch(getUser())
         }
         
     }

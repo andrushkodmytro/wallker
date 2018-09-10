@@ -33,7 +33,10 @@ import Cookies from 'universal-cookie';
     axios.post("http://localhost:8000/users/sign_in",user)
       .then(function(response) {
         console.log(response);
+        const token =response.data.token
         if(response.status===230){
+          const cookies = new Cookies();
+          cookies.set('sessionid',token , { path: '/' });
           dispatch(goLogIn("230"))
           console.log(response.data)
           dispatch(loginUser(response.data[0]))
@@ -75,12 +78,12 @@ import Cookies from 'universal-cookie';
       })
   }
 
-  export const getUser=(id)=> dispatch => {
-    return axios.get(`http://localhost:8000/users/sign_in`)
+  export const getUser=()=> dispatch => {
+    return axios.get(`http://localhost:8000/users/me`)
      .then(function(response) {
        console.log(response)
-       const cookies = new Cookies();
-        cookies.set('sesionid', response.data, { path: '/' });
+      //  const cookies = new Cookies();
+      //   cookies.set('sesionid', response.data, { path: '/' });
         if(response.status===200){
           dispatch( loginUser(response.data))
         }      
