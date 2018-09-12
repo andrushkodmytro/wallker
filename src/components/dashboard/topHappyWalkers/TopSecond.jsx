@@ -6,7 +6,6 @@ import Calendar from './Calendar.jsx';
 
 
 export default class TopSecond extends Component {
-    
     render() {
         const { handleBtnClick } = this.props;
 

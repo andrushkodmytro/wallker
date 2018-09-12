@@ -35,20 +35,21 @@ export default class SettingsProfile extends Component {
               <form className="form" onSubmit={this.handleSaveLocation}>
               <div className="inputs">
                 <div className="first_name">
-                  <label className="first_name__label">First&nbsp;Name</label>
-                  <input className="first_name__input" type="text" value={ user.first_name }/>
+                  <label htmlFor="first_name" className="first_name__label">First&nbsp;Name</label>
+                  <input name="first_name" className="first_name__input" type="text" value={ user.first_name }/>
                 </div>
                 <div className="last_name">
-                  <label className="last_name__label">Last&nbsp;Name</label>
-                  <input className="last_name__input" type="text" value={ user.last_name }/>
+                  <label htmlFor="last_name" className="last_name__label">Last&nbsp;Name</label>
+                  <input name="last_name" className="last_name__input" type="text" value={ user.last_name }/>
                 </div>
                 <div className="email">
-                  <label className="email__label">Email</label>
-                  <input className="emaill__input" type="email" value={ user.email }/>
+                  <label htmlFor="email" className="email__label">Email</label>
+                  <input name="email" className="emaill__input" type="email" value={ user.email }/>
                 </div>
                 <div className="location">
-                  <label className="location__label">Location</label>
-                  <input 
+                  <label htmlFor="location" className="location__label">Location</label>
+                  <input
+                    name="location" 
                     id="autocomplete" 
                     className="location__input" 
                     type="text" 
@@ -64,7 +65,7 @@ export default class SettingsProfile extends Component {
                 <label className="photo__label">Your&nbsp;Photo</label>
                 <div className="button_file">
                   <button className="button_photo" >Upload</button>
-                  <input type="file" name="myfile" />
+                  <input className="input_file" type="file" name="myfile" />
                 </div>
                 <p>Format: JPEG, PNG or GIF. Max size: 500K.</p>
               </div>

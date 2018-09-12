@@ -8,7 +8,7 @@ import TopSecond from './TopSecond.jsx';
 export default class TopHWTop extends Component {
     render() {
       const { handleBtnClick } = this.props;
-
+      
       return (
         <div className="top">
             <TopFirst handleBtnClick={ handleBtnClick } />

@@ -137,6 +137,10 @@
     width: 100%;
 }
 
+.input_file {
+    cursor: pointer;
+}
+
 .button_file input[type=file] {
     width: 38%;
     height: 40px;
