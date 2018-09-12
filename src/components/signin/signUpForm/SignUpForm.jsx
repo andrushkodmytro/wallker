@@ -101,7 +101,7 @@ componentWillReceiveProps(NewProps){
             </div>
             <div className="inputElem">
               <label htmlFor="email">Email<span>*</span></label>
-              <input type="email" name="email" value={this.props.state.email} onChange={this.inputHandler}/>
+              <input type="email" name="email" maxLength="129" value={this.props.state.email} onChange={this.inputHandler}/>
               {this.props.state.emailError?<ErrorSpan error={this.props.state.emailError}/>:""}
             </div>
             <div className="inputElem">
