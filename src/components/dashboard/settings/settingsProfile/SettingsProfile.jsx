@@ -5,29 +5,55 @@ import '../../../../assets/fonts/fonts.css';
 import photo from '../../../../assets/img/rectangle-4.png';
 
 export default class SettingsProfile extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      inputLocation : "",
+    }
+  }
+  handleChange = (e) => {
+    this.setState({
+      inputLocation: e.target.value
+    })
+  }
+  
+  handleSaveLocation = (e) => {
+    e.preventDefault();
+    console.log(this.state.inputLocation)
+  }
+
     render() {
+      const { user } = this.props;
+
       return (
         <div className="container_settings__profile">
             <div className="container_settings__profile-block">
               <div className="profile_text">
                 <p>Profile</p>
               </div>
+              <form className="form" onSubmit={this.handleSaveLocation}>
               <div className="inputs">
                 <div className="first_name">
                   <label className="first_name__label">First&nbsp;Name</label>
-                  <input className="first_name__input" type="text"/>
+                  <input className="first_name__input" type="text" value={ user.first_name }/>
                 </div>
                 <div className="last_name">
                   <label className="last_name__label">Last&nbsp;Name</label>
-                  <input className="last_name__input" type="text"/>
+                  <input className="last_name__input" type="text" value={ user.last_name }/>
                 </div>
                 <div className="email">
                   <label className="email__label">Email</label>
-                  <input className="emaill__input" type="email"/>
+                  <input className="emaill__input" type="email" value={ user.email }/>
                 </div>
                 <div className="location">
                   <label className="location__label">Location</label>
-                  <input className="location__input" type="text"/>
+                  <input 
+                    id="autocomplete" 
+                    className="location__input" 
+                    type="text" 
+                    onChange={ this.handleChange }
+                    value={this.state.inputLocation} />
                 </div>
             </div>
             <div className="photo_upload">
@@ -43,8 +69,12 @@ export default class SettingsProfile extends Component {
                 <p>Format: JPEG, PNG or GIF. Max size: 500K.</p>
               </div>
             </div>
+            </form>
             <div className="save_block">
-              <button className="save_block__button">Save</button>
+              <button 
+                className="save_block__button" 
+                type="submit"
+                value="submit">Save</button>
             </div>
           </div>
         </div>

@@ -6,11 +6,13 @@ import '../../../assets/fonts/fonts.css';
 
 export default class TodayProfile extends Component {
     render() {
+      const { user } = this.props;
+
       return (
         <div className="today__profile_info">
             <img src={ this.props.src } alt="profile img"/>
             <div className="today__name_edit">
-                <p>{ this.props.name }</p>
+                <p>{ `${user.first_name} ${user.last_name}` }</p>
                 <Link to="/dashboard/settings">Edit profile</Link>
             </div> 
         </div>

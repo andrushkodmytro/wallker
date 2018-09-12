@@ -46,6 +46,15 @@
     width: 100%;
 }
 
+.form {
+    margin: 0;
+    width: 100%;
+}
+
+.email {
+    display: block;
+}
+
 .first_name__label,
 .last_name__label,
 .email__label, 
@@ -91,6 +100,7 @@
 .photo_upload__details {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     width: 62%;
 }
 

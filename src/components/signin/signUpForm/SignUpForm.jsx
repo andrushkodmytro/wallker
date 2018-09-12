@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
+import PasswordMask from 'react-password-mask';
+
 import {formChangeActionSignUp,signUpAction,goSignUp} from "../../../action/actions"
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
   emailValidation,passwordValidation,inputHandler} from "../formHandler/formHandler"
@@ -95,7 +97,7 @@ componentWillReceiveProps(NewProps){
               {this.props.state.firstNameError?<ErrorSpan error={this.props.state.firstNameError}/>:""}
             </div>
             <div className="inputElem">
-              <label htmlFor="lastName">Last name<span>*</span></label>
+              <label htmlFor="lastName">Last name <span>*</span></label>
               <input type="text" name="lastName"value={this.props.state.lastName} onChange={this.inputHandler}/>
               {this.props.state.lastNameError?<ErrorSpan error={this.props.state.lastNameError}/>:""}
             </div>
@@ -105,8 +107,15 @@ componentWillReceiveProps(NewProps){
               {this.props.state.emailError?<ErrorSpan error={this.props.state.emailError}/>:""}
             </div>
             <div className="inputElem">
-              <label htmlFor="password">Password<span>*</span></label>
-              <input type="password" name="password" value={this.props.state.password} onChange={this.inputHandler}/>
+              <label htmlFor="password">Password <span>*</span></label>
+              {/* <input type="password" name="password" value={this.props.state.password} onChange={this.inputHandler}/> */}
+              <PasswordMask
+                id="password"
+                name="password"
+                value={ this.props.state.password }
+                onChange={ this.inputHandler }
+                useVendorStyles={ true }
+                />
               {this.props.state.passwordError?<ErrorSpan error={this.props.state.passwordError}/>:""}
             </div>
             <input type="submit"
@@ -114,6 +123,7 @@ componentWillReceiveProps(NewProps){
               name="submit" 
               disabled={!nickName||!firstName||!lastName||!email||!password}
             />
+            
         </form>
     )
   }  

@@ -9,7 +9,9 @@ import header__signout from '../../../../assets/img/signout.png';
 
 export default class HeaderRight extends Component {
     render() {
-      return (
+        const { user } = this.props;
+
+    return (
         <div className="header__right">
             <div>
                 <Link to="/dashboard">  
@@ -17,7 +19,7 @@ export default class HeaderRight extends Component {
                 </Link>
             </div>
             <div>
-                <p className="header__hello">Hi, { this.props.name }!</p>
+                <p className="header__hello">Hi, { user.first_name }!</p>
             </div>
             <div>
                 <Link to="/dashboard/settings"><img className="header__settings" src={ header__settings } alt="settings"/></Link>

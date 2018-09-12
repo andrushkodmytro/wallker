@@ -7,10 +7,12 @@ import HeaderRight from './headerMain/HeaderRight';
 
 export default class Header extends Component {
     render() {
+      const { user } = this.props;
+
       return (
         <header className="header">
             <HeaderLeft />
-            <HeaderRight name="Effie" />
+            <HeaderRight user={ user } />
         </header>
       );
     }
