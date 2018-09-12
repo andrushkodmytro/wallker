@@ -1,10 +1,10 @@
 export default{
     signUp:{
-        nickName:"dima", 
-        firstName:"dima",
-        lastName:"dima", 
-        email:"andrushkodima@gmail.com", 
-        password:"123456789", 
+        nickName:"", 
+        firstName:"",
+        lastName:"", 
+        email:"", 
+        password:"", 
         nickNameError:"", 
         firstNameError:"", 
         lastNameError:"",
@@ -19,10 +19,10 @@ export default{
         showError:false
       },
     signIn:{
-        email:"andrushkodima@gmail.com",
+        email:"",
         emailError:"",
         passwordError:"", 
-        password:"qwertyuiop", 
+        password:"", 
         emailValid: false, 
         passwordValid: false,
         formValid: false,

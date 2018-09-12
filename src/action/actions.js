@@ -1,15 +1,5 @@
 import axios from "axios";
-import Cookies from 'universal-cookie';
 
-// var request = axios.create({
-//   baseURL: 'http://localhost:8000/',
-//   timeout: 5000,
-//   headers: {
-//     // 'X-Custom-Header': 'foobar'
-//   // "accept": "application/json" , 
-//   "Content-Type": "application/json"
-// }
-// });
 
 //  action для sign up форми
   export function formChangeActionSignUp(value,stateName){
@@ -35,8 +25,8 @@ import Cookies from 'universal-cookie';
         console.log(response);
         const token =response.data.token
         if(response.status===230){
-          const cookies = new Cookies();
-          cookies.set('sessionid',token , { path: '/' });
+          var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
+          document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
           dispatch(goLogIn("230"))
           console.log(response.data)
           dispatch(loginUser(response.data[0]))
@@ -79,11 +69,9 @@ import Cookies from 'universal-cookie';
   }
 
   export const getUser=()=> dispatch => {
-    return axios.get(`http://localhost:8000/users/me`)
+    return axios.get(`http://localhost:8000/users/95`)
      .then(function(response) {
        console.log(response)
-      //  const cookies = new Cookies();
-      //   cookies.set('sesionid', response.data, { path: '/' });
         if(response.status===200){
           dispatch( loginUser(response.data))
         }      

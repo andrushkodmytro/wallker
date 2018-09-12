@@ -108,6 +108,18 @@ form {
   font-family: "SourceSansPro-Semibold";
   text-decoration: none; }
 
+.inputElem > a {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  text-decoration: none;
+  color: black;
+  background-color: #d2d6da;
+  border-radius: 4px;
+  padding: 8px 5px;
+  height: 23px;
+  min-width: 15%; }
+
 .inputElem label span {
   color: #df203d; }
 
