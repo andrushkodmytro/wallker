@@ -27,6 +27,8 @@
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./jquery.daterangepicker.js"></script>
     <script src="./jquery.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
   </head>
   <body>
     <noscript>
@@ -43,5 +45,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      window.onload = function() {
+       var input = document.getElementById('autocomplete');
+        var autocomplete = new google.maps.places.Autocomplete(input,{types: ['(cities)']});
+        google.maps.event.addListener(autocomplete, 'place_changed', function(){
+          var place = autocomplete.getPlace();
+        })
+      }
+    </script>
   </body>
 </html>

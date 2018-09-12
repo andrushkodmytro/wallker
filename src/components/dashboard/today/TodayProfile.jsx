@@ -8,6 +8,8 @@ import profile_photo from '../../../assets/img/oval-profile.png';
 
 export default class TodayProfile extends Component {
     render() {
+      const { user } = this.props;
+
       return (
         <div className="today__profile">
             <div className="today__text_block">
@@ -15,7 +17,7 @@ export default class TodayProfile extends Component {
             </div>
             <TodayProfileInfo 
               src={ profile_photo } 
-              name="Effie Robbins"/>
+              user={ user }/>
         </div>
       );
     }
