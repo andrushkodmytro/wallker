@@ -114,7 +114,8 @@ form {
 .signPageSection2 {
   text-align: right;
   width: 50%;
-  overflow: hidden; }
+  overflow: hidden;
+  height: 100vh; }
 
 .signPageSection2 img {
   height: 100vh; }
