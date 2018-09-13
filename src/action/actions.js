@@ -20,7 +20,7 @@ import axios from "axios";
     }
   } 
   export const signInAction=(user)=> dispatch => {
-    axios.post("http://localhost:8000/users/sign_in",user)
+    axios.post("https://a-qa-backend-happy-walker.herokuapp.com/users/sign_in",user)
       .then(function(response) {
         console.log(response);
         const token =response.data.token
@@ -38,7 +38,7 @@ import axios from "axios";
   }
   // action для реєстрації
   export const signUpAction=(user)=> dispatch => {
-    return axios.post("http://localhost:8000/users/register",user)
+    return axios.post("https://a-qa-backend-happy-walker.herokuapp.com/users/register",user)
      .then(function(response) {
        console.log(response)
         if(response.status===201){
@@ -54,7 +54,7 @@ import axios from "axios";
 
 
   export const confirmEmail=(confirm)=> dispatch => {
-    return axios.post("http://localhost:8000/users/confirm_email",confirm)
+    return axios.post("https://a-qa-backend-happy-walker.herokuapp.com/users/confirm_email",confirm)
      .then(function(response) {
        console.log(response)
         if(response.status===200){
@@ -69,7 +69,7 @@ import axios from "axios";
   }
 
   export const getUser=()=> dispatch => {
-    return axios.get(`http://localhost:8000/users/95`)
+    return axios.get(`https://a-qa-backend-happy-walker.herokuapp.com//users/me`)
      .then(function(response) {
        console.log(response)
         if(response.status===200){
