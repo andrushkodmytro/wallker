@@ -16,14 +16,13 @@ form > div > label {
   color: #868e95;
   text-transform: uppercase; }
 
-.signUp {
-  margin-top: 7%; }
+ 
 
 form {
-  margin: 40% 0 0 20%;
+  margin: 4.3% 0 0 20%;
   display: flex;
   width: 50%;
-  margin-top: 20%;
+  /* margin-top: 20%; */
   flex-direction: column; }
   form h1 {
     margin-bottom: 3.75%;

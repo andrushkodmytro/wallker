@@ -17,10 +17,10 @@ export default class TopRows extends Component {
       const { filteredWalkersArray } = this.state;
 
       onStartClick(id);
-      this.setState = ({
-       filteredWalkersArray: filteredWalkersArray.filter((_, item) => item !== id)
-      })
+      
     }
+
+    
 
     render() {
       const {

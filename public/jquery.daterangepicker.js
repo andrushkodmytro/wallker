@@ -2,7 +2,7 @@
 
 (function ($) {
     
-    $(function() {
+    $(document).ready(function() {
         $.DateRangePicker({
             container: '#date_range_picker'
         });

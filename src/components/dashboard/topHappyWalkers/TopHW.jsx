@@ -53,33 +53,44 @@ class TopHW extends Component {
       })
     }
 
-    handleBtnClick = (val) => {
+    handleBtnClick = (tabName) => {
       const { walkers } = this.props;
       var filteredWalkersArray;
       
-      if(val === 'FAW'){
-        filteredWalkersArray = walkers.filter(item => item.star);
+      if(tabName === 'FAW'){
+        filteredWalkersArray = this.filterWalkersForFavourite(walkers);
       } else {
         filteredWalkersArray = walkers;
       }
         this.setState({
-          filteredWalkersArray
+          filteredWalkersArray,
+          tabName
         })
     }
 
     onStartClick = (id) => {
       const { filteredWalkersArray } = this.state;
-
-      filteredWalkersArray.forEach(item => {
+      let arr = [];
+      arr = filteredWalkersArray.map(item => {
         if(item.id === id){
           item.star = !item.star
-          }
+        }
+         return item; 
       })
-      
-       this.setState({
-              filteredWalkersArray
-            })
+      if(this.state.tabName === 'FAW'){
+        console.log(this.state.tabName)
+        arr = this.filterWalkersForFavourite(filteredWalkersArray);
+      }
+      this.setState({
+        filteredWalkersArray: arr || filteredWalkersArray
+      })
     }
+
+
+    filterWalkersForFavourite = (arr) => {
+      return arr.filter(e => e.star)
+    }
+
 
     render() {
       const { filteredWalkersArray } = this.state;
