@@ -25,8 +25,11 @@ class Form extends Component {
             target.submit.value="SIGN IN";
             if( this.emailValidation(target) && this.passwordValidation(target)){
                 this.props.formChangeActionSignIn(true,"formValid")
-                const user={username_or_email:target.email.value,password:target.password.value};
-                this.props.getSignIn(user)
+                // const user={username_or_email:target.email.value,password:target.password.value};
+                // this.props.getSignIn(user)
+                // this.props.getUser()
+                this.props.history.push("/dashboard")
+
                 
                 
               }
@@ -71,11 +74,16 @@ class Form extends Component {
             }
         }
     }
+    componentDidMount(){     
+       if( document.cookie.indexOf("sessionid")===0){
+        this.props.getUser()
+        this.props.history.push("/dashboard")       }
+    }
     componentWillReceiveProps(NewProps){
         if(NewProps.logIn==="230"){
             this.resetValidation();
             this.props.logInAction("");
-            this.props.getUser()
+            // this.props.getUser()
             // this.getDashboard()
             
             
@@ -95,7 +103,7 @@ class Form extends Component {
             {this.props.state.emailError||this.props.state.passwordError?<Error emailError={this.props.state.emailError} passwordError={this.props.state.passwordError}/>:""}
             <div className="inputElem">
                 <label htmlFor="email">Email or nickname</label>
-                <input type="email" name="email" value={this.props.state.email} onChange={this.inputHandler} />
+                <input type="email" name="email" maxLength="129" value={this.props.state.email} onChange={this.inputHandler} />
             </div>
             <div className="inputElem">
               <label htmlFor="password">Password</label>

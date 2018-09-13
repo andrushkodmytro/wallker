@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
-import PasswordMask from 'react-password-mask';
+// import PasswordMask from 'react-password-mask';
 
 import {formChangeActionSignUp,signUpAction,goSignUp} from "../../../action/actions"
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
@@ -103,19 +103,21 @@ componentWillReceiveProps(NewProps){
             </div>
             <div className="inputElem">
               <label htmlFor="email">Email<span>*</span></label>
-              <input type="email" name="email" value={this.props.state.email} onChange={this.inputHandler}/>
+              <input type="email" name="email" maxLength="129" value={this.props.state.email} onChange={this.inputHandler}/>
               {this.props.state.emailError?<ErrorSpan error={this.props.state.emailError}/>:""}
             </div>
             <div className="inputElem">
               <label htmlFor="password">Password <span>*</span></label>
-              {/* <input type="password" name="password" value={this.props.state.password} onChange={this.inputHandler}/> */}
-              <PasswordMask
+              <input type="text" name="password" value={this.props.state.password} onChange={this.inputHandler}/>
+              {/* <PasswordMask
+                className="inputElem"
                 id="password"
                 name="password"
                 value={ this.props.state.password }
                 onChange={ this.inputHandler }
-                useVendorStyles={ true }
-                />
+                useVendorStyles={ false }
+                
+                /> */}
               {this.props.state.passwordError?<ErrorSpan error={this.props.state.passwordError}/>:""}
             </div>
             <input type="submit"

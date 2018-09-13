@@ -43,13 +43,7 @@ form{
         position: relative;
     }
 
-    input[type="email"], input[type="text"],input[type="submit"],input[type="password"]{
-        font-size: 1rem;
-        line-height: 1.5rem;
-        padding: 8px 16px;
-        margin-bottom: 25px;
-        border:none;
-    }
+    
     input[type="email"],input[type="password"], input[type="text"]{
         
         background-color: #f1f3f5;
@@ -63,7 +57,12 @@ form{
     input[type="submit"]{
         background-color: #01ce9f;
         border-radius: 4px;
+        padding: 8px 16px;
         color: #fff;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        border:none;
+        margin-bottom: 25px;
     }
     input[type="submit"]:hover{
         cursor: pointer;
@@ -76,6 +75,13 @@ form{
         font-family: "SourceSansPro-Semibold";
         font-size: 1rem;
     }
+}
+.inputElem>input[type="email"], .inputElem>input[type="text"],.inputElem>input[type="password"]{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 8px 16px;
+    margin-bottom: 25px;
+    border:none;
 }
         
 
@@ -129,6 +135,18 @@ form{
     margin-left: 5px;
     font-family: "SourceSansPro-Semibold";
     text-decoration: none;
+}
+.inputElem>a {
+    position:absolute;
+    right:0px;
+    top:0;
+    text-decoration: none;
+    color :black;
+    background-color: #d2d6da;
+    border-radius: 4px;
+    padding:8px 5px;;
+    height:23px;
+    min-width: 15%;
 }
 .inputElem label span{
     color:#df203d;

@@ -34,17 +34,17 @@ export const  errorShow=function(name,error,textError){
 export const validateEmail=function(email) {
   // eslint-disable-next-line
   var re = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/;
-  return re.test(String(email).toLowerCase());
+  return re.test(String(email));
   
 }
  // Валідація nickname
 export const  nickNameValidation=function(form){
   this.errorHide(form.nickName,"nickNameError");
-  if(this.props.state.nickName.length<3||this.props.state.nickName.length>16){
-    this.errorShow(form.nickName,"nickNameError","Nickname should be between 3 and 16 characters")
+  if(this.props.state.nickName.length<2||this.props.state.nickName.length>30){
+    this.errorShow(form.nickName,"nickNameError","Nickname should be between 2 and 30 characters")
     return
   }
-  if((/[^\w]/g).test(this.props.state.nickName)===true){
+  else if((/[^\w]/g).test(this.props.state.nickName)===true){
     this.errorShow(form.nickName,"nickNameError","Must contain only letters and numbers","nickNameError")
     return
   }
@@ -58,11 +58,11 @@ export const  nickNameValidation=function(form){
  // Валідація firstName
  export const firstNameValidation=function(form){
   this.errorHide(form.firstName,"firstNameError");
-  if(this.props.state.firstName.length<3||this.props.state.firstName.length>16){
-    this.errorShow(form.firstName,"firstNameError","First name should be between 3 and 16 characters")
+  if(this.props.state.firstName.length<2||this.props.state.firstName.length>30){
+    this.errorShow(form.firstName,"firstNameError","First name should be between 2 and 30 characters")
     return
   }
-  if((/[^a-zа-я]/g).test(this.props.state.firstName)===true){
+  if((/[^A-Za-z]/g).test(this.props.state.firstName)===true){
     this.errorShow(form.firstName,"firstNameError","Must contain only letters","firstNameError")
     return
   }
@@ -76,11 +76,11 @@ export const  nickNameValidation=function(form){
 // Валідація lastName
 export const lastNameValidation = function (form) {
   this.errorHide(form.lastName, "lastNameError");
-  if (this.props.state.lastName.length < 3 || this.props.state.lastName.length > 16) {
-    this.errorShow(form.lastName, "lastNameError", "First name should be between 3 and 16 characters")
+  if (this.props.state.lastName.length < 2 || this.props.state.lastName.length > 30) {
+    this.errorShow(form.lastName, "lastNameError", "First name should be between 2 and 30 characters")
     return
   }
-  if ((/[^a-zа-я]/g).test(this.props.state.lastName)===true) {
+  else if ((/[^A-Za-z]/g).test(this.props.state.lastName)===true) {
     this.errorShow(form.lastName, "lastNameError", "Must contain only letters","lastNameError")
     return
   }
