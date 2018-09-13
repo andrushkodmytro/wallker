@@ -3,8 +3,6 @@ import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
 import PasswordMask from 'react-password-mask';
 
-import photo_eye from '../../../../public/assets/img/';
-
 import {formChangeActionSignUp,signUpAction,goSignUp} from "../../../action/actions"
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
   emailValidation,passwordValidation,inputHandler} from "../formHandler/formHandler"
@@ -117,7 +115,6 @@ componentWillReceiveProps(NewProps){
                 value={ this.props.state.password }
                 onChange={ this.inputHandler }
                 useVendorStyles={ true }
-                src={ photo_eye }
                 />
               {this.props.state.passwordError?<ErrorSpan error={this.props.state.passwordError}/>:""}
             </div>
@@ -126,7 +123,6 @@ componentWillReceiveProps(NewProps){
               name="submit" 
               disabled={!nickName||!firstName||!lastName||!email||!password}
             />
-            
         </form>
     )
   }  

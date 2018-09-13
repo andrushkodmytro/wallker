@@ -8,6 +8,7 @@ import TopRows from './TopRows.jsx';
 export default class TopTable extends Component {   
     render() {
       const { walkers, onStartClick } = this.props;
+      const { filteredWalkersArray } = this.props;
 
       return (
         <div className="table">
@@ -24,6 +25,7 @@ export default class TopTable extends Component {
               kcal={ item.kcal }
               star={ item.star }
               onStartClick={ onStartClick }
+              walkers={ filteredWalkersArray }
             />
           )}
         </div>

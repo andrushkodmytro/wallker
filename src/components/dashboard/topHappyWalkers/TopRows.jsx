@@ -5,12 +5,22 @@ import '../../../assets/fonts/fonts.css';
 import photo from '../../../assets/img/oval-girl.png';
 
 export default class TopRows extends Component {
+    constructor(props) {
+      super(props)
 
-  handleStarChange = () => {
-    var { onStartClick, id } = this.props;
-    
-    onStartClick(id);
-  }
+      this.state = {
+        filteredWalkersArray : []
+      }
+    }
+    handleStarChange = () => {
+      var { onStartClick, id } = this.props;
+      const { filteredWalkersArray } = this.state;
+
+      onStartClick(id);
+      this.setState = ({
+       filteredWalkersArray: filteredWalkersArray.filter((_, item) => item !== id)
+      })
+    }
 
     render() {
       const {

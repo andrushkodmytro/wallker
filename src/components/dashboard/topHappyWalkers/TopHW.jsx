@@ -56,16 +56,15 @@ class TopHW extends Component {
     handleBtnClick = (val) => {
       const { walkers } = this.props;
       var filteredWalkersArray;
-
+      
       if(val === 'FAW'){
         filteredWalkersArray = walkers.filter(item => item.star);
       } else {
         filteredWalkersArray = walkers;
       }
-
-      this.setState({
-        filteredWalkersArray
-      })
+        this.setState({
+          filteredWalkersArray
+        })
     }
 
     onStartClick = (id) => {
@@ -74,12 +73,12 @@ class TopHW extends Component {
       filteredWalkersArray.forEach(item => {
         if(item.id === id){
           item.star = !item.star
-        }
+          }
       })
-
-      this.setState({
-        filteredWalkersArray
-      })
+      
+       this.setState({
+              filteredWalkersArray
+            })
     }
 
     render() {
