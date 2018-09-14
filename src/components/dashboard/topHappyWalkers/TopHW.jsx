@@ -85,12 +85,10 @@ class TopHW extends Component {
         filteredWalkersArray: arr || filteredWalkersArray
       })
     }
-
-
+    
     filterWalkersForFavourite = (arr) => {
       return arr.filter(e => e.star)
     }
-
 
     render() {
       const { filteredWalkersArray } = this.state;
