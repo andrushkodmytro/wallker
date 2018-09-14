@@ -69,7 +69,7 @@ import axios from "axios";
   }
 
   export const getUser=()=> dispatch => {
-    return axios.get(`https://a-qa-backend-happy-walker.herokuapp.com/users/95`)
+    return axios.get(`https://a-qa-backend-happy-walker.herokuapp.com/users/me`)
      .then(function(response) {
        console.log(response)
         if(response.status===200){
