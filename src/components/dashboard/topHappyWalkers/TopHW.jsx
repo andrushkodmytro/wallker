@@ -17,8 +17,6 @@ class TopHW extends Component {
   }
 
     handleUserInput = (e) => {
-     // const { inputText } = this.state;
-
       this.filterWalkersArray(e.target.value);
     }
 
@@ -85,7 +83,7 @@ class TopHW extends Component {
         filteredWalkersArray: arr || filteredWalkersArray
       })
     }
-    
+
     filterWalkersForFavourite = (arr) => {
       return arr.filter(e => e.star)
     }

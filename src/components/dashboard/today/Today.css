@@ -35,6 +35,7 @@
   .today__profile_info img {
     width: 160px;
     height: auto;
+    border-radius: 50% 50%;
   }
 
   .today__name_edit {

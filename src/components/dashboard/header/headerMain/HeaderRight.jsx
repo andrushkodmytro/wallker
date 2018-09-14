@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../Header.css';
 import '../../../../assets/fonts/fonts.css';
 
-import header__photo from '../../../../assets/img/oval-3-copy.png';
+import header__photo from '../../../../assets/img/avatar.png';
 import header__settings from '../../../../assets/img/settings.png';
 import header__signout from '../../../../assets/img/signout.png';
 
