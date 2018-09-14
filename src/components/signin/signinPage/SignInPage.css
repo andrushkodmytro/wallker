@@ -103,7 +103,8 @@ form {
   text-decoration: none; }
 
 .signup {
-  display: flex; }
+  display: flex;
+  align-items: center; }
   .signup p {
     font-family: "SourceSansPro-Regular";
     font-size: 1rem; }
