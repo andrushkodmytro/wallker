@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: circleci/node:8.11.3 # the primary container, where your job's commands are ru
+    working_directory: ~/ci
+    steps:
+      - checkout # check out the code in the project directory
+      - run: npm install
+      - run: npm run build
+  deploy_heroku:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: circleci/node:8.11.3  
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_QA.git master
+workflows:
+  version: 2
+  deploys:
+    jobs:
+      - build
+      - deploy_heroku:
+          requires:
+            - build
+          filters:
+            branches:
+              only: qa
