@@ -27,10 +27,10 @@ class Form extends Component {
             target.submit.value="SIGN IN";
             if( this.emailValidation(target) && this.passwordValidation(target)){
                 this.props.formChangeActionSignIn(true,"formValid")
-                // const user={username_or_email:target.email.value,password:target.password.value};
-                // this.props.getSignIn(user)
+                const user={username_or_email:target.email.value,password:target.password.value};
+                this.props.getSignIn(user)
                 // this.props.getUser()
-                this.props.history.push("/dashboard")
+                // this.props.history.push("/dashboard")
 
                 
                 
@@ -77,10 +77,10 @@ class Form extends Component {
         }
     }
     componentDidMount(){ 
-        this.resetValidation()    
-       if( document.cookie.indexOf("sessionid")===0){
-        this.props.getUser()
-        this.props.history.push("/dashboard")       }
+    //     this.resetValidation()    
+    //    if( document.cookie.indexOf("sessionid")===0){
+    //     this.props.getUser()
+    //     this.props.history.push("/dashboard")       }
     }
     componentWillReceiveProps(NewProps){
         if(NewProps.logIn==="230"){
@@ -98,7 +98,7 @@ class Form extends Component {
         }
     }
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         let {email,password,passwordShow}=this.props.state
     return (
         <form onSubmit={this.submitHandler} noValidate>

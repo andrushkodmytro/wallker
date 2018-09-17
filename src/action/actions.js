@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from 'universal-cookie';
 // axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
 axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
@@ -24,11 +25,16 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   export const signInAction=(user)=> dispatch => {
     axios.post("/users/sign_in",user)
       .then(function(response) {
-        console.log(response);
-        // const token =response.data.token
+        console.log(response.data.token);
+        const token =response.data.token
+        var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
+        console.log(date)
+        // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
+        const cookies = new Cookies();
+
+        cookies.set('sessionid', token, { path: '/',expires:date,domain:"a-qa-backend-happy-walker.herokuapp.com"});
         if(response.status===230){
-          // var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
-          // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
+          
           dispatch(goLogIn("230"))
           console.log(response.data)
           dispatch(loginUser(response.data[0]))
