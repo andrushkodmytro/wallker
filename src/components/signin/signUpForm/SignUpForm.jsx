@@ -112,7 +112,7 @@ componentWillReceiveProps(NewProps){
                 name="password" 
                 value={this.props.state.password} 
                 onChange={this.inputHandler}/>
-                <img src={passwordShow?HidePass: ShowPass} 
+                <img alt="show_pass" src={passwordShow?HidePass: ShowPass} 
                 onClick={()=>this.props.showPass(!passwordShow)}/>
               {this.props.state.passwordError?<ErrorSpan error={this.props.state.passwordError}/>:""}
             </div>

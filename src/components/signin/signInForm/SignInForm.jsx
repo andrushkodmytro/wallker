@@ -114,7 +114,7 @@ class Form extends Component {
                 name="password" 
                 value={this.props.state.password}
                 onChange={this.inputHandler}/>
-                  <img src={passwordShow?HidePass: ShowPass} 
+                  <img  alt="show_pass" src={passwordShow?HidePass: ShowPass} 
                 onClick={()=>this.props.showPassSignIn(!passwordShow)}/>
             </div>
             <div className="remember">
