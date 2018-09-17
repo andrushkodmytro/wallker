@@ -8,6 +8,14 @@
         });
     });
 
+    
+        //  $(function() {
+        //      $.DateRangePicker({
+        //          container: '#date_range_picker'
+        //      });
+        // });
+
+
     $.DateRangePicker = function (options)
     {
         // setup

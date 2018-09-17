@@ -97,6 +97,12 @@
     width: 25%;
 }
 
+.photo_upload__photo img {
+    width: 88px;
+    height: 88px;
+    border-radius: 50% 50%;
+}
+
 .photo_upload__details {
     display: flex;
     flex-direction: column;

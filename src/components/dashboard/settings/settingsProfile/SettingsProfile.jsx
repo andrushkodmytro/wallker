@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../Settings.css';
 import '../../../../assets/fonts/fonts.css';
 
-import photo from '../../../../assets/img/rectangle-4.png';
+import photo from '../../../../assets/img/avatar.png';
 
 export default class SettingsProfile extends Component {
   constructor(props) {
