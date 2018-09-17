@@ -111,6 +111,7 @@ class Form extends Component {
             <div className="inputElem">
               <label htmlFor="password">Password</label>
               <input type={passwordShow?"text":"password"} 
+                maxLength="16"
                 name="password" 
                 value={this.props.state.password}
                 onChange={this.inputHandler}/>
