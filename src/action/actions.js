@@ -1,6 +1,6 @@
 import axios from "axios";
-// axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
-axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
+axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
+// axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
 //  action для sign up форми
   export function formChangeActionSignUp(value,stateName){

@@ -6,7 +6,8 @@ import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
 // import PrivateRoutDashboard from "../privateRoutDashboard/PrivateRoutDashboard";
 import Dashboard from "../dashboard/Dashboard";
 import NotFound from "../notFound/NotFound";
-import EmailConfirm from "../emailConfirm/EmailConfirm"
+import EmailConfirm from "../emailConfirm/EmailConfirm";
+import "../../assets/fonts/fonts.css";
  
 class App extends Component {
   render() {
