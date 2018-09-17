@@ -2,11 +2,19 @@
 
 (function ($) {
     
-    $(function() {
+    $(document).ready(function() {
         $.DateRangePicker({
             container: '#date_range_picker'
         });
     });
+
+    
+        //  $(function() {
+        //      $.DateRangePicker({
+        //          container: '#date_range_picker'
+        //      });
+        // });
+
 
     $.DateRangePicker = function (options)
     {

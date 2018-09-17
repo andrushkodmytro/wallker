@@ -4,7 +4,7 @@ import '../../../assets/fonts/fonts.css';
 
 import TodayProfileInfo from './TodayProfileInfo';
 
-import profile_photo from '../../../assets/img/oval-profile.png';
+import profile_photo from '../../../assets/img/avatar.png';
 
 export default class TodayProfile extends Component {
     render() {

@@ -121,7 +121,6 @@ componentWillReceiveProps(NewProps){
               name="submit" 
               disabled={!nickName||!firstName||!lastName||!email||!password}
             />
-            
         </form>
     )
   }  

@@ -5,12 +5,11 @@ import '../../../assets/fonts/fonts.css';
 import photo from '../../../assets/img/oval-girl.png';
 
 export default class TopRows extends Component {
+    handleStarChange = () => {
+      var { onStartClick, id } = this.props;
 
-  handleStarChange = () => {
-    var { onStartClick, id } = this.props;
-    
-    onStartClick(id);
-  }
+      onStartClick(id);
+    }
 
     render() {
       const {
