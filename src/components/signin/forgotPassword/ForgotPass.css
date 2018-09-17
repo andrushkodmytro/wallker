@@ -24,11 +24,13 @@
   font-family: "SourceSansPro-Regular";
   color: #222529;
   line-height: 1.5;
+
 }
 
-.email {
+.email_forgot_pass {
   display: flex;
   flex-direction: column;
+  margin-bottom: 24px;
 }
 
 .email__label {

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Error from "../errorSignIn/ErrorSignIn";
 import { connect } from "react-redux";
-import { signInAction, goLogIn, formChangeActionSignIn,getUser } from "../../../action/actions";
+import { signInAction, goLogIn, formChangeActionSignIn,getUser,showPassSignIn } from "../../../action/actions";
 import { inputHandler,resetValidationSignIn } from "../formHandler/formHandler";
 import { Link } from "react-router-dom";
+import ShowPass from "../../../assets/img/password2.png";
+import HidePass from "../../../assets/img/password1.png"
 
 
 
@@ -49,7 +51,7 @@ class Form extends Component {
         this.emailValidation=function(form){
             this.errorHide(form.email,"emailError")
             // eslint-disable-next-line
-            if((/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/).test(String(this.props.state.email).toLowerCase())===false){
+            if((/[^\w]/g).test(this.props.state.email)===true){
               this.errorShow(form.email,"emailError","Wrong email. Try again or click Forgot password to reset it. ")
               return false
             }
@@ -74,7 +76,8 @@ class Form extends Component {
             }
         }
     }
-    componentDidMount(){     
+    componentDidMount(){ 
+        this.resetValidation()    
        if( document.cookie.indexOf("sessionid")===0){
         this.props.getUser()
         this.props.history.push("/dashboard")       }
@@ -96,7 +99,7 @@ class Form extends Component {
     }
     render() {
         console.log(this.props)
-        let {email,password}=this.props.state
+        let {email,password,passwordShow}=this.props.state
     return (
         <form onSubmit={this.submitHandler} noValidate>
             <h1>SIGN IN</h1>
@@ -107,7 +110,12 @@ class Form extends Component {
             </div>
             <div className="inputElem">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" value={this.props.state.password} onChange={this.inputHandler}/>
+              <input type={passwordShow?"text":"password"} 
+                name="password" 
+                value={this.props.state.password}
+                onChange={this.inputHandler}/>
+                  <img src={passwordShow?HidePass: ShowPass} 
+                onClick={()=>this.props.showPassSignIn(!passwordShow)}/>
             </div>
             <div className="remember">
                 <div className="check">
@@ -150,6 +158,9 @@ const mapDispatchToProps=(dispatch)=>{
         },
         getUser:()=>{
             dispatch(getUser())
+        },
+        showPassSignIn:(val)=>{
+            dispatch(showPassSignIn(val))
         }
         
     }

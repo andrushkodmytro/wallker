@@ -1,5 +1,6 @@
 import axios from "axios";
-
+// axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
+axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
 //  action для sign up форми
   export function formChangeActionSignUp(value,stateName){
@@ -19,8 +20,9 @@ import axios from "axios";
       propChange:stateName
     }
   } 
+  
   export const signInAction=(user)=> dispatch => {
-    axios.post("https://a-qa-backend-happy-walker.herokuapp.com/users/sign_in",user)
+    axios.post("/users/sign_in",user)
       .then(function(response) {
         console.log(response);
         // const token =response.data.token
@@ -38,7 +40,7 @@ import axios from "axios";
   }
   // action для реєстрації
   export const signUpAction=(user)=> dispatch => {
-    return axios.post("https://a-qa-backend-happy-walker.herokuapp.com/users/register",user)
+    return axios.post("/users/register",user)
      .then(function(response) {
        console.log(response)
         if(response.status===201){
@@ -54,7 +56,7 @@ import axios from "axios";
 
 
   export const confirmEmail=(confirm)=> dispatch => {
-    return axios.post("https://a-qa-backend-happy-walker.herokuapp.com/users/confirm_email",confirm)
+    return axios.post("/users/confirm_email",confirm)
      .then(function(response) {
        console.log(response)
         if(response.status===200){
@@ -69,7 +71,7 @@ import axios from "axios";
   }
 
   export const getUser=()=> dispatch => {
-    return axios.get(`https://a-qa-backend-happy-walker.herokuapp.com/users/me`)
+    return axios.get(`/users/me`)
      .then(function(response) {
        console.log(response)
         if(response.status===200){
@@ -108,4 +110,18 @@ import axios from "axios";
       payload:value
     }
   } 
+
+  export function showPass(val){
+    return{
+      type:"SHOW_PASS",
+      payload:val
+    }
+  }
+
+  export function showPassSignIn(val){
+    return{
+      type:"SHOW_PASS_SIGN_IN",
+      payload:val
+    }
+  }
   

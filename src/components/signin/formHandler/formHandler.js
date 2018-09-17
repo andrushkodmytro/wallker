@@ -62,7 +62,7 @@ export const  nickNameValidation=function(form){
     this.errorShow(form.firstName,"firstNameError","First name should be between 2 and 30 characters")
     return
   }
-  if((/[^A-Za-z]/g).test(this.props.state.firstName)===true){
+  else if((/[^A-Za-z]/g).test(this.props.state.firstName)===true){
     this.errorShow(form.firstName,"firstNameError","Must contain only letters","firstNameError")
     return
   }
@@ -77,7 +77,7 @@ export const  nickNameValidation=function(form){
 export const lastNameValidation = function (form) {
   this.errorHide(form.lastName, "lastNameError");
   if (this.props.state.lastName.length < 2 || this.props.state.lastName.length > 30) {
-    this.errorShow(form.lastName, "lastNameError", "First name should be between 2 and 30 characters")
+    this.errorShow(form.lastName, "lastNameError", "Last name should be between 2 and 30 characters")
     return
   }
   else if ((/[^A-Za-z]/g).test(this.props.state.lastName)===true) {

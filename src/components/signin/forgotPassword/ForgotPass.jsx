@@ -24,7 +24,7 @@ export default class ForgotPassword extends Component {
                             </div>;
         const mainText=<div className="hidd">
                             <p className="form__text">Enter your email below to receive your <br></br>password instructions</p>
-                            <div className="email">
+                            <div className="email_forgot_pass">
                                     <label className="email__label">Email</label>
                                     <input className="email__input" type="email"/>
                             </div>

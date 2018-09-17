@@ -16,7 +16,8 @@ export default{
         emailValid: false, 
         passwordValid: false,
         formValid: false, 
-        showError:false
+        showError:false,
+        passwordShow:false
       },
     signIn:{
         email:"",
@@ -26,7 +27,8 @@ export default{
         emailValid: false, 
         passwordValid: false,
         formValid: false,
-        showError:false
+        showError:false,
+        passwordShow:false
     },
     logIn:"",
     signUpStatus:"",

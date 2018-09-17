@@ -114,17 +114,15 @@ form {
   font-family: "SourceSansPro-Semibold";
   text-decoration: none; }
 
-.inputElem > a {
+.inputElem .show_pass {
+  position: relative; }
+
+.inputElem > img {
   position: absolute;
-  right: 0px;
-  top: 0;
-  text-decoration: none;
-  color: black;
-  background-color: #d2d6da;
-  border-radius: 4px;
-  padding: 8px 5px;
-  height: 23px;
-  min-width: 15%; }
+  right: 20px;
+  top: 32%;
+  height: 24px;
+  width: 24px; }
 
 .inputElem label span {
   color: #df203d; }

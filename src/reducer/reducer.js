@@ -40,6 +40,26 @@ import initialState from "../store/initialStateToReducer"
             
         }
         break
+        case "SHOW_PASS":
+        state={
+            ...state,
+            signUp:{
+                ...state.signUp,
+                passwordShow:action.payload
+            }
+            
+        }
+        break
+        case "SHOW_PASS_SIGN_IN":
+        state={
+            ...state,
+            signIn:{
+                ...state.signIn,
+                passwordShow:action.payload
+            }
+            
+        }
+        break
             default: return state
     }
     return state
