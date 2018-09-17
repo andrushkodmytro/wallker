@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Header.css';
-import '../../../assets/fonts/fonts.css';
+
 
 import HeaderLeft from './headerMain/HeaderLeft';
 import HeaderRight from './headerMain/HeaderRight';

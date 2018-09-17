@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TopHW.css';
-import '../../../assets/fonts/fonts.css';
+
 
 import search_loupe from '../../../assets/img/search.png';
 
