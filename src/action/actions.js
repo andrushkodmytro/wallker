@@ -23,7 +23,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   } 
   
   export const signInAction=(user)=> dispatch => {
-    axios.post("/users/sign_in",user,{withCredentials: true})
+    axios.post("/users/sign_in",user)
       .then(function(response) {
         console.log(response);
        
