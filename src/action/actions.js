@@ -32,12 +32,13 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
         // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
         const cookies = new Cookies();
 
-        cookies.set('sessionid', token, { path: '/',expires:date,domain:"a-qa-backend-happy-walker.herokuapp.com"});
+        cookies.set('sessionid', token, { path: '/',expires:date,domain:".herokuapp.com"});
         if(response.status===230){
           
           dispatch(goLogIn("230"))
           console.log(response.data)
           dispatch(loginUser(response.data[0]))
+          dispatch(getUser())
         }        
       })
       .catch(function(error) {
