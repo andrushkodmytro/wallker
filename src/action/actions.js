@@ -29,10 +29,10 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
         const token =response.data.token
         var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
         console.log(date)
-        // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
-        const cookies = new Cookies();
+        document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
+        // const cookies = new Cookies();
 
-        cookies.set('sessionid', token, { path: '/',expires:date});
+        // cookies.set('sessionid', token, { path: '/',expires:date});
         if(response.status===230){
           
           dispatch(goLogIn("230"))
