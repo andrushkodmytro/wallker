@@ -47,7 +47,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   }
   // action для реєстрації
   export const signUpAction=(user)=> dispatch => {
-    return axios.post("/users/register",user)
+    return axios.post("/users/register",user,{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===201){
@@ -63,7 +63,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
 
   export const confirmEmail=(confirm)=> dispatch => {
-    return axios.post("/users/confirm_email",confirm)
+    return axios.post("/users/confirm_email",confirm,{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===200){
