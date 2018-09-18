@@ -28,8 +28,8 @@ class Form extends Component {
             if( this.emailValidation(target) && this.passwordValidation(target)){
                 this.props.formChangeActionSignIn(true,"formValid")
                 const user={username_or_email:target.email.value,password:target.password.value};
-                this.props.getSignIn(user)
-                // this.props.getUser()
+                // this.props.getSignIn(user)
+                this.props.getUser()
                 // this.props.history.push("/dashboard")
 
                 

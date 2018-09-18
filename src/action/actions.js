@@ -25,14 +25,8 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   export const signInAction=(user)=> dispatch => {
     axios.post("/users/sign_in",user,{withCredentials: true})
       .then(function(response) {
-        console.log(response.data.token);
-        const token =response.data.token
-        var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
-        console.log(date)
-        // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
-        const cookies = new Cookies();
-
-        cookies.set('sessionid', token, { path: '/',expires:date});
+        console.log(response);
+       
         if(response.status===230){
           
           dispatch(goLogIn("230"))
@@ -78,7 +72,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   }
 
   export const getUser=()=> dispatch => {
-    return axios.get(`/users/me`)
+    return axios.get(`/users/me`,{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===200){
