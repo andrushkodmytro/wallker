@@ -29,7 +29,8 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
         const token =response.data.token
         var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
         console.log(date)
-        document.cookie = `sessionid=${token}; path=/;domain:.herokuapp.com; expires=${date.toUTCString()}`;
+        var domain=".herokuapp.com"
+        document.cookie = `sessionid=${token}; path=/; domain:${domain}; expires=${date.toUTCString()}`;
         // const cookies = new Cookies();
 
         // cookies.set('sessionid', token, { path: '/',expires:date});
