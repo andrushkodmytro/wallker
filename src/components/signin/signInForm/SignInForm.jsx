@@ -43,8 +43,6 @@ class Form extends Component {
             this.props.formChangeActionSignIn(true,"showError")
         }
         this.errorHide=(name,error)=>{
-            // console.log("Hello")
-
             name.style.border="none";
             this.props.formChangeActionSignIn("",[error])
         }

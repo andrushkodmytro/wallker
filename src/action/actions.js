@@ -61,7 +61,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
      .then(function(response) {
        console.log(response)
         if(response.status===200){
-          dispatch( loginUser(response.data))
+          dispatch( getUser())
         }      
       }     
     )
