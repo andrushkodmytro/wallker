@@ -23,16 +23,9 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   } 
   
   export const signInAction=(user)=> dispatch => {
-    axios.post("/users/sign_in",user)
+    axios.post("/users/sign_in",user,{withCredentials: true})
       .then(function(response) {
-        console.log(response.data.token);
-        const token =response.data.token
-        var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
-        console.log(date)
-        // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
-        const cookies = new Cookies();
-
-        cookies.set('sessionid', token, { path: '/',domain:".herokuapp.com",expires:date});
+        console.log(response)
         if(response.status===230){
           
           dispatch(goLogIn("230"))
@@ -47,7 +40,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   }
   // action для реєстрації
   export const signUpAction=(user)=> dispatch => {
-    return axios.post("/users/register",user)
+    return axios.post("/users/register",user,{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===201){
@@ -63,11 +56,11 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
 
   export const confirmEmail=(confirm)=> dispatch => {
-    return axios.post("/users/confirm_email",confirm)
+    return axios.post("/users/confirm_email",confirm,{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===200){
-          dispatch( loginUser(response.data))
+          dispatch( getUser())
         }      
       }     
     )
@@ -78,7 +71,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   }
 
   export const getUser=()=> dispatch => {
-    return axios.get(`/users/me`)
+    return axios.get("/users/me",{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===200){

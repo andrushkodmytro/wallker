@@ -14,11 +14,11 @@ import { connect} from "react-redux";
    }
    componentWillReceiveProps(NewProps){
     if(NewProps.user)
-    this.props.getUser(NewProps.user.id)
+   console.log(NewProps)
     // this.props.history.push("/dashboard")
   }
   render() {
-    console.log(document.cookie)
+   
     return (
       <div>
         
