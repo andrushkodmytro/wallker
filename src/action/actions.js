@@ -32,7 +32,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
         // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
         const cookies = new Cookies();
 
-        cookies.set('sessionid', token, { path: '/',domain:".herokuapp.com",expires:date});
+        cookies.set('sessionid', token, { path: '/',expires:date});
         if(response.status===230){
           
           dispatch(goLogIn("230"))
