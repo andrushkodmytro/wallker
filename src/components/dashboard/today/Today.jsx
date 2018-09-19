@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Iframe from './Iframe.jsx';
+// import Iframe from './Iframe.jsx';
 import Map from "../map/Map";
 import TodayProfile from './TodayProfile.jsx';
 import TodayResults from './TodayResults.jsx';
