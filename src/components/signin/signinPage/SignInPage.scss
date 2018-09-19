@@ -62,7 +62,7 @@ form{
         font-size: 1rem;
         line-height: 1.5rem;
         border:none;
-        margin-bottom: 25px;
+        margin-bottom: 7px;
     }
     input[type="submit"]:hover{
         cursor: pointer;
@@ -80,13 +80,17 @@ form{
     font-size: 1rem;
     line-height: 1.5rem;
     padding: 8px 16px;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     border:none;
 }
+<<<<<<< HEAD
 .span__error + input{
     border:1px solid #d0021b;
 }     
 
+=======
+        
+>>>>>>> dev
 .remember{
     display: flex;
     justify-content: space-between;
@@ -144,8 +148,8 @@ form{
 }
 .inputElem>img {
     position:absolute;
-    right:20px;
-    top:32%;
+    right:25px;
+    top:31%;
     height: 24px;
     width: 24px;
     // background: url("../../../assets/img/password2.png")   no-repeat;

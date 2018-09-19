@@ -10,21 +10,21 @@ import third_data from '../../../assets/img/third-data.png';
 
 export default class TodayResults extends Component {
     render() {
-      const { user } = this.props;
+      const { data } = this.props;
 
       return (
         <div className="results">
             <TodayResultsValue 
               src={ first_data } 
-              user={ user.steps } 
+              data={data.steps } 
               info="steps"/>
             <TodayResultsValue 
               src={ second_data } 
-              user={ user.distance } 
+              data={ data.distance } 
               info="distance"/>
             <TodayResultsValue 
               src={ third_data } 
-              user={ user.kcal } 
+              data={ data.kcal } 
               info="kcal"/>
         </div>
       );

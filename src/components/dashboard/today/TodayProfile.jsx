@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './Today.css';
-
-
 import TodayProfileInfo from './TodayProfileInfo';
 
 import profile_photo from '../../../assets/img/avatar.png';

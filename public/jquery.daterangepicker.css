@@ -69,7 +69,7 @@
     margin-top: 12px;
     cursor: pointer;
     display: none;
-    background-image: url("./assets/img/arrow-down.png");
+    background-image: url("../img/arrow-down.png");
     background-repeat: no-repeat;
     background-size: 16px 16px;
 }
@@ -145,11 +145,11 @@
     opacity: 1;
 }
 .date_range_picker .calendar .button-prev {
-    background-image: url("./assets/img/arrow-left.png");
+    background-image: url("../img/arrow-left.png");
     left: 20px;
 }
 .date_range_picker .calendar .button-next {
-    background-image: url("./assets/img/arrow-right.png");
+    background-image: url("../img/arrow-right.png");
     right: 20px;
 }
 .date_range_picker .calendar .container {

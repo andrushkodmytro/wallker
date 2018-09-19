@@ -8,7 +8,7 @@ export default class HeaderLeft extends Component {
     render() {
       return (
         <div className="header__left">
-          <Link to="/">\
+          <Link to="/dashboard">
             <img className="header__logo" src={ header__logo } alt="logo"/>
           </Link>
             
