@@ -5,6 +5,9 @@ import { signInAction, goLogIn, formChangeActionSignIn,getUser,showPassSignIn } 
 import { inputHandler,resetValidationSignIn } from "../formHandler/formHandler";
 import { Link } from "react-router-dom";
 import "../signinPage/SignInPage.css";
+
+import { GoogleLogin } from 'react-google-login';
+
 import ShowPass from "../../../assets/img/password2.png";
 import HidePass from "../../../assets/img/password1.png";
 
@@ -84,6 +87,21 @@ class Form extends Component {
         }
     }
     render() {
+        const responseGoogle = (response) => {
+            console.log(response);
+            //const session= this.props.state.reducer.session;
+            // this.props.inputSession(response.profileObj.familyName,'firstName');
+            // this.props.inputSession(response.profileObj.givenName,'lastName');
+            // this.props.inputSession(response.profileObj.email,'email');
+            // this.props.inputSession(response.profileObj.imageUrl,'image');
+            
+            //window.location.replace('/dashboard');
+            //переробити коли бекенд доробить з гуглом то саме
+            if(response.googleId){
+                this.props.history.push("/dashboard");
+            }
+        }
+
         // console.log(this.props)
         let {email,password,passwordShow}=this.props.state
     return (
@@ -116,6 +134,13 @@ class Form extends Component {
                 value="SIGN IN" 
                 name="submit"
                 disabled={!email||!password}/>
+            <div className="google_button"><GoogleLogin
+              clientId="772503025939-f349nuolhdsqqbrmrvr8mn5kjqb2g9lf.apps.googleusercontent.com"
+              buttonText="Login with Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+            />
+            </div>
             <div className="signup">
                 <p>Don’t have an account? </p>
                 <Link to="/signup">Sign up</Link>
