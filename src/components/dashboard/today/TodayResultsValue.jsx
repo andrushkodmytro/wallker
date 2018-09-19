@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Today.css';
-import '../../../assets/fonts/fonts.css';
+
 
 export default class TodayResultsValue extends Component {
     render() {

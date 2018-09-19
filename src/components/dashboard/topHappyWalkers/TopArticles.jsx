@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TopHW.css';
-import '../../../assets/fonts/fonts.css';
+
 
 export default class TopArticles extends Component {
     render() {

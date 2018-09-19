@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TopHW.css';
-import '../../../assets/fonts/fonts.css';
+
 
 import TopHWTop from './TopHWTop.jsx';
 import TopSearchWalkers from './TopSearchWalkers';
@@ -106,7 +106,8 @@ class TopHW extends Component {
 
 function mapStateToProps (state) {
   return {
-    walkers : state.walkers
+    walkers : state.walkers,
+    user:state.reducer.user
   };
 }
   

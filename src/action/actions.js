@@ -22,16 +22,11 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   } 
   
   export const signInAction=(user)=> dispatch => {
-    axios.post("/users/sign_in",user)
+    axios.post("/users/sign_in",user,{withCredentials: true})
       .then(function(response) {
-        console.log(response);
-        // const token =response.data.token
-        if(response.status===230){
-          // var date = new Date(new Date().getTime() + 60 * 60 * 24 * 14 * 1000);
-          // document.cookie = `sessionid=${token}; path=/; expires=${date.toUTCString()}`;
-          dispatch(goLogIn("230"))
-          console.log(response.data)
-          dispatch(loginUser(response.data[0]))
+        console.log(response)
+        if(response.status===230){ 
+          dispatch(getUser())
         }        
       })
       .catch(function(error) {
@@ -40,7 +35,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   }
   // action для реєстрації
   export const signUpAction=(user)=> dispatch => {
-    return axios.post("/users/register",user)
+    return axios.post("/users/register",user,{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===201){
@@ -56,11 +51,11 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
 
   export const confirmEmail=(confirm)=> dispatch => {
-    return axios.post("/users/confirm_email",confirm)
+    return axios.post("/users/confirm_email",confirm,{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===200){
-          dispatch( loginUser(response.data))
+          dispatch( getUser())
         }      
       }     
     )
@@ -71,11 +66,12 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   }
 
   export const getUser=()=> dispatch => {
-    return axios.get(`/users/me`)
+    return axios.get("/users/me",{withCredentials: true})
      .then(function(response) {
        console.log(response)
         if(response.status===200){
           dispatch( loginUser(response.data))
+          dispatch(goLogIn("230"))
         }      
       }     
     )

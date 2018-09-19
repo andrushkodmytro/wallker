@@ -22,7 +22,9 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
     this.passwordValidation=passwordValidation
     this.inputHandler = inputHandler.bind(this)
 
-  //  this.resetValidation()
+    this.resetValidation()
+
+    //Показує password
     this.changePass=()=>{
       this.setState({passwordShow:"text"})
     }
@@ -55,7 +57,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
           email: email,
           password: password
         }
-        console.log(user)
+        
         this.props.signUp(user)
         
         // this.props.formChangeActionSignUp(true,"formValid")
@@ -67,7 +69,6 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
 }
 componentWillReceiveProps(NewProps){
   if(NewProps.signUpStatus==="201"){
-    console.log(document.cookie)
     this.props.goSignUp("")
     this.resetValidation();
     this.props.history.push("/signup/confirm")

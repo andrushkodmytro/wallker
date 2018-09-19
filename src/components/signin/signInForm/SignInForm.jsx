@@ -27,14 +27,9 @@ class Form extends Component {
             target.submit.value="SIGN IN";
             if( this.emailValidation(target) && this.passwordValidation(target)){
                 this.props.formChangeActionSignIn(true,"formValid")
-                // const user={username_or_email:target.email.value,password:target.password.value};
-                // this.props.getSignIn(user)
-                // this.props.getUser()
-                this.props.history.push("/dashboard")
-
-                
-                
-              }
+                const user={username_or_email:target.email.value,password:target.password.value};
+                this.props.getSignIn(user)             
+            }
         }
        
         this.errorShow=(name,error,textError)=>{
@@ -43,8 +38,6 @@ class Form extends Component {
             this.props.formChangeActionSignIn(true,"showError")
         }
         this.errorHide=(name,error)=>{
-            // console.log("Hello")
-
             name.style.border="none";
             this.props.formChangeActionSignIn("",[error])
         }
@@ -76,18 +69,12 @@ class Form extends Component {
             }
         }
     }
-    componentDidMount(){ 
-        this.resetValidation()    
-       if( document.cookie.indexOf("sessionid")===0){
-        this.props.getUser()
-        this.props.history.push("/dashboard")       }
-    }
+ 
     componentWillReceiveProps(NewProps){
         if(NewProps.logIn==="230"){
             this.resetValidation();
             this.props.logInAction("");
-            // this.props.getUser()
-            // this.getDashboard()
+            this.getDashboard()
             
             
         }
@@ -98,7 +85,7 @@ class Form extends Component {
         }
     }
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         let {email,password,passwordShow}=this.props.state
     return (
         <form onSubmit={this.submitHandler} noValidate>
@@ -111,6 +98,7 @@ class Form extends Component {
             <div className="inputElem">
               <label htmlFor="password">Password</label>
               <input type={passwordShow?"text":"password"} 
+                maxLength="16"
                 name="password" 
                 value={this.props.state.password}
                 onChange={this.inputHandler}/>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ExpirienceText from "../expirienceText";
 import ExpirienceBtn from "../expirienceBtn";
 import Data from "../expirienceData";
+import GroupLeft from "../../../assets/img/group-7-copy.png";
+import Groupright from "../../../assets/img/group-7.png";
 
 import "./style.css";
 
@@ -27,9 +29,9 @@ export default class ExpirienceUser extends Component {
     return (
         <div className="section4__text">
         
-       <ExpirienceBtn src="/assets/img/group-7-copy.png"/>
+       <ExpirienceBtn src={GroupLeft}/>
        <ExpirienceText user={Data[this.state.textPos]}/>
-       <ExpirienceBtn src="/assets/img/group-7.png" handler={this.btnHandler}/>
+       <ExpirienceBtn src={Groupright} handler={this.btnHandler}/>
     </div>
 
     )
