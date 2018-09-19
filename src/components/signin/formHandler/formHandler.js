@@ -135,6 +135,7 @@ export const lastNameValidation = function (form) {
       this.props.formChangeActionSignIn("","password")
       this.props.formChangeActionSignIn(false, "emailValid")
       this.props.formChangeActionSignIn(false, "passwordValid")
+      this.props.formChangeActionSignIn(false, "error")
       this.props.formChangeActionSignIn(false, "showError")
       this.props.formChangeActionSignIn(false, "formValid")
 

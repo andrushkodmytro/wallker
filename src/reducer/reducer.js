@@ -19,16 +19,39 @@ import initialState from "../store/initialStateToReducer"
                 }
             }
             break
-        case "LOGIN":
-        state={
-            ...state,
-            logIn:action.payload
-        }
-        break
+            case "BUTTON_SIGN_UP":
+            state={
+                ...state,
+                signUp:{
+                    ...state.signUp,
+                    button:action.payload
+                }
+            }
+            break
+            case "BUTTON_SIGN_IN":
+            state={
+                ...state,
+                signIn:{
+                    ...state.signIn,
+                    button:action.payload
+                }
+            }
+            break
+            
+        // case "LOGIN":
+        // state={
+        //     ...state,
+        //     logIn:action.payload
+        // }
+        // break
         case "SIGN_UP":
         state={
             ...state,
-            signUpStatus:action.payload
+            signUp:{
+                ...state.signUp,
+                signUpStatus:action.payload
+            }
+            
         }
         break
         case "LOGIN_USER":
