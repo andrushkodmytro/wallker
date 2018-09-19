@@ -1,5 +1,5 @@
 import axios from "axios";
-import Cookies from 'universal-cookie';
+// import Cookies from 'universal-cookie';
 // axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
 axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
