@@ -5,7 +5,6 @@ import ShowPass from "../../../assets/img/password2.png";
 import HidePass from "../../../assets/img/password1.png";
 
 import { GoogleLogin } from 'react-google-login';
-import { GoogleLogout } from 'react-google-login';
 
 import {formChangeActionSignUp,signUpAction,goSignUp,showPass} from "../../../action/actions";
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
@@ -87,7 +86,7 @@ componentWillReceiveProps(NewProps){
   render() {
     const responseGoogle = (response) => {
       console.log(response);
-      const session= this.props.state.reducer.session;
+      //const session= this.props.state.reducer.session;
       this.props.inputSession(response.profileObj.familyName,'firstName');
       this.props.inputSession(response.profileObj.givenName,'lastName');
       this.props.inputSession(response.profileObj.email,'email');
@@ -97,7 +96,7 @@ componentWillReceiveProps(NewProps){
       //переробити коли бекенд доробить з гуглом то саме
 
     }
-    const logout = "Success";
+    
     let {nickName,firstName,lastName,email,password,passwordShow}=this.props.state
     return (
         <form onSubmit={this.submitHandler}  noValidate className="signUp">
