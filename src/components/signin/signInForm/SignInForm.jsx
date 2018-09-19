@@ -28,13 +28,8 @@ class Form extends Component {
             if( this.emailValidation(target) && this.passwordValidation(target)){
                 this.props.formChangeActionSignIn(true,"formValid")
                 const user={username_or_email:target.email.value,password:target.password.value};
-                this.props.getSignIn(user)
-                // this.props.getUser()
-                // this.props.history.push("/dashboard")
-
-                
-                
-              }
+                this.props.getSignIn(user)             
+            }
         }
        
         this.errorShow=(name,error,textError)=>{
@@ -74,18 +69,12 @@ class Form extends Component {
             }
         }
     }
-    componentDidMount(){ 
-    //     this.resetValidation()    
-    //    if( document.cookie.indexOf("sessionid")===0){
-    //     this.props.getUser()
-    //     this.props.history.push("/dashboard")       }
-    }
+ 
     componentWillReceiveProps(NewProps){
         if(NewProps.logIn==="230"){
             this.resetValidation();
             this.props.logInAction("");
-            // this.props.getUser()
-            // this.getDashboard()
+            this.getDashboard()
             
             
         }

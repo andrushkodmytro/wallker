@@ -1,5 +1,4 @@
 import axios from "axios";
-// import Cookies from 'universal-cookie';
 // axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
 axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
@@ -26,11 +25,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
     axios.post("/users/sign_in",user,{withCredentials: true})
       .then(function(response) {
         console.log(response)
-        if(response.status===230){
-          
-          dispatch(goLogIn("230"))
-          console.log(response.data)
-          dispatch(loginUser(response.data[0]))
+        if(response.status===230){ 
           dispatch(getUser())
         }        
       })
@@ -76,6 +71,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
        console.log(response)
         if(response.status===200){
           dispatch( loginUser(response.data))
+          dispatch(goLogIn("230"))
         }      
       }     
     )
