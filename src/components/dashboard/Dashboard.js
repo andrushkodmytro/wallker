@@ -16,23 +16,26 @@ import {connect} from "react-redux";
     const settings = "settings";
     
     const userData = { 
-      username : "",
-      first_name : "Effie",
-      last_name : "Robbins",
-      email : "effie.robbins@gmail.com",
+      // username : "",
+      // first_name : "Effie",
+      // last_name : "Robbins",
+      // email : "effie.robbins@gmail.com",
       steps : 9.593,
       distance : 7.42 + " KM",
       kcal : 482
      }
 
+     console.log("hi");
+     console.log(this.props.user);
+     console.log("hi");
     return (
       <div className="container">
-        <Header user={ userData }/>
+        <Header user={ this.props.user }/>
         <Route exact path="/dashboard" render= {()=><Summary text={ summary }/>}/>
         <Route exact path="/dashboard/settings" render= {()=><Summary text={ settings }/>}/>
-        <Route exact path="/dashboard" render= {()=><Today user={ userData }/>}/>
+        <Route exact path="/dashboard" render= {()=><Today data={ userData } user={ this.props.user }/>}/>
         <Route exact path="/dashboard" render= {()=><TopHW/>}/>
-        <Route exact path="/dashboard/settings" render= {()=><SettingsProfile user={ userData }/>}/>
+        <Route exact path="/dashboard/settings" render= {()=><SettingsProfile user={ this.props.user }/>}/>
         <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/>
         
         <Footer />
@@ -42,7 +45,7 @@ import {connect} from "react-redux";
 }
 const mapStateToProps=state=>{
   return {
-    user:state.reducer.user
+    user: state.reducer.user
   }
 }
 export default connect(mapStateToProps)(Dashboard)
