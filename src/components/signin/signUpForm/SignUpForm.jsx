@@ -69,7 +69,6 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
 }
 componentWillReceiveProps(NewProps){
   if(NewProps.signUpStatus==="201"){
-    console.log(document.cookie)
     this.props.goSignUp("")
     this.resetValidation();
     this.props.history.push("/signup/confirm")

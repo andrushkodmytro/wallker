@@ -1,5 +1,4 @@
 import axios from "axios";
-
 // axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
 axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 
@@ -25,13 +24,8 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
   export const signInAction=(user)=> dispatch => {
     axios.post("/users/sign_in",user)
       .then(function(response) {
-        console.log(response);
-       
-        if(response.status===230){
-          
-          dispatch(goLogIn("230"))
-          console.log(response.data)
-          dispatch(loginUser(response.data[0]))
+        console.log(response)
+        if(response.status===230){ 
           dispatch(getUser())
         }        
       })
@@ -77,6 +71,7 @@ axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
        console.log(response)
         if(response.status===200){
           dispatch( loginUser(response.data))
+          dispatch(goLogIn("230"))
         }      
       }     
     )

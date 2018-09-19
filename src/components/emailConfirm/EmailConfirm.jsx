@@ -15,7 +15,7 @@ import { connect} from "react-redux";
    componentWillReceiveProps(NewProps){
     if(NewProps.user)
    console.log(NewProps)
-    // this.props.history.push("/dashboard")
+    this.props.history.push("/dashboard")
   }
   render() {
    

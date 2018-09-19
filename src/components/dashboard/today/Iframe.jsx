@@ -12,6 +12,7 @@ export default class Iframe extends Component {
               height={ this.props.height } 
               
               allowFullScreen={ this.props.allowFullScreen } 
+              
               frameBorder={ this.props.frameBorder }>
             </iframe>
       </div>
