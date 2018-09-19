@@ -66,6 +66,9 @@ form {
   margin-bottom: 25px;
   border: none; }
 
+.span__error + input {
+  border: 1px solid #d0021b; }
+
 .remember {
   display: flex;
   justify-content: space-between;

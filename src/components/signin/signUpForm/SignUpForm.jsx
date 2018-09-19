@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import ShowPass from "../../../assets/img/password2.png";
 import HidePass from "../../../assets/img/password1.png"
 
-import {formChangeActionSignUp,signUpAction,goSignUp,showPass} from "../../../action/actions";
+import {formChangeActionSignUp,signUpAction,showPass,buttonSignUp,signUpStatusChange} from "../../../action/actions";
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
   emailValidation,passwordValidation,inputHandler} from "../formHandler/formHandler"
 
@@ -32,7 +32,7 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
     this.submitHandler=(e)=>{
       e.preventDefault();
       const target=e.target;
-      target.submit.value="SIGNING UP";
+      
       const {nickName,firstName,lastName,email,password}=this.props.state ;       
       this.nickNameValidation(target)
       this.firstNameValidation(target)
@@ -57,31 +57,28 @@ import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,fir
           email: email,
           password: password
         }
-        
+        this.props.buttonSignUp("SIGNING IN...")
+        target.submit.style.opacity= 0.5;
         this.props.signUp(user)
-        
-        // this.props.formChangeActionSignUp(true,"formValid")
-        
-        
-        // this.props.history.push("/signup/confirm")
       }
     }
 }
 componentWillReceiveProps(NewProps){
-  if(NewProps.signUpStatus==="201"){
-    this.props.goSignUp("")
+  console.log(NewProps)
+  if(NewProps.state.signUpStatus==="201"){
+    this.props.signUpStatusChange("")
     this.resetValidation();
     this.props.history.push("/signup/confirm")
   }
   if(NewProps.signUpStatus==="400"){
-    this.props.goSignUp("")
+    this.props.signUpStatusChange("")
     this.resetValidation();
     alert("Nickname and email must be unique")
   }
  
 }
   render() {
-    let {nickName,firstName,lastName,email,password,passwordShow}=this.props.state
+    let {nickName,firstName,lastName,email,password,passwordShow,button}=this.props.state
     return (
         <form onSubmit={this.submitHandler}  noValidate className="signUp">
             <h1>SIGN UP</h1>
@@ -118,7 +115,7 @@ componentWillReceiveProps(NewProps){
               {this.props.state.passwordError?<ErrorSpan error={this.props.state.passwordError}/>:""}
             </div>
             <input type="submit"
-              value="SIGN UP"
+              value={button}
               name="submit" 
               disabled={!nickName||!firstName||!lastName||!email||!password}
             />
@@ -129,7 +126,6 @@ componentWillReceiveProps(NewProps){
 const mapStateToProps=(state)=>{
   return{
     state:state.reducer.signUp,
-    signUpStatus:state.reducer.signUpStatus
   }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -140,11 +136,14 @@ const mapDispatchToProps=(dispatch)=>{
     signUp: (user) => {
       dispatch(signUpAction(user));
     },
-    goSignUp:(status)=>{
-      dispatch(goSignUp(status))
+    signUpStatusChange:(status)=>{
+      dispatch(signUpStatusChange(status))
     },
     showPass:(val)=>{
       dispatch(showPass(val))
+    },
+    buttonSignUp:(val)=>{
+      dispatch(buttonSignUp(val))
     }
     
   }

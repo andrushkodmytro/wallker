@@ -17,21 +17,24 @@ export default{
         passwordValid: false,
         formValid: false, 
         showError:false,
-        passwordShow:false
+        passwordShow:false,
+        button:"SIGN UP",
+        signUpStatus:""
+
       },
     signIn:{
         email:"",
         emailError:"",
-        passwordError:"", 
+        passwordError:"",
+        error:"", 
         password:"", 
         emailValid: false, 
         passwordValid: false,
         formValid: false,
         showError:false,
-        passwordShow:false
+        passwordShow:false,
+        button:"SIGN IN"
     },
-    logIn:"",
-    signUpStatus:"",
-    user:{}
+    user:""
 
 }

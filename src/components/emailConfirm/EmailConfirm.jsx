@@ -7,9 +7,10 @@ import { connect} from "react-redux";
     var regexp = /uid=([\d]+).token=(.+)/;
     const url=this.props.location.search.match(regexp)
     const confirm={
-      uid: url[1],
+      uid: +(url[1]),
       token: url[2]
     }
+    console.log(confirm)
      this.props.confirmEmail(confirm)
    }
    componentWillReceiveProps(NewProps){
