@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import ErrorSpan from "../errorSignUp/ErrorSignUp";
 import {connect} from "react-redux";
 import ShowPass from "../../../assets/img/password2.png";
-import HidePass from "../../../assets/img/password1.png"
+import HidePass from "../../../assets/img/password1.png";
+
+import { GoogleLogin } from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
 
 import {formChangeActionSignUp,signUpAction,goSignUp,showPass} from "../../../action/actions";
 import {resetValidation,errorShow,errorHide,validateEmail,nickNameValidation,firstNameValidation,lastNameValidation,
@@ -80,7 +83,21 @@ componentWillReceiveProps(NewProps){
   }
  
 }
+
   render() {
+    const responseGoogle = (response) => {
+      console.log(response);
+      const session= this.props.state.reducer.session;
+      this.props.inputSession(response.profileObj.familyName,'firstName');
+      this.props.inputSession(response.profileObj.givenName,'lastName');
+      this.props.inputSession(response.profileObj.email,'email');
+      this.props.inputSession(response.profileObj.imageUrl,'image');
+      
+      // window.location.replace('/dashboard');
+      //переробити коли бекенд доробить з гуглом то саме
+
+    }
+    const logout = "Success";
     let {nickName,firstName,lastName,email,password,passwordShow}=this.props.state
     return (
         <form onSubmit={this.submitHandler}  noValidate className="signUp">
@@ -121,6 +138,12 @@ componentWillReceiveProps(NewProps){
               value="SIGN UP"
               name="submit" 
               disabled={!nickName||!firstName||!lastName||!email||!password}
+            />
+            <GoogleLogin
+              clientId="772503025939-f349nuolhdsqqbrmrvr8mn5kjqb2g9lf.apps.googleusercontent.com"
+              buttonText="Login with Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
             />
         </form>
     )

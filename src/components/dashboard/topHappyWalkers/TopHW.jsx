@@ -107,7 +107,6 @@ class TopHW extends Component {
 function mapStateToProps (state) {
   return {
     walkers : state.walkers,
-    user:state.reducer.user
   };
 }
   

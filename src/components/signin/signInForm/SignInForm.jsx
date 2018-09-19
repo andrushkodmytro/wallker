@@ -4,10 +4,9 @@ import { connect } from "react-redux";
 import { signInAction, goLogIn, formChangeActionSignIn,getUser,showPassSignIn } from "../../../action/actions";
 import { inputHandler,resetValidationSignIn } from "../formHandler/formHandler";
 import { Link } from "react-router-dom";
+import "../signinPage/SignInPage.css";
 import ShowPass from "../../../assets/img/password2.png";
-import HidePass from "../../../assets/img/password1.png"
-
-
+import HidePass from "../../../assets/img/password1.png";
 
 class Form extends Component {
     constructor(props){
@@ -117,7 +116,6 @@ class Form extends Component {
                 value="SIGN IN" 
                 name="submit"
                 disabled={!email||!password}/>
-            <div className="g-signin2" data-onsuccess="onSignIn"></div>
             <div className="signup">
                 <p>Don’t have an account? </p>
                 <Link to="/signup">Sign up</Link>
