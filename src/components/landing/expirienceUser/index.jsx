@@ -3,6 +3,9 @@ import ExpirienceText from "../expirienceText";
 import ExpirienceBtn from "../expirienceBtn";
 import Data from "../expirienceData";
 
+import left_arrow from '../../../assets/img/group-7-copy.png';
+import right_arrow from '../../../assets/img/group-7.png';
+
 import "./style.css";
 
 export default class ExpirienceUser extends Component {
@@ -27,9 +30,9 @@ export default class ExpirienceUser extends Component {
     return (
         <div className="section4__text">
         
-       <ExpirienceBtn src="/assets/img/group-7-copy.png"/>
+       <ExpirienceBtn src={ left_arrow } handler={this.btnHandler}/>
        <ExpirienceText user={Data[this.state.textPos]}/>
-       <ExpirienceBtn src="/assets/img/group-7.png" handler={this.btnHandler}/>
+       <ExpirienceBtn src={ right_arrow } handler={this.btnHandler}/>
     </div>
 
     )

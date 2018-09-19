@@ -20,6 +20,7 @@ export default class Today extends Component {
               height="248" 
               allowFullScreen="allowfullscreen" 
               frameBorder="0"/>
+              {/* <div id="map"></div> */}
         </div>
       );
     }

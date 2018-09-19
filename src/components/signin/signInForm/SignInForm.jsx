@@ -129,6 +129,7 @@ class Form extends Component {
                 value="SIGN IN" 
                 name="submit"
                 disabled={!email||!password}/>
+            <div className="g-signin2" data-onsuccess="onSignIn"></div>
             <div className="signup">
                 <p>Don’t have an account? </p>
                 <Link to="/signup">Sign up</Link>
