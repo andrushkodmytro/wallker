@@ -94,7 +94,7 @@ componentWillReceiveProps(NewProps){
 
     }
     
-    let {nickName,firstName,lastName,email,password,passwordShow}=this.props.state
+    let {nickName,firstName,lastName,email,password,passwordShow,button}=this.props.state
     return (
         <form onSubmit={this.submitHandler}  noValidate className="signUp">
             <h1>SIGN UP</h1>
@@ -134,12 +134,6 @@ componentWillReceiveProps(NewProps){
               value={button}
               name="submit" 
               disabled={!nickName||!firstName||!lastName||!email||!password}
-            />
-            <GoogleLogin
-              clientId="772503025939-f349nuolhdsqqbrmrvr8mn5kjqb2g9lf.apps.googleusercontent.com"
-              buttonText="Login with Google"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
             />
         </form>
     )
