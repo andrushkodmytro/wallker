@@ -35,6 +35,20 @@ export default{
         passwordShow:false,
         button:"SIGN IN"
     },
-    user:""
+    resetPassword:{
+        password:"",
+        confirmPassword:"",
+        passwordError:"",
+        confirmPasswordError:"",
+        error:"",
+        passwordShow:false,
+        confirmPasswordShow:false,
+        button:"SAVE"
+    },
+    user:"",
+    
+    dashboard:{
+        isFetching:true
+    }
 
 }

@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import Dashboard from "../dashboard/Dashboard";
-import {Redirect} from "react-router-dom"
+// import {Redirect} from "react-router-dom";
+import {isFetching,getUser} from "../../action/actions"
+import Download from "../../assets/img/download.gif";
+import "./PrivateRoutDashboard.css"
+
 
  class PrivateRoutDashboard extends Component {
-
+  componentWillMount(){
+    this.props.getUser()
+   }
   render() {
+    console.log(this.props)
     return (
-      <div>
-      {this.props.state? <Dashboard/>:<Redirect to="/signin" />} 
+      <div className="private_rout">
+      {/* {this.props.state? <Dashboard/>:<Redirect to="/signin" />}  */}
+      {this.props.state.dashboard.isFetching?<div><img src={Download} alt="download"/></div>:<Dashboard/>}
+
       </div>
     )
   }
 }
 const mapStateToProps=state=>{
     return {
-        state:state.reducer.logIn
+        state:state.reducer
     }
 }
-export default connect(mapStateToProps)(PrivateRoutDashboard)
+const mapDispatchToProps=dispatch=>{
+  return{
+    isFetching:()=>{
+      dispatch(isFetching())
+    },
+    getUser:()=>{
+      dispatch(getUser())
+    }
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(PrivateRoutDashboard)
