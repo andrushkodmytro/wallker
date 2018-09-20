@@ -83,6 +83,52 @@ import initialState from "../store/initialStateToReducer"
             
         }
         break
+        case "IS_FETCHING":
+        state={
+            ...state,
+            dashboard:{
+                ...state.dashboard,
+                isFetching:action.payload
+            }
+            
+            
+        }
+        break
+        case "FORM_CHANGE_ACTION_RESET_PASSWORD":
+        state={
+            ...state,
+            resetPassword:{
+                ...state.resetPassword,
+                [action.propChange]:action.payload
+            }
+            
+            
+        }
+        break
+        case "SHOW_PASS_RESET_PASSWORD":
+        state={
+            ...state,
+            resetPassword:{
+                ...state.resetPassword,
+                [action.inputName]:action.payload
+            }
+            
+            
+        }
+        break
+        case  "BUTTON_RESET_PASS":
+        state={
+            ...state,
+            resetPassword:{
+                ...state.resetPassword,
+                button:action.payload
+            }
+            
+            
+        }
+        break
+       
+        
             default: return state
     }
     return state

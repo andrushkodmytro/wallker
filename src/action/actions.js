@@ -117,8 +117,7 @@ export const getUser=()=> dispatch => {
       console.log(response)
       if(response.status===200){
         dispatch( loginUser(response.data))
-        // dispatch(goLogIn("230")
-        // )
+        dispatch(isFetching(false))
       }      
     }     
   )
@@ -167,4 +166,30 @@ export function showPassSignIn(val){
     payload:val
   }
 }
-
+export function isFetching(val){
+  return{
+    type:"IS_FETCHING",
+    payload:val
+  }
+}
+//  action для sign in форми
+export function formChangeActionResetPassword(value,stateName){
+  return{
+    type:"FORM_CHANGE_ACTION_RESET_PASSWORD",
+    payload:value,
+    propChange:stateName
+  }
+}
+export function showPassResetPassword(val,inputName){
+  return{
+    type:"SHOW_PASS_RESET_PASSWORD",
+    payload:val,
+    inputName
+  }
+}
+export function buttonResetPass(val){
+  return{
+    type:"BUTTON_RESET_PASS",
+    payload:val
+  }
+}

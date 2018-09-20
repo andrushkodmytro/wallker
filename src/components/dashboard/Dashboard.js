@@ -11,6 +11,7 @@ import {Route} from "react-router-dom";
 import {connect} from "react-redux";
 
  class Dashboard extends Component {
+   
   render() {
     const summary = "summary";
     const settings = "settings";
@@ -48,4 +49,5 @@ const mapStateToProps=state=>{
     user: state.reducer.user
   }
 }
+
 export default connect(mapStateToProps)(Dashboard)
