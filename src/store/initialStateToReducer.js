@@ -23,7 +23,7 @@ export default{
 
       },
     signIn:{
-        email:"",
+        email:"frf",
         emailError:"",
         passwordError:"",
         error:"", 

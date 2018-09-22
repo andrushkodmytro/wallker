@@ -105,7 +105,7 @@ class Form extends Component {
             }
         }
 
-        // console.log(this.props)
+        console.log(this.props)
         let {email,password,passwordShow,button,emailError,passwordError,error}=this.props.state
     return (
         <form onSubmit={this.submitHandler} noValidate>
