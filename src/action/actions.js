@@ -1,6 +1,7 @@
 import axios from "axios";
 // axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
 axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
+axios.defaults.withCredentials=true
 
 //  action для sign up форми
 export function formChangeActionSignUp(value,stateName){
@@ -36,7 +37,7 @@ export function formChangeActionSignIn(value,stateName){
 } 
 
 export const signInAction=(user)=> dispatch => {
-  axios.post("/users/sign_in",user,{withCredentials: true})
+  axios.post("/users/sign_in",user)
     .then(function(response) {
       console.log(response)
       if(response.status===230){ 
@@ -69,7 +70,7 @@ export const signInAction=(user)=> dispatch => {
 }
 // action для реєстрації
 export const signUpAction=(user)=> dispatch => {
-  return axios.post("/users/register",user,{withCredentials: true})
+  return axios.post("/users/register",user)
     .then(function(response) {
       console.log(response)
       if(response.status===201){
@@ -97,7 +98,7 @@ export const signUpAction=(user)=> dispatch => {
 
 
 export const confirmEmail=(confirm)=> dispatch => {
-  return axios.post("/users/confirm_email",confirm,{withCredentials: true})
+  return axios.post("/users/confirm_email",confirm)
     .then(function(response) {
       console.log(response)
       if(response.status===200){
@@ -112,7 +113,7 @@ export const confirmEmail=(confirm)=> dispatch => {
 }
 
 export const getUser=()=> dispatch => {
-  return axios.get(`/users/me`,{withCredentials: true})
+  return axios.get(`/users/me`)
     .then(function(response) {
       console.log(response)
       if(response.status===200){
@@ -126,14 +127,6 @@ export const getUser=()=> dispatch => {
     
     })
 }
-
-
-// export function goLogIn(value){
-//   return{
-//     type:"LOGIN",
-//     payload:value
-//   }
-// } 
 export function loginUser(user){
   return{
     type:"LOGIN_USER",
@@ -169,27 +162,6 @@ export function showPassSignIn(val){
 export function isFetching(val){
   return{
     type:"IS_FETCHING",
-    payload:val
-  }
-}
-//  action для sign in форми
-export function formChangeActionResetPassword(value,stateName){
-  return{
-    type:"FORM_CHANGE_ACTION_RESET_PASSWORD",
-    payload:value,
-    propChange:stateName
-  }
-}
-export function showPassResetPassword(val,inputName){
-  return{
-    type:"SHOW_PASS_RESET_PASSWORD",
-    payload:val,
-    inputName
-  }
-}
-export function buttonResetPass(val){
-  return{
-    type:"BUTTON_RESET_PASS",
     payload:val
   }
 }

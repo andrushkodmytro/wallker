@@ -9,8 +9,29 @@ import Footer from './footer/Footer';
 import SettingsPassword from './settings/settingsPassword/SettingsPassword';
 import {Route} from "react-router-dom";
 import {connect} from "react-redux";
+import axios from "axios"
 
  class Dashboard extends Component {
+   constructor(props){
+     super(props)
+     this.state={img:""}
+
+     this.handler=this.handler.bind(this)
+   }
+   handler(e){
+    //  alert("Hello")
+     e.preventDefault()
+     var pic=document.querySelector('input[type="file"]').files[0]
+     var data=new FormData();
+     
+     data.append('image', pic)
+     console.log(data)
+    //  console.log(pic)
+
+     axios.post("https://a-qa-backend-happy-walker.herokuapp.com/users/image",data,{withCredentials: true})
+     .then(res=>this.setState({img:"https://a-qa-backend-happy-walker.herokuapp.com"+res.data.image}))
+     .catch(error=>console.log(error))
+   }
    
   render() {
     const summary = "summary";
@@ -40,6 +61,12 @@ import {connect} from "react-redux";
         <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/>
         
         <Footer />
+        {/* <form enctype="multipart/form-data" onSubmit={this.handler}>
+          <input id="picture" type="file"/>
+          <img src={this.state.img}/>
+          <input type="submit"/>
+
+        </form> */}
       </div>
     );
   }

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import {withRouter} from "react-router-dom"
 import './Header.css';
 
 
 import HeaderLeft from './headerMain/HeaderLeft';
 import HeaderRight from './headerMain/HeaderRight';
 
-export default class Header extends Component {
+ class Header extends Component {
     render() {
       const { user } = this.props;
 
@@ -17,3 +18,4 @@ export default class Header extends Component {
       );
     }
   }
+  export default  withRouter(Header)
