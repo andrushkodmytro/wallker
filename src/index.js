@@ -4,9 +4,11 @@ import App from './components/app/App';
 import {applyMiddleware,createStore,combineReducers,compose} from "redux";
 import {Provider} from "react-redux";
 import reducer from "./reducer/reducer";
+import forgotResetReducer from "./reducer/forgotResetReducer"
 import dashboardReducer from "./reducer/dashboardReducer";
 // import logger from "redux-logger";
 import thunk from 'redux-thunk';
+
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -14,7 +16,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store=createStore(combineReducers({reducer, walkers : dashboardReducer}) , 
+const store=createStore(combineReducers({reducer,forgotResetReducer, walkers : dashboardReducer}) , 
 composeEnhancers(applyMiddleware(thunk)) )
 // console.log(store.getState())
 // store.subscribe(()=>(console.log(store.getState())))

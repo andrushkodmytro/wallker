@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import '../Header.css';
 import '../../../../assets/fonts/fonts.css';
 
@@ -7,10 +7,10 @@ import header__photo from '../../../../assets/img/avatar.png';
 import header__settings from '../../../../assets/img/settings.png';
 import header__signout from '../../../../assets/img/signout.png';
 
-export default class HeaderRight extends Component {
+ class HeaderRight extends Component {
     render() {
         const { user } = this.props;
-
+        console.log(this.props)
     return (
         <div className="header__right">
             <div>
@@ -31,3 +31,4 @@ export default class HeaderRight extends Component {
       );
     }
   }
+  export default  withRouter(HeaderRight)

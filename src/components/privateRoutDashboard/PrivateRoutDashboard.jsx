@@ -12,7 +12,7 @@ import "./PrivateRoutDashboard.css"
     this.props.getUser()
    }
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className="private_rout">
       {/* {this.props.state? <Dashboard/>:<Redirect to="/signin" />}  */}
