@@ -44,12 +44,18 @@ class Form extends Component {
             this.props.formChangeActionSignIn("",[error])
         }
         this.emailValidation=function(form){
+            // eslint-disable-next-line
+            var re = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/
             if(this.props.state.error==="") this.errorHide(form.email,"emailError")
             // eslint-disable-next-line
-            if((/[^\w]/g).test(this.props.state.email)===true){
-              this.errorShow(form.email,"emailError","Wrong email. Try again or click Forgot password to reset it. ")
-              return false
-            }
+           else if(!re.test(String(this.props.state.email))){
+                if((/[^\w]/g).test(this.props.state.email)===true){
+                    this.errorShow(form.email,"emailError","Wrong email. Try again or click Forgot password to reset it. ")
+                    return false
+                }
+           }
+           
+          
             else {
                 this.props.formChangeActionSignIn(true,"emailValid")
                 return true
@@ -57,11 +63,11 @@ class Form extends Component {
         }
         this.passwordValidation=function(form){
             if(this.props.state.error==="")  this.errorHide(form.password,"passwordError")
-            if (this.props.state.password.length < 8 || this.props.state.password.length > 16) {
+           else if (this.props.state.password.length < 8 || this.props.state.password.length > 16) {
                 this.errorShow(form.password,"passwordError","Password should be between 8 and 16 characters. ")
                 return 
               }
-            if((/[^\w]/g).test(this.props.state.password)===true){
+           else if((/[^\w]/g).test(this.props.state.password)===true){
               this.errorShow(form.password,"Wrong email/password. Try again or click Forgot password to reset it. ")
               return false
             }

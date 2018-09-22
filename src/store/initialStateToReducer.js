@@ -27,7 +27,7 @@ export default{
         emailError:"",
         passwordError:"",
         error:"", 
-        password:"", 
+        password:"dcdcddc", 
         emailValid: false, 
         passwordValid: false,
         formValid: false,
