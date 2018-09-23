@@ -61,12 +61,6 @@ import axios from "axios"
         <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/>
         
         <Footer />
-        {/* <form enctype="multipart/form-data" onSubmit={this.handler}>
-          <input id="picture" type="file"/>
-          <img src={this.state.img}/>
-          <input type="submit"/>
-
-        </form> */}
       </div>
     );
   }

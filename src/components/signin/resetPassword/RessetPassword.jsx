@@ -83,11 +83,11 @@ class Form extends Component {
         if(this.props.state.error==="")  this.errorHide(form.confirmPassword,"confirmPasswordError")
         if (this.props.state.confirmPassword.length < 8 || this.props.state.confirmPassword.length > 16) {
             this.errorShow(form.confirmPassword,"confirmPasswordError","Password should be between 8 and 16 characters. ")
-            return 
+            return false
           }
         if((/[^\w]/g).test(this.props.state.password)===true){
           this.errorShow(form.confirmPassword,"confirmPasswordError","Must contain only letters and numbers" )
-          return true
+          return false
         }
         else{
             return true
