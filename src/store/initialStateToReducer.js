@@ -23,11 +23,11 @@ export default{
 
       },
     signIn:{
-        email:"",
+        email:"frf",
         emailError:"",
         passwordError:"",
         error:"", 
-        password:"", 
+        password:"dcdcddc", 
         emailValid: false, 
         passwordValid: false,
         formValid: false,

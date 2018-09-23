@@ -46,6 +46,7 @@ class ForgotPassword extends Component {
        }    
     }
     componentWillMount(){
+        this.props.forgotPassInput("")
         this.props.forgotPassStatus("")
         this.props.buttonForgotPass("SEND PASSWORD")
         this.props.forgotPassInput("")
