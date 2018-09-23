@@ -165,3 +165,9 @@ export function isFetching(val){
     payload:val
   }
 }
+export function changeEmailStatus(status){
+  return{
+    type:"CHANGE_EMAIL_STATUS",
+    payload:status
+  }
+}

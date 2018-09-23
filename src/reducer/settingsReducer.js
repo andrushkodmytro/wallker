@@ -12,6 +12,36 @@ const settingsReducer=(state=settingsState,action)=>{
         }
 
         break
+        case "SETTINGS_STATUS":
+        state={
+            ...state,
+            settings:{
+                ...state.settings,
+                status:action.payload
+            }
+        }
+
+        break
+        case "SHOW_PHOTO":
+        state={
+            ...state,
+            settings:{
+                ...state.settings,
+                photo:action.payload
+            }
+        }
+
+        break
+        case "CHANGE_EMAIL_STATUS":
+        state={
+            ...state,
+            settings:{
+                ...state.settings,
+                changePassStatus:action.payload
+            }
+            
+        }
+        break
 
         default: return state
     }

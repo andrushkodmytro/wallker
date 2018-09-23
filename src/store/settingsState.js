@@ -1,11 +1,13 @@
 export default{
     settings:{
-        firstName: "s",
-        lastName: "s",
-        email: "s",
+        firstName: "",
+        lastName: "",
+        email: "",
+        photo:"",
         confirmPasswordShow:false,
         button:"SAVE",
-        status:""
+        status:"",
+        changePassStatus:""
     }  
     
 
