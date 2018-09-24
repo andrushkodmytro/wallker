@@ -5,7 +5,8 @@ import { connect} from "react-redux";
 
  class emailConfirm extends Component {
    componentDidMount(){
-     var href=document.location.href
+     var href=this.props.location.search
+
      if((/uid=/).test(href)&&(/token=/).test(href)&&(/new_email=/).test(href)){
       let regexp = /uid=([\d]+).token=(.+).new_email=(.+)$/;
       const url=href.match(regexp)

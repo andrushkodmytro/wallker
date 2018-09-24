@@ -6,7 +6,7 @@ import profile_photo from '../../../assets/img/avatar.png';
 
 export default class TodayProfile extends Component {
     render() {
-      const { user } = this.props;
+      const { user } = this.props
 
       return (
         <div className="today__profile">
