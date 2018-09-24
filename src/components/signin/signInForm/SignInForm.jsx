@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Error from "../errorSignIn/ErrorSignIn";
 import { connect } from "react-redux";
-import { signInAction, formChangeActionSignIn,getUser,showPassSignIn,buttonSignIn } from "../../../action/actions";
-import { inputHandler,resetValidationSignIn } from "../formHandler/formHandler";
+import { signInAction, formChangeActionSignIn,getUser,showPassSignIn,buttonSignIn, signInStatus } from "../../../action/actions";
+import { inputHandler,resetValidationSignIn, validateEmail} from "../formHandler/formHandler";
 import { Link } from "react-router-dom";
 import "../signinPage/SignInPage.css";
 
@@ -17,6 +17,7 @@ class Form extends Component {
         this.getDashboard=()=>{this.props.history.push('/dashboard')}
         this.inputHandler=inputHandler.bind(this)
         this.resetValidation=resetValidationSignIn
+
         
         this.submitHandler=(e)=>{
             let target=e.target;
@@ -45,14 +46,23 @@ class Form extends Component {
         }
         this.emailValidation=function(form){
             // eslint-disable-next-line
-            var re = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.-]{2,6})$/
-            if(this.props.state.error==="") this.errorHide(form.email,"emailError")
+            var email=validateEmail(this.props.state.email)
+            var nickname=((/[^\w]/g).test(this.props.state.email)===true)
+            if(this.props.state.error==="") {
+                this.errorShow(form.email,"emailError")
+                return false
+            }
+            else if (this.props.state.email.length < 2 || this.props.state.email.length > 129) {
+                this.errorShow(form.email,"emailError","Nickname should be between 2 and 16 characters. ")
+                return 
+              }
             // eslint-disable-next-line
-           else if(!re.test(String(this.props.state.email))){
-                if((/[^\w]/g).test(this.props.state.email)===true){
-                    this.errorShow(form.email,"emailError","Wrong email. Try again or click Forgot password to reset it. ")
-                    return false
-                }
+           else if( !email&&nickname) {
+              
+                this.errorShow(form.email,"emailError","Wrong email/password. Try again or click Forgot password to reset it. ")
+                
+             return false
+            
            }
            
           
@@ -62,7 +72,7 @@ class Form extends Component {
             }
         }
         this.passwordValidation=function(form){
-            if(this.props.state.error==="")  this.errorHide(form.password,"passwordError")
+            if(this.props.state.error==="")  this.errorShow(form.password,"passwordError")
            else if (this.props.state.password.length < 8 || this.props.state.password.length > 16) {
                 this.errorShow(form.password,"passwordError","Password should be between 8 and 16 characters. ")
                 return 
@@ -78,14 +88,16 @@ class Form extends Component {
         }
     }
  
-    componentWillReceiveProps(NewProps){
-        if(NewProps.user){
-            // this.resetValidation();
-            // this.getDashboard()
+    componentWillReceiveProps({state}){
+        if(state.status===200){
+            this.resetValidation();
+            this.props.signInStatus("")
+            this.getDashboard()
+            // alert("Hell")
             
             
         }
-        if(NewProps.logIn==="400"){
+        if(state.status===400){
             this.props.logInAction("")
             this.resetValidation();
             alert("login or email is incorect")
@@ -185,6 +197,9 @@ const mapDispatchToProps=(dispatch)=>{
         },
         buttonSignIn:(val)=>{
             dispatch(buttonSignIn(val))
+        },
+        signInStatus:(status)=>{
+            dispatch(signInStatus(status))
         }
         
     }

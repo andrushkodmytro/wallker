@@ -94,6 +94,18 @@ import initialState from "../store/initialStateToReducer"
             
         }
         break
+        case "SIGN_IN_STATUS":
+        state={
+            ...state,
+            signIn:{
+                ...state.signIn,
+                status:action.payload
+            }
+            
+            
+        }
+        break
+        
         
         
             default: return state

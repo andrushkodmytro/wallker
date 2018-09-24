@@ -3,7 +3,7 @@ import { Link ,withRouter} from "react-router-dom";
 import '../Header.css';
 import '../../../../assets/fonts/fonts.css';
 import {connect}  from "react-redux"
-import {loginUser} from "../../../../action/actions"
+import {loginUser, logOutAction} from "../../../../action/actions"
 import header__photo from '../../../../assets/img/avatar.png';
 import header__settings from '../../../../assets/img/settings.png';
 import header__signout from '../../../../assets/img/signout.png';
@@ -16,13 +16,13 @@ import header__signout from '../../../../assets/img/signout.png';
 
      }
      logOut(){
-        this.props.history.push("/signin")
+        this.props.logOutAction()
+        // this.props.history.push("/signin")
         this.props.loginUser("")
         
      }
     render() {
         const { user } = this.props;
-        console.log(this.props)
     return (
         <div className="header__right">
             <div>
@@ -37,8 +37,8 @@ import header__signout from '../../../../assets/img/signout.png';
                 <Link to="/dashboard/settings"><img className="header__settings" src={ header__settings } alt="settings"/></Link>
             </div>
             <div>
-                <Link to="/signin">
-                <img className="header__sign-out" src={ header__signout } alt="signout" />
+                <Link to="/signin" onClick={this.logOut}>
+                <img className="header__sign-out" src={ header__signout } onClick={this.logOut} alt="signout" />
                 </Link>
             </div>
         </div>
@@ -54,6 +54,9 @@ import header__signout from '../../../../assets/img/signout.png';
     return {
         loginUser:(user)=>{
             dispatch(loginUser(user))
+        },
+        logOutAction:()=>{
+            dispatch(logOutAction())
         }
     }
   }

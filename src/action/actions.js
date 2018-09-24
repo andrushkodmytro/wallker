@@ -119,6 +119,21 @@ export const getUser=()=> dispatch => {
       if(response.status===200){
         dispatch( loginUser(response.data))
         dispatch(isFetching(false))
+        dispatch(signInStatus(200))
+      }      
+    }     
+  )
+    .catch(function(error) {
+      console.log(error);
+    
+    })
+}
+export const logOutAction=()=> dispatch => {
+  return axios.get(`/users/logout`)
+    .then(function(response) {
+      console.log(response)
+      if(response.status===200){
+       alert("logout")
       }      
     }     
   )
@@ -131,6 +146,12 @@ export function loginUser(user){
   return{
     type:"LOGIN_USER",
     payload:user
+  }
+}
+export function signInStatus(status){
+  return{
+    type:"SIGN_IN_STATUS",
+    payload:status
   }
 }
 export function signUpStatusChange(value){

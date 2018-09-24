@@ -27,13 +27,14 @@ export default{
         emailError:"",
         passwordError:"",
         error:"", 
-        password:"dcdcddc", 
+        password:"", 
         emailValid: false, 
         passwordValid: false,
         formValid: false,
         showError:false,
         passwordShow:false,
-        button:"SIGN IN"
+        button:"SIGN IN",
+        status:""
     },
     
     user:"",
