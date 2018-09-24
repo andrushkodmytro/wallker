@@ -4,7 +4,7 @@ import '../Header.css';
 import '../../../../assets/fonts/fonts.css';
 import {connect}  from "react-redux"
 import {loginUser, logOutAction} from "../../../../action/actions"
-import header__photo from '../../../../assets/img/avatar.png';
+// import header__photo from '../../../../assets/img/avatar.png';
 import header__settings from '../../../../assets/img/settings.png';
 import header__signout from '../../../../assets/img/signout.png';
 // import { userInfo } from 'os';
@@ -21,13 +21,17 @@ import header__signout from '../../../../assets/img/signout.png';
         this.props.loginUser("")
         
      }
+    //  shouldComponentUpdate(nextProps, nextState) {
+    //     return this.props.user.image != nextProps.user.image;
+    //   }
     render() {
         const { user } = this.props;
+        console.log(this.props.user.image)
     return (
         <div className="header__right">
             <div>
                 <Link to="/dashboard">  
-                <img className="header__photo" src={ header__photo } alt="header img"/>
+                <img className="header__photo" src={ `https://${this.props.user.image}` } alt="header img"/>
                 </Link>
             </div>
             <div>
@@ -38,7 +42,7 @@ import header__signout from '../../../../assets/img/signout.png';
             </div>
             <div>
                 <Link to="/signin" onClick={this.logOut}>
-                <img className="header__sign-out" src={ header__signout } onClick={this.logOut} alt="signout" />
+                <img className="header__sign-out" src={ header__signout }  alt="signout" />
                 </Link>
             </div>
         </div>
