@@ -126,7 +126,7 @@ export const getUser=()=> dispatch => {
     .catch(function(error) {
       if(error.response.status===404){
         dispatch(isFetching(false))
-        dispatch(signInStatus(200))
+        dispatch(signInStatus(404))
       }
     
     })
