@@ -17,6 +17,7 @@ class Form extends Component {
         this.getDashboard=()=>{this.props.history.push('/dashboard')}
         this.inputHandler=inputHandler.bind(this)
         this.resetValidation=resetValidationSignIn
+        this.checkboxHandler=this.checkboxHandler.bind(this)
 
         
         this.submitHandler=(e)=>{
@@ -30,7 +31,15 @@ class Form extends Component {
                 this.props.formChangeActionSignIn(true,"formValid")
                 const user={username_or_email:target.email.value,password:target.password.value};
                 this.props.buttonSignIn("SIGNING IN...")
-                 target.submit.style.opacity= 0.5;
+                target.submit.style.opacity= 0.5;
+                console.log(target)
+                if(this.props.state.checkbox){
+                    localStorage.setItem("email",this.props.state.email)
+                    localStorage.setItem("password",this.props.state.password) 
+                }
+                else {
+                    localStorage.clear()
+                }
                 this.props.getSignIn(user)             
             }
         }
@@ -85,8 +94,13 @@ class Form extends Component {
             }
         }
     }
+    checkboxHandler(e){
+        this.props.formChangeActionSignIn(!this.props.state.checkbox,"checkbox")
+    }
     componentWillMount(){
         this.props.signInStatus("") 
+        this.props.buttonSignIn("SIGN IN")
+       
     }
     componentWillReceiveProps({state}){
         if(state.status===200){
@@ -103,6 +117,13 @@ class Form extends Component {
     }
     componentDidMount(){
         this.resetValidation();
+        var email=localStorage.getItem("email")
+        var password=localStorage.getItem("password")
+        if(email&&password){
+            this.props.formChangeActionSignIn(email,"email")
+            this.props.formChangeActionSignIn(password,"password")
+            this.props.formChangeActionSignIn(true,"checkbox")
+        }
     }
     
     render() {
@@ -122,7 +143,7 @@ class Form extends Component {
         }
 
         // console.log(this.props)
-        let {email,password,passwordShow,button,emailError,passwordError,error}=this.props.state
+        let {email,password,passwordShow,button,emailError,passwordError,error,checkbox}=this.props.state
     return (
         <form onSubmit={this.submitHandler} noValidate>
             <h1>SIGN IN</h1>
@@ -143,7 +164,7 @@ class Form extends Component {
             </div>
             <div className="remember">
                 <div className="check">
-                    <input type="checkbox" id="check"/>
+                    <input type="checkbox" name="rememberme" id="check" checked={checkbox} onChange={this.checkboxHandler}/>
                     <label htmlFor="check">Remember me</label>
                 </div>
 

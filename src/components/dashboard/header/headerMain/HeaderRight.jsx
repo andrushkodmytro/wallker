@@ -26,7 +26,6 @@ import header__signout from '../../../../assets/img/signout.png';
     //   }
     render() {
         const { user } = this.props;
-        console.log(this.props.user.image)
     return (
         <div className="header__right">
             <div>

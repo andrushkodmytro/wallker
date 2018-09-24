@@ -33,6 +33,7 @@ export default{
         formValid: false,
         showError:false,
         passwordShow:false,
+        checkbox:false,
         button:"SIGN IN",
         status:""
     },

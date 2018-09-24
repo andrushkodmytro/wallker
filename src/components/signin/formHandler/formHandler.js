@@ -60,11 +60,11 @@ export const  nickNameValidation=function(form){
   this.errorHide(form.firstName,"firstNameError");
   if(this.props.state.firstName.length<2||this.props.state.firstName.length>30){
     this.errorShow(form.firstName,"firstNameError","First name should be between 2 and 30 characters")
-    return
+    return false
   }
   else if((/[^A-Za-z]/g).test(this.props.state.firstName)===true){
     this.errorShow(form.firstName,"firstNameError","Must contain only letters","firstNameError")
-    return
+    return false
   }
   else {
     this.props.formChangeActionSignUp(true,"firstNameValid")
