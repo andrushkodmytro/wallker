@@ -142,13 +142,8 @@ class Form extends Component {
             }
         }
 
-<<<<<<< HEAD
-        console.log(this.props)
-        let {email,password,passwordShow,button,emailError,passwordError,error}=this.props.state
-=======
         // console.log(this.props)
         let {email,password,passwordShow,button,emailError,passwordError,error,checkbox}=this.props.state
->>>>>>> andrushko
     return (
         <form onSubmit={this.submitHandler} noValidate>
             <h1>SIGN IN</h1>
