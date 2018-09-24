@@ -48,6 +48,7 @@ import photo from '../../../../assets/img/avatar.png';
     this.props.settingsInput(this.props.user.first_name,"firstName")
     this.props.settingsInput(this.props.user.last_name,"lastName")
     this.props.settingsInput(this.props.user.email,"email")
+    // this.props.settingsInput(this.props.user.image,"image")
   }
   componentWillReceiveProps({state}){
     if(state.status===201){

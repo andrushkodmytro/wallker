@@ -9,7 +9,7 @@ import './Today.css';
 export default class Today extends Component {
     render() {
       const { user, data } = this.props;
-
+      // console.log(this.props)
       return (
         <div className="today">
             <TodayProfile user={ user }/> 

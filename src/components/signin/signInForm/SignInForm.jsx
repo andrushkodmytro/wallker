@@ -64,8 +64,6 @@ class Form extends Component {
              return false
             
            }
-           
-          
             else {
                 this.props.formChangeActionSignIn(true,"emailValid")
                 return true
@@ -87,14 +85,14 @@ class Form extends Component {
             }
         }
     }
- 
+    componentWillMount(){
+        this.props.signInStatus("") 
+    }
     componentWillReceiveProps({state}){
         if(state.status===200){
             this.resetValidation();
-            this.props.signInStatus("")
-            this.getDashboard()
-            // alert("Hell")
-            
+            // this.props.signInStatus("")
+            this.getDashboard()        
             
         }
         if(state.status===400){

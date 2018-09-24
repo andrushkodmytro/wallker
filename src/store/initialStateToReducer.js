@@ -38,7 +38,7 @@ export default{
     },
     
     user:"",
-    
+    login:false,
     dashboard:{
         isFetching:true
     }

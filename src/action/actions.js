@@ -124,7 +124,10 @@ export const getUser=()=> dispatch => {
     }     
   )
     .catch(function(error) {
-      console.log(error);
+      if(error.response.status===404){
+        dispatch(isFetching(false))
+        dispatch(signInStatus(200))
+      }
     
     })
 }
@@ -133,7 +136,7 @@ export const logOutAction=()=> dispatch => {
     .then(function(response) {
       console.log(response)
       if(response.status===200){
-       alert("logout")
+       dispatch(signInStatus(""))
       }      
     }     
   )
