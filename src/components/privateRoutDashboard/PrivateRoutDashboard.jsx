@@ -28,7 +28,7 @@ import "./PrivateRoutDashboard.css"
       this.props.signInStatus("")
     }
     else if(state.signIn.status===404){
-      alert("Hello")
+      // alert("Hello")
       this.props.history.push("/signin")
     }
    }
