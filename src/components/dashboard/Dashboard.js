@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../../assets/css/App.css';
+import {connect} from "react-redux";
+
 import Header from './header/Header';
 import Summary from './summary/Summary';
 import SettingsProfile from './settings/settingsProfile/SettingsProfile';
@@ -8,12 +10,13 @@ import TopHW from './topHappyWalkers/TopHW';
 import Footer from './footer/Footer';
 import SettingsPassword from './settings/settingsPassword/SettingsPassword';
 import {Route} from "react-router-dom";
-import {connect} from "react-redux";
+import {signInStatus} from "../../action/actions"
 // import axios from "axios"
 
- class Dashboard extends Component {
-   
-   
+ class Dashboard extends Component {  
+   componentDidMount(){
+     this.props.signInStatus("")
+   } 
   render() {
     const summary = "summary";
     const settings = "settings";
@@ -51,5 +54,12 @@ const mapStateToProps=state=>{
     user: state.reducer.user
   }
 }
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    signInStatus:(status)=>{
+      dispatch(signInStatus(status))
+    }
+  }
+}
 
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps, mapDispatchToProps)( Dashboard )
