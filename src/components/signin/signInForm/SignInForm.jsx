@@ -80,8 +80,8 @@ class Form extends Component {
  
     componentWillReceiveProps(NewProps){
         if(NewProps.user){
-            this.resetValidation();
-            this.getDashboard()
+            // this.resetValidation();
+            // this.getDashboard()
             
             
         }
