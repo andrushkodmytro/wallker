@@ -4,7 +4,7 @@ import '../../../../assets/fonts/fonts.css';
 import {connect} from "react-redux";
 import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from "../../../../action/settingsActions"
 
-import photo from '../../../../assets/img/avatar.png';
+// import photo from '../../../../assets/img/avatar.png';
 
  class SettingsProfile extends Component {
   constructor(props) {
@@ -57,8 +57,8 @@ import photo from '../../../../assets/img/avatar.png';
   }
 
     render() {
-      const { firstName, lastName,email } = this.props.state;
-
+      const { firstName, lastName, email } = this.props.state;
+      
       console.log(this.props)
       return (
         <div className="container_settings__profile">
@@ -93,7 +93,7 @@ import photo from '../../../../assets/img/avatar.png';
             </div>
             <div className="photo_upload">
               <div className="photo_upload__photo">
-                <img src={ this.props.state.photo || photo} alt="account"/>
+                <img src={ this.props.state.photo || `https://${this.props.user.image}` } alt="account"/>
               </div>
               <div className="photo_upload__details">
                 <label className="photo__label">Your&nbsp;Photo</label>

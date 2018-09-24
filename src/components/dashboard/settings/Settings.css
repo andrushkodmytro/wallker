@@ -130,6 +130,11 @@
     margin-bottom: 8px;
 }
 
+.button_photo:hover {
+    background-color: #01ce9f;
+    color: #f1f3f5;
+}
+
 .photo_upload__details > p {
     margin: 0;
     padding: 0;
@@ -186,6 +191,14 @@
     width: 40%;
 }
 
+.save_block__button:hover,
+.change_block__button:hover {
+    background-color: #3cf0c6;
+}
+.save_block__button:active,
+.change_block__button:active {
+    opacity: 0.5;
+}
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
     .photo_upload {
         display: flex;
