@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link ,withRouter} from "react-router-dom";
 import '../Header.css';
 import '../../../../assets/fonts/fonts.css';
-
+import {connect}  from "react-redux"
+import {loginUser} from "../../../../action/actions"
 import header__photo from '../../../../assets/img/avatar.png';
 import header__settings from '../../../../assets/img/settings.png';
 import header__signout from '../../../../assets/img/signout.png';
+// import { userInfo } from 'os';
 
  class HeaderRight extends Component {
+     constructor(props){
+        super(props)
+        this.logOut=this.logOut.bind(this)
+
+     }
+     logOut(){
+        this.props.history.push("/signin")
+        this.props.loginUser("")
+        
+     }
     render() {
         const { user } = this.props;
         console.log(this.props)
@@ -25,10 +37,24 @@ import header__signout from '../../../../assets/img/signout.png';
                 <Link to="/dashboard/settings"><img className="header__settings" src={ header__settings } alt="settings"/></Link>
             </div>
             <div>
-                <Link to="/signin"><img className="header__sign-out" src={ header__signout } alt="signout"/></Link>
+                <Link to="/signin">
+                <img className="header__sign-out" src={ header__signout } alt="signout" />
+                </Link>
             </div>
         </div>
       );
     }
   }
-  export default  withRouter(HeaderRight)
+  const mapStateToProps=state=>{
+    return {
+      user: state.reducer.user
+    }
+  }
+  const mapDispatchToProps=dispatch=>{
+    return {
+        loginUser:(user)=>{
+            dispatch(loginUser(user))
+        }
+    }
+  }
+  export default connect(mapStateToProps,mapDispatchToProps) (withRouter(HeaderRight))
