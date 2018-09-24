@@ -18,6 +18,7 @@ import {signInStatus} from "../../action/actions"
      this.props.signInStatus("")
    } 
   render() {
+    // console.log(this.props.state)
     const summary = "summary";
     const settings = "settings";
     
@@ -31,9 +32,8 @@ import {signInStatus} from "../../action/actions"
       kcal : 482
      }
 
-     console.log("hi");
-     console.log(this.props.user);
-     console.log("hi");
+    //  console.log(this.props.user);
+    
     return (
       <div className="container">
         <Header user={ this.props.user }/>
