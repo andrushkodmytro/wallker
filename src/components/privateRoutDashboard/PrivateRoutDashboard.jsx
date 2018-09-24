@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import Dashboard from "../dashboard/Dashboard";
-// import {Redirect} from "react-router-dom";
+import {Route} from "react-router-dom";
 import {isFetching,getUser} from "../../action/actions"
 import Download from "../../assets/img/download.gif";
 import "./PrivateRoutDashboard.css"
@@ -16,7 +16,11 @@ import "./PrivateRoutDashboard.css"
     return (
       <div className="private_rout">
       {/* {this.props.state? <Dashboard/>:<Redirect to="/signin" />}  */}
-      {this.props.state.dashboard.isFetching?<div><img src={Download} alt="download"/></div>:<Dashboard/>}
+      {this.props.state.dashboard.isFetching?
+         <div><img src={Download} alt="download"/></div>
+      :
+      <Route path="/dashboard" component={Dashboard}/>
+      }
 
       </div>
     )
