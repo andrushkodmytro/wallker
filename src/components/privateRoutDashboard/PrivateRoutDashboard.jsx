@@ -21,7 +21,7 @@ import "./PrivateRoutDashboard.css"
     else{
       this.props.getUser()
     }
-    this.props.getUser()
+    
    }
    componentWillReceiveProps({state}){
     if(state.signIn.status===200){
@@ -33,7 +33,7 @@ import "./PrivateRoutDashboard.css"
     }
    }
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className="private_rout">
       {/* {this.props.state? <Dashboard/>:<Redirect to="/signin" />}  */}

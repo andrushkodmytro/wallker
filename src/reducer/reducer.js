@@ -57,7 +57,7 @@ import initialState from "../store/initialStateToReducer"
         case "LOGIN_USER":
         state={
             ...state,
-            user:{
+            user:{...state.user,
                 ...action.payload
             }
             
