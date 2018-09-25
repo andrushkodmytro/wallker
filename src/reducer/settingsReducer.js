@@ -42,7 +42,38 @@ const settingsReducer=(state=settingsState,action)=>{
             
         }
         break
+        case "CHANGE_PASS_INPUT":
+        state={
+            ...state,
+            changePass:{
+                ...state.changePass,
+                [action.nameInput]:action.payload
+            }
+        }
 
+        break
+        case "SHOW_CHANGE_PASS":
+        state={
+            ...state,
+            changePass:{
+                ...state.changePass,
+                [action.passName]:action.payload
+            }
+        }
+
+        break
+        case "CHANGE_PASS_STATUS":
+        state={
+            ...state,
+            changePass:{
+                ...state.changePass,
+                status:action.payload
+            }
+        }
+        break
+
+
+        
         default: return state
     }
     return state

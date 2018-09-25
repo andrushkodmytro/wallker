@@ -150,7 +150,6 @@ emailValidation(form){
     render() {
       const { firstName, lastName,email , image, firstNameError, lastNameError, emailError} = this.props.state;
 
-      console.log(this.props)
       return (
         <div className="container_settings__profile">
             <div className="container_settings__profile-block">

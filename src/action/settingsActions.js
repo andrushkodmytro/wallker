@@ -82,3 +82,46 @@ export function settingsInput(val,nameInput){
       
       })
   }
+  export function changePassInput(val,nameInput){
+    return{
+      type:"CHANGE_PASS_INPUT",
+      payload:val,
+      nameInput
+    }
+  }
+  export function showChangePass(val,passName){
+    return{
+      type:"SHOW_CHANGE_PASS",
+      payload:val,
+      passName
+    }
+  }
+  export const changePass=(pass)=> dispatch => {
+    return axios.post("/users/change_password",pass)
+      .then(function(res) {
+        console.log(res)
+        if(res.status===201){
+          dispatch(changePassStatus(201))
+
+        }
+      
+        
+      }     
+    )
+      .catch(function(error) {
+        if(error.response.status===401){
+          dispatch(changePassStatus(401))
+        }
+        else if(error.response.status===444){
+          dispatch(changePassStatus(444))
+        }
+       
+        
+      })
+  }
+  export function changePassStatus(status){
+    return{
+      type:"CHANGE_PASS_STATUS",
+      payload:status
+    }
+  }
