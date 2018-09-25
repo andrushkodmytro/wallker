@@ -12,7 +12,7 @@ import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from 
     this.inputHandler=this.inputHandler.bind(this)
     this.submitHandler=this.submitHandler.bind(this)
     this.inputHandlerFile=this.inputHandlerFile.bind(this)
-  
+    
   }
 
   
@@ -33,6 +33,7 @@ import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from 
     this.props.uploadPhoto(photo)
   }
 
+  
 
   inputHandler(e){
     const name=e.target.name;
@@ -41,9 +42,9 @@ import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from 
     
   }
   inputHandlerFile(e){
-
     this.props.showPhoto(URL.createObjectURL(e.target.files[0]))
   }
+
   componentDidMount(){
     this.props.settingsInput(this.props.user.first_name,"firstName")
     this.props.settingsInput(this.props.user.last_name,"lastName")
@@ -82,13 +83,7 @@ import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from 
                 </div>
                 <div className="location">
                   <label htmlFor="location" className="location__label">Location</label>
-                  <input
-                    name="location" 
-                    id="autocomplete" 
-                    className="location__input" 
-                    type="text" 
-                    onChange={ this.handleChange }
-                     />
+                  <input name="location" id="autocomplete" className="location__input" type="text"/>
                 </div>
             </div>
             <div className="photo_upload">
@@ -98,7 +93,7 @@ import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from 
               <div className="photo_upload__details">
                 <label className="photo__label">Your&nbsp;Photo</label>
                 <div className="button_file">
-                  <button className="button_photo" >Upload</button>
+                  <button className="button_photo">Upload</button>
                   <input className="input_file" type="file" name="myfile" id="avatar" onChange={this.inputHandlerFile}/>
                 </div>
                 <p>Format: JPEG, PNG or GIF. Max size: 500K.</p>
