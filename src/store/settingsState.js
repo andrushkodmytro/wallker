@@ -4,7 +4,9 @@ export default{
         lastName: "",
         email: "",
         photo:"",
-        confirmPasswordShow:false,
+        firstNameError: "",
+        lastNameError: "",
+        emailError: "",
         button:"SAVE",
         status:"",
         changePassStatus:""
