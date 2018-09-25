@@ -6,11 +6,18 @@ import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from 
 import {validateEmail} from "../../../signin/formHandler/formHandler"
 import Error from "../../../signin/errorSignUp/ErrorSignUp"
 
+
+// import Cropper from 'react-cropper';
+// import 'cropperjs/dist/cropper.css';
+
 // import photo from '../../../../assets/img/avatar.png';
 
  class SettingsProfile extends Component {
   constructor(props) {
     super(props)
+
+    
+
     this.inputHandler=this.inputHandler.bind(this)
     this.submitHandler=this.submitHandler.bind(this)
     this.inputHandlerFile=this.inputHandlerFile.bind(this)
@@ -22,6 +29,7 @@ import Error from "../../../signin/errorSignUp/ErrorSignUp"
     this.validateEmail=validateEmail.bind(this)
 
   }
+
   submitHandler(e){
     e.preventDefault();
     const { firstName, lastName,email,firstNameError,lastNameError,emailError } = this.props.state;
@@ -149,8 +157,9 @@ emailValidation(form){
 
     render() {
       const { firstName, lastName,email , image, firstNameError, lastNameError, emailError} = this.props.state;
+      const { toggleModal } = this.props;
 
-      console.log(this.props)
+      console.log(toggleModal);
       return (
         <div className="container_settings__profile">
             <div className="container_settings__profile-block">
@@ -179,10 +188,22 @@ emailValidation(form){
                   <input name="location" id="autocomplete" className="location__input" type="text"/>
                 </div>
             </div>
+             {/* <Cropper
+              ref='cropper'
+              src={` https://${image}`}
+              style={{height: 400, width: '100%'}}
+              // Cropper.js options
+              aspectRatio={16 / 9}
+              guides={false}
+              crop={this._crop.bind(this)} />  */}
             <div className="photo_upload">
               <div className="photo_upload__photo">
-                <img src={ this.props.state.photo || ` https://${image}` } alt="account"/>
+                <img 
+                  src={ this.props.state.photo || ` https://${image}` } 
+                  alt="account" 
+                  onClick={() => toggleModal()}/>
               </div>
+              
               <div className="photo_upload__details">
                 <label className="photo__label">Your&nbsp;Photo</label>
                 <div className="button_file">

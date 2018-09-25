@@ -1,7 +1,11 @@
+.settings {
+    width: 31.25%;
+}
+
 .container_settings__profile {
     display: flex;
     justify-content: center;
-    width: 31.25%;
+    width: 100%;
     height: auto;
     background-color: #ffffff;
     margin-top: 16px;
@@ -11,7 +15,7 @@
 .container_settings__password {
     display: flex;
     justify-content: center;
-    width: 31.25%;
+    width: 100%;
     height: auto;
     margin-top: 16px;
     background-color: #ffffff;
@@ -103,6 +107,7 @@
     width: 88px;
     height: 88px;
     border-radius: 50% 50%;
+    object-fit: cover;
 }
 
 .photo_upload__details {
@@ -207,4 +212,33 @@
         flex-direction: column;
         width: 100%;
     }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);
+    padding: 50px;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 500px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px !important;
+}
+
+.footer > button {
+    align-self: flex-end;
 }
