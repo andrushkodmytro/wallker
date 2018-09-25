@@ -56,6 +56,22 @@
 .email {
     display: block;
 }
+.inputs .inputElem>img {
+    position:absolute;
+    right:25px;
+    top:36%;
+    height: 24px;
+    width: 24px;
+}
+.inputElem{
+    position: relative;
+}
+button[type="submit"]:disabled {
+    opacity: 0.5;
+}
+/* button[type="submit"]:disabled button[type="submit"]:hover {
+    background-color: #01ce9f;
+} */
 
 .first_name__label,
 .last_name__label,
@@ -87,6 +103,7 @@
     border-radius: 4px;
     margin-bottom: 24px;
     padding: 8px 5%;
+    
 }
 
 .photo_upload {
@@ -130,6 +147,11 @@
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 8px;
+}
+
+.button_photo:hover {
+    background-color: #01ce9f;
+    color: #f1f3f5;
 }
 
 .photo_upload__details > p {
@@ -188,6 +210,14 @@
     width: 40%;
 }
 
+.save_block__button:hover,
+.change_block__button:hover {
+    background-color: #3cf0c6;
+}
+.save_block__button:active,
+.change_block__button:active {
+    opacity: 0.5;
+}
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
     .photo_upload {
         display: flex;

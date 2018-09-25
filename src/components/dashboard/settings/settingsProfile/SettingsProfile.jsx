@@ -150,7 +150,6 @@ emailValidation(form){
     render() {
       const { firstName, lastName,email , image, firstNameError, lastNameError, emailError} = this.props.state;
 
-      console.log(this.props)
       return (
         <div className="container_settings__profile">
             <div className="container_settings__profile-block">
@@ -176,13 +175,7 @@ emailValidation(form){
                 </div>
                 <div className="location">
                   <label htmlFor="location" className="location__label">Location</label>
-                  <input
-                    name="location" 
-                    id="autocomplete" 
-                    className="location__input" 
-                    type="text" 
-                    onChange={ this.handleChange }
-                     />
+                  <input name="location" id="autocomplete" className="location__input" type="text"/>
                 </div>
             </div>
             <div className="photo_upload">
@@ -192,7 +185,7 @@ emailValidation(form){
               <div className="photo_upload__details">
                 <label className="photo__label">Your&nbsp;Photo</label>
                 <div className="button_file">
-                  <button className="button_photo" >Upload</button>
+                  <button className="button_photo">Upload</button>
                   <input className="input_file" type="file" name="myfile" id="avatar" onChange={this.inputHandlerFile}/>
                 </div>
                 <p>Format: JPEG, PNG or GIF. Max size: 500K.</p>

@@ -81,7 +81,7 @@
   .steps img, .distance img, .kcal img {
     width: 96px;
     height: auto;
-    padding: 8px 16px 8px 3px;
+    padding: 0 16px 8px 3px;
   }
 
   .info, .info, .info {

@@ -34,7 +34,7 @@ export default class Map extends React.Component {
   render() {
     return (
       <MapWithAMarker
-        containerElement={<div style={{ height: `248px`,width:"50%" }} />}
+        containerElement={<div style={{ height: `248px`, width:"50%", paddingTop:"72px", marginRight:"24px" }} />}
         mapElement={<div style={{ height: `100%`  }} />}
       />
     );
