@@ -7,13 +7,11 @@ import { uploadPhoto, showPhoto, settingsInput } from "../../../action/settingsA
 import Cropper from 'react-cropper';
 import 'cropperjs/dist/cropper.css';
 
-import avatar from '../../../assets/img/avatar.png';
-
 class ModalDialog extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-    }
+    // }
     _crop(){
         // image in dataUrl
        //console.log(this.refs.cropper.getCroppedCanvas().toDataURL());

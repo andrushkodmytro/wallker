@@ -1,5 +1,5 @@
 .error {
-  margin: 0 0 10px 0;
+  margin: -10px 0 10px 0;
   background-color: #ffd1d8;
   border-radius: 4px;
   position: relative;
@@ -11,5 +11,6 @@
   .error p {
     color: #df203d;
     position: absolute;
-    font-size: 0.625rem;
-    margin: 0.5% 1%; }
+    font-size: 0.975rem;
+    /* margin: 0.5% 1%; */
+  } 
