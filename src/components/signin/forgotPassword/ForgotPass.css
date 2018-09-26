@@ -13,7 +13,7 @@
   height: 64px;
   font-size: 3rem;
   line-height: 4rem;
-  margin-bottom: 0;
+  margin-bottom: 24px;
   color: #222529;
 }
 
@@ -70,10 +70,6 @@
 
 .button__send:focus {
   outline: none;
-}
-
-.button__send:hover {
-  background-color: #27be9b;
 }
 
 .button__send:active {

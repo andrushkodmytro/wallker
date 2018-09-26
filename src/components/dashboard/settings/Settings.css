@@ -76,7 +76,12 @@ button[type="submit"]:disabled {
 /* button[type="submit"]:disabled button[type="submit"]:hover {
     background-color: #01ce9f;
 } */
-
+.message_succes{
+    font-size: 12px;
+    color:#01ce9f;
+    margin:10px auto;
+    line-height: 20px;
+}
 .first_name__label,
 .last_name__label,
 .email__label, 

@@ -29,7 +29,7 @@ form{
     margin-top:20%;
     flex-direction: column;
     h1{
-        margin-bottom: 3.75%;
+        margin-bottom: 24px;
         font-size: 3rem;
         line-height: 4rem;
         font-family: "BebasNeueBold";
@@ -44,8 +44,7 @@ form{
     }
 
     
-    input[type="email"],input[type="password"], input[type="text"]{
-        
+    input[type="email"],input[type="password"], input[type="text"]{ 
         background-color: #f1f3f5;
         font-family: "SourceSansPro-Regular";
         border-radius: 4px;
@@ -66,9 +65,10 @@ form{
     }
     input[type="submit"]:hover{
         cursor: pointer;
+        background-color: #27be9b;
     }
     input[type="submit"]:disabled{
-       opacity: 0.6;
+       opacity: 0.5;
     }
 
     label{
@@ -175,6 +175,6 @@ form{
     }
     button:hover{
       
-      opacity: 1 !important;
+    //   opacity: 1 !important;
     }
   }

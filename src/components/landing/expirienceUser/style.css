@@ -1,13 +1,16 @@
+.section4 {
+  padding: 0 10%; }
+
 .section4__text {
   display: flex;
   margin: 4.166666% 5% 2.0833% 5%;
-  display: flex;
   justify-content: space-between; }
 
 .section4__text__main {
-  width: 66.197183%;
   color: #fff;
-  font-family: "SourceSansPro-Regular"; }
+  font-family: "SourceSansPro-Regular";
+  margin: 20px 20px;
+  padding: 0 100px; }
 
 .section4__text__main p {
   text-align: justify;

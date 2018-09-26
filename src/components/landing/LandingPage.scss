@@ -48,13 +48,14 @@ h1{
 .section1__button{
     text-align: center;
     margin:0 auto 20% auto;
+    button{
+        color: #fff;
+        font-family:"SourceSansPro-Regular" ;
+        background-color: #01ce9f;
+        border:none;
+    }
 }
-button{
-    color: #fff;
-    font-family:"SourceSansPro-Regular" ;
-    background-color: #01ce9f;
-    border:none;
-}
+
      
 
         

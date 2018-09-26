@@ -26,7 +26,7 @@ form {
   margin-top: 20%;
   flex-direction: column; }
   form h1 {
-    margin-bottom: 3.75%;
+    margin-bottom: 24px;
     font-size: 3rem;
     line-height: 4rem;
     font-family: "BebasNeueBold";
@@ -52,9 +52,10 @@ form {
     border: none;
     margin-bottom: 7px; }
   form input[type="submit"]:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background-color: #27be9b; }
   form input[type="submit"]:disabled {
-    opacity: 0.6; }
+    opacity: 0.5; }
   form label {
     font-family: "SourceSansPro-Semibold";
     font-size: 1rem; }
@@ -144,6 +145,3 @@ form {
   opacity: 0.8 !important;
   transition: 0.3s !important;
   margin-bottom: 10px !important; }
-
-.google_button button:hover {
-  opacity: 1 !important; }
