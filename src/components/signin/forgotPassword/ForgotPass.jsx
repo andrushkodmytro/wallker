@@ -31,9 +31,9 @@ class ForgotPassword extends Component {
     }
     error(){
         this.props.showError(true)
-        let input=document.getElementsByClassName("email__input")
-        input[0].style.border="1px solid #d0021b"
-        input[0].className+="input_error"
+        console.log(this._email)
+        this._email.style.border="1px solid #d0021b"
+        
 
     }
     componentWillReceiveProps({state}){
@@ -66,7 +66,7 @@ class ForgotPassword extends Component {
                 <p className="form__text">Enter your email below to receive your <br></br>password instructions</p>
                 <div className="email_forgot_pass">
                     <label className="email__label">Email</label>
-                    <input className="email__input" type="email" value={email} maxLength="129" onChange={this.inputHandler}/>
+                    <input className="email__input" ref={node=>{this._email=node}} type="email" value={email} maxLength="129" onChange={this.inputHandler}/>
                     { error? <ErrorForgotPassword error="Enter correct email address."/>:""}
                 </div>
                 <div className="button">

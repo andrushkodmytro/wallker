@@ -48,6 +48,7 @@ form{
         background-color: #f1f3f5;
         font-family: "SourceSansPro-Regular";
         border-radius: 4px;
+        padding: 8px 16px;
     }
     input[type="email"],input[type="password"], input[type="text"]:focus{
         
@@ -173,8 +174,5 @@ form{
       transition: 0.3s !important;
       margin-bottom: 10px !important;
     }
-    button:hover{
-      
-    //   opacity: 1 !important;
-    }
+   
   }
