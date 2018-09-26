@@ -4,12 +4,10 @@ import {connect} from "react-redux";
 
 import Header from './header/Header';
 import Summary from './summary/Summary';
-// import SettingsProfile from './settings/settingsProfile/SettingsProfile';
 import Settings from './settings/Settings';
 import Today from './today/Today';
 import TopHW from './topHappyWalkers/TopHW';
 import Footer from './footer/Footer';
-// import SettingsPassword from './settings/settingsPassword/SettingsPassword';
 import {Route} from "react-router-dom";
 import {signInStatus} from "../../action/actions"
 // import axios from "axios"

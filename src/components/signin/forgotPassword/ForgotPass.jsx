@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./ForgotPass.css";
 import {Link, Route} from "react-router-dom";
-import Error from "../errorSignUp/ErrorSignUp"
+import ErrorForgotPassword from "../errorForgotPassword/ErrorForgotPassword";
 import {validateEmail} from "../formHandler/formHandler"
 import {forgotPassword,forgotPassInput,forgotPassStatus,buttonForgotPass,showError} from "../../../action/forgotResetAction"
 import {connect} from "react-redux";
@@ -66,11 +66,8 @@ class ForgotPassword extends Component {
                 <p className="form__text">Enter your email below to receive your <br></br>password instructions</p>
                 <div className="email_forgot_pass">
                     <label className="email__label">Email</label>
-                    <input className="email__input"
-                        type="email" value={email}
-                        maxLength="129"
-                        onChange={this.inputHandler}/>
-                        { error? <Error error="Enter correct email address."/>:""}
+                    <input className="email__input" type="email" value={email} maxLength="129" onChange={this.inputHandler}/>
+                    { error? <ErrorForgotPassword error="Enter correct email address."/>:""}
                 </div>
                 <div className="button">
                 <input className="button__send"
