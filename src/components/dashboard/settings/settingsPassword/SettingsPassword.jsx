@@ -23,10 +23,13 @@ class SettingsPassword extends Component {
   }
   submitHandler(e){
     e.preventDefault()
+    this._messageSucces.style.visibility="hidden"
     Promise.all([this.passwordValidation(this._currentPass,"currentPassError"),this.passwordValidation(this._newPass,"newPassError"),
       this.passwordValidation(this._confirmPass,"confirmPassError")])
       .then(res=>{
-        if(this._newPass!==this._confirmPass){
+        console.log(this._newPass)
+        console.log(this._confirmPass)
+        if(this._newPass.value!==this._confirmPass.value){
           this.errorShow(this._newPass,"newPassError","Passwords doesn’t match")
           this.errorShow(this._confirmPass,"confirmPassError","Passwords doesn’t match")
           return
@@ -70,7 +73,9 @@ class SettingsPassword extends Component {
     })
    
 }
-
+componentDidMount(){
+  this._messageSucces.style.visibility="hidden"
+}
   componentWillMount(){
     this.props.changePassStatus("")
     this.props.changePassInput("","currentPass")
@@ -83,6 +88,7 @@ class SettingsPassword extends Component {
       this.props.changePassInput("","currentPass")
       this.props.changePassInput("","newPass")
       this.props.changePassInput("","confirmPass")
+      this._messageSucces.style.visibility="visible"
     }
     else if(state.status===401){
       this.errorShow(this._currentPass,"Current password is incorrect","currentPassError")
@@ -147,6 +153,7 @@ class SettingsPassword extends Component {
                 </div>
                 </div>
                 <div className="change_block">
+                <span className="message_succes" ref={node=>{this._messageSucces=node}}>Password changed successfully</span>
               <button className="change_block__button"
               disabled={!currentPass&&!newPass&&!confirmPass}
               type="submit">Change</button>

@@ -32,7 +32,6 @@ class Form extends Component {
                 const user={username_or_email:target.email.value,password:target.password.value};
                 this.props.buttonSignIn("SIGNING IN...")
                 target.submit.style.opacity= 0.5;
-                console.log(target)
                 if(this.props.state.checkbox){
                     localStorage.setItem("email",this.props.state.email)
                     localStorage.setItem("password",this.props.state.password) 

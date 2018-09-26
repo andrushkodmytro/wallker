@@ -1,0 +1,13 @@
+.carousel{
+    display: flex;
+    /* margin: */
+    /* height: 100px */
+   
+}
+/* .sliderList{
+    height: 200px;;
+} */
+.carousel .slideItem{
+    width: 800px !important;
+    height: 200px;
+}
