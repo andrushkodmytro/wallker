@@ -1,13 +1,30 @@
 .carousel{
     display: flex;
-    /* margin: */
-    /* height: 100px */
-   
 }
-/* .sliderList{
-    height: 200px;;
-} */
 .carousel .slideItem{
-    width: 800px !important;
-    height: 200px;
+    height: 250px;
+    padding:0 250px;
+}
+.button_lending{
+    background-color: transparent !important;
+    border:none;
+    outline: none;
+}
+.carousel__dot-group{
+    margin:0 auto;
+    text-align: center
+    
+}
+.carousel__dot-group button{
+    border-radius: 100%;
+    height: 12px;
+    width: 8px;
+    border:none;
+    margin:15px;
+    outline: none;
+    background-color: rgba(248, 249, 250, 0.2)
+    
+}
+.carousel__dot-group button:disabled{
+    background-color: #f8f9fa;
 }

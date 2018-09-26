@@ -152,6 +152,10 @@ componentDidMount(){
       this.props.settingStatus("")
       this._messageSucces.style.visibility="visible"
     }
+    else if(state.status===200){
+      this.props.settingStatus("")
+      this._messageSucces.style.visibility="visible"
+    }
   }
 
     render() {

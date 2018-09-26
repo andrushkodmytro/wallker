@@ -39,6 +39,7 @@ export function settingsInput(val,nameInput){
         console.log(res)
         if(res.status===200){
           dispatch(loginUser(res.data))
+          dispatch(settingStatus(200))
         }
       
         
