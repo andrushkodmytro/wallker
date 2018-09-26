@@ -115,7 +115,6 @@ export const confirmEmail=(confirm)=> dispatch => {
 export const getUser=()=> dispatch => {
   return axios.get(`/users/me`)
     .then(function(response) {
-      console.log(response)
       if(response.status===200){
         dispatch( loginUser(response.data))
         dispatch(isFetching(false))

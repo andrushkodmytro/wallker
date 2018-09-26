@@ -159,7 +159,6 @@ emailValidation(form){
       const { firstName, lastName,email , image, firstNameError, lastNameError, emailError} = this.props.state;
       const { toggleModal } = this.props;
 
-      console.log(toggleModal);
       return (
         <div className="container_settings__profile">
             <div className="container_settings__profile-block">

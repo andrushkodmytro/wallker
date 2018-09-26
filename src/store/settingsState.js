@@ -10,7 +10,19 @@ export default{
         button:"SAVE",
         status:"",
         changePassStatus:""
-    }  
+    },
+    changePass:{
+        currentPass:"",
+        newPass:"",
+        confirmPass:"",
+        currentPassShow:false,
+        newPassShow:false,
+        confirmPassShow:false,
+        currentPassError:"",
+        newPassError:"",
+        confirmPassError:"",
+        status:""
+    }
     
 
 }
