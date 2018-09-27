@@ -104,6 +104,9 @@ form {
   font-family: "SourceSansPro-Semibold";
   text-decoration: none; }
 
+.remember a:hover {
+  color: #27be9b; }
+
 .signup {
   display: flex; }
   .signup p {
@@ -115,6 +118,9 @@ form {
   margin-left: 5px;
   font-family: "SourceSansPro-Semibold";
   text-decoration: none; }
+
+.signup a:hover {
+  color: #27be9b; }
 
 .inputElem .show_pass {
   position: relative; }

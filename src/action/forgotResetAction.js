@@ -1,6 +1,6 @@
 import axios from "axios";
-// axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
-axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
+axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
+// axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 axios.defaults.withCredentials=true
 
 
