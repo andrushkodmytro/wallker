@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux"
 import {changePassInput, showChangePass, changePass, changePassStatus} from "../../../../action/settingsActions"
-import Error from "../../../signin/errorSignUp/ErrorSignUp"
+import ErrorSettings from "../errorSettings/ErrorSettings";
 import '../Settings.css';
 import '../../../../assets/fonts/fonts.css';
 import ShowPass from "../../../../assets/img/password2.png";
@@ -23,10 +23,13 @@ class SettingsPassword extends Component {
   }
   submitHandler(e){
     e.preventDefault()
+    this._messageSucces.style.visibility="hidden"
     Promise.all([this.passwordValidation(this._currentPass,"currentPassError"),this.passwordValidation(this._newPass,"newPassError"),
       this.passwordValidation(this._confirmPass,"confirmPassError")])
       .then(res=>{
-        if(this._newPass!==this._confirmPass){
+        console.log(this._newPass)
+        console.log(this._confirmPass)
+        if(this._newPass.value!==this._confirmPass.value){
           this.errorShow(this._newPass,"newPassError","Passwords doesn’t match")
           this.errorShow(this._confirmPass,"confirmPassError","Passwords doesn’t match")
           return
@@ -70,7 +73,9 @@ class SettingsPassword extends Component {
     })
    
 }
-
+componentDidMount(){
+  this._messageSucces.style.visibility="hidden"
+}
   componentWillMount(){
     this.props.changePassStatus("")
     this.props.changePassInput("","currentPass")
@@ -83,6 +88,7 @@ class SettingsPassword extends Component {
       this.props.changePassInput("","currentPass")
       this.props.changePassInput("","newPass")
       this.props.changePassInput("","confirmPass")
+      this._messageSucces.style.visibility="visible"
     }
     else if(state.status===401){
       this.errorShow(this._currentPass,"Current password is incorrect","currentPassError")
@@ -115,7 +121,7 @@ class SettingsPassword extends Component {
                     value={currentPass}
                     ref={(node)=>{this._currentPass=node}}
                     onChange={this.inputHandler}/>
-                    <Error error={currentPassError}/>
+                    <ErrorSettings error={currentPassError}/>
                     <img  alt="show_pass" src={currentPassShow?HidePass: ShowPass} 
                     onClick={()=>this.props.showChangePass(!currentPassShow,"currentPassShow")}/>
                   </div>
@@ -128,7 +134,7 @@ class SettingsPassword extends Component {
                      value={newPass}
                      ref={(node)=>{this._newPass=node}}
                     onChange={this.inputHandler}/>
-                     <Error error={newPassError} />
+                     <ErrorSettings error={newPassError} />
                      <img  alt="show_pass" src={newPassShow?HidePass: ShowPass}
                      onClick={()=>this.props.showChangePass(!newPassShow,"newPassShow")} />
                   </div>
@@ -141,12 +147,13 @@ class SettingsPassword extends Component {
                   value={confirmPass}
                   ref={(node)=>{this._confirmPass=node}}
                    onChange={this.inputHandler}/>
-                    <Error error={confirmPassError}/>
+                    <ErrorSettings error={confirmPassError}/>
                    <img  alt="show_pass" src={confirmPassShow?HidePass: ShowPass} 
                    onClick={()=>this.props.showChangePass(!confirmPassShow,"confirmPassShow")}/>
                 </div>
                 </div>
                 <div className="change_block">
+                <span className="message_succes" ref={node=>{this._messageSucces=node}}>Password changed successfully</span>
               <button className="change_block__button"
               disabled={!currentPass&&!newPass&&!confirmPass}
               type="submit">Change</button>

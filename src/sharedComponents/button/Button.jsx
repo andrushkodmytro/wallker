@@ -8,7 +8,7 @@ export default class Button extends Component {
   //    this.props.handler(this.props.val)
   //  }
     return (
-     <button >
+     <button className="buttonComponent">
         {this.props.title}
      </button>
     )

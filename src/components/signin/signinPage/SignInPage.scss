@@ -1,3 +1,4 @@
+@import '../../../assets/scss/constant.scss';
 .container__signin{
     max-width: 1920px;
     display: flex;
@@ -29,7 +30,7 @@ form{
     margin-top:20%;
     flex-direction: column;
     h1{
-        margin-bottom: 3.75%;
+        margin-bottom: 24px;
         font-size: 3rem;
         line-height: 4rem;
         font-family: "BebasNeueBold";
@@ -44,18 +45,18 @@ form{
     }
 
     
-    input[type="email"],input[type="password"], input[type="text"]{
-        
+    input[type="email"],input[type="password"], input[type="text"]{ 
         background-color: #f1f3f5;
         font-family: "SourceSansPro-Regular";
         border-radius: 4px;
+        padding: 8px 16px;
     }
     input[type="email"],input[type="password"], input[type="text"]:focus{
         
-        outline-color: #01ce9f
+        outline-color: $buttonMain
     }
     input[type="submit"]{
-        background-color: #01ce9f;
+        background-color: $buttonMain;
         border-radius: 4px;
         padding: 8px 16px;
         color: #fff;
@@ -66,9 +67,10 @@ form{
     }
     input[type="submit"]:hover{
         cursor: pointer;
+        background-color: $buttonMainHover;
     }
     input[type="submit"]:disabled{
-       opacity: 0.6;
+       opacity: 0.5;
     }
 
     label{
@@ -113,12 +115,15 @@ form{
     content:"\2713";
     text-align: center;
     color: #fff;
-    background-color:#01ce9f;
+    background-color:$buttonMain;
 }
 .remember a{
-    color:#01ce9f;
+    color:$buttonMain;
     font-family: "SourceSansPro-Semibold";
     text-decoration: none;
+}
+.remember a:hover{
+    color: $buttonMainHover;
 }
 
         
@@ -131,11 +136,15 @@ form{
     }
 }
 .signup a{
-    color:#01ce9f;
+    color:$buttonMain;
     margin-left: 5px;
     font-family: "SourceSansPro-Semibold";
     text-decoration: none;
 }
+.signup a:hover{
+    color:$buttonMainHover;
+}
+
 .inputElem .show_pass{
     position: relative;
 }
@@ -145,8 +154,6 @@ form{
     top:31%;
     height: 24px;
     width: 24px;
-    // background: url("../../../assets/img/password2.png")   no-repeat;
-    // background-size: cover
 }
 .inputElem label span{
     color:#df203d;
@@ -173,8 +180,5 @@ form{
       transition: 0.3s !important;
       margin-bottom: 10px !important;
     }
-    button:hover{
-      
-      opacity: 1 !important;
-    }
+   
   }

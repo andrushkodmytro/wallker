@@ -1,7 +1,7 @@
 import axios from "axios";
 import {loginUser} from "../action/actions"
-// axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
-axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
+axios.defaults.baseURL = "https://a-prod-backend-happy-walker.herokuapp.com"; 
+// axios.defaults.baseURL = "https://a-qa-backend-happy-walker.herokuapp.com";
 axios.defaults.withCredentials=true
 
 export function settingsInput(val,nameInput){
@@ -39,6 +39,7 @@ export function settingsInput(val,nameInput){
         console.log(res)
         if(res.status===200){
           dispatch(loginUser(res.data))
+          dispatch(settingStatus(200))
         }
       
         

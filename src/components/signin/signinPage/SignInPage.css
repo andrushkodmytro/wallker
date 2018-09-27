@@ -26,7 +26,7 @@ form {
   margin-top: 20%;
   flex-direction: column; }
   form h1 {
-    margin-bottom: 3.75%;
+    margin-bottom: 24px;
     font-size: 3rem;
     line-height: 4rem;
     font-family: "BebasNeueBold";
@@ -39,7 +39,8 @@ form {
   form input[type="email"], form input[type="password"], form input[type="text"] {
     background-color: #f1f3f5;
     font-family: "SourceSansPro-Regular";
-    border-radius: 4px; }
+    border-radius: 4px;
+    padding: 8px 16px; }
   form input[type="email"], form input[type="password"], form input[type="text"]:focus {
     outline-color: #01ce9f; }
   form input[type="submit"] {
@@ -52,9 +53,10 @@ form {
     border: none;
     margin-bottom: 7px; }
   form input[type="submit"]:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background-color: #27be9b; }
   form input[type="submit"]:disabled {
-    opacity: 0.6; }
+    opacity: 0.5; }
   form label {
     font-family: "SourceSansPro-Semibold";
     font-size: 1rem; }
@@ -102,6 +104,9 @@ form {
   font-family: "SourceSansPro-Semibold";
   text-decoration: none; }
 
+.remember a:hover {
+  color: #27be9b; }
+
 .signup {
   display: flex; }
   .signup p {
@@ -113,6 +118,9 @@ form {
   margin-left: 5px;
   font-family: "SourceSansPro-Semibold";
   text-decoration: none; }
+
+.signup a:hover {
+  color: #27be9b; }
 
 .inputElem .show_pass {
   position: relative; }
@@ -144,6 +152,3 @@ form {
   opacity: 0.8 !important;
   transition: 0.3s !important;
   margin-bottom: 10px !important; }
-
-.google_button button:hover {
-  opacity: 1 !important; }

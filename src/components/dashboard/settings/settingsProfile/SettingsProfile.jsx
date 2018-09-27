@@ -6,11 +6,18 @@ import {settingsInput,updateProfile,settingStatus, uploadPhoto, showPhoto} from 
 import {validateEmail} from "../../../signin/formHandler/formHandler"
 import Error from "../../../signin/errorSignUp/ErrorSignUp"
 
+
+// import Cropper from 'react-cropper';
+// import 'cropperjs/dist/cropper.css';
+
 // import photo from '../../../../assets/img/avatar.png';
 
  class SettingsProfile extends Component {
   constructor(props) {
     super(props)
+
+    
+
     this.inputHandler=this.inputHandler.bind(this)
     this.submitHandler=this.submitHandler.bind(this)
     this.inputHandlerFile=this.inputHandlerFile.bind(this)
@@ -22,9 +29,13 @@ import Error from "../../../signin/errorSignUp/ErrorSignUp"
     this.validateEmail=validateEmail.bind(this)
 
   }
+
   submitHandler(e){
     e.preventDefault();
-    const { firstName, lastName,email,firstNameError,lastNameError,emailError } = this.props.state;
+    this._messageSucces.style.visibility="hidden"
+    const { firstName, lastName,email
+      // ,firstNameError,lastNameError,emailError 
+    } = this.props.state;
     const { first_name, last_name } = this.props.user;
 
     let target=e.target
@@ -41,7 +52,7 @@ import Error from "../../../signin/errorSignUp/ErrorSignUp"
     Promise.all([this.firstNameValidation(target),this.lastNameValidation(target),this.emailValidation(target)])
     .then(res=>{
       if(firstName!==first_name|| lastName!==last_name||email!==this.props.user.email ){
-        if(!firstNameError&&!lastNameError&&!emailError)
+      //   if(!firstNameError&&!lastNameError&&!emailError)
         this.props.updateProfile(user)
       }
     })
@@ -90,7 +101,7 @@ import Error from "../../../signin/errorSignUp/ErrorSignUp"
       reject()
     }
     else {
-      this.props.settingsInput("","firstNameError")
+      this.errorHide(form.firstName,"firstNameError");
       resolve()
   
     }
@@ -110,7 +121,7 @@ lastNameValidation (form) {
       reject()
     }
     else {
-      this.props.settingsInput("","lastNameError")
+      this.errorHide(form.lastName, "lastNameError");
       resolve()
 
     }
@@ -120,18 +131,20 @@ lastNameValidation (form) {
 emailValidation(form){
   return new Promise((resolve,reject)=>{
     this.errorHide(form.email, "emailError");
-
     if (!this.validateEmail(this.props.state.email)) {
       this.errorShow(form.email, "emailError", "Enter correct email");
       reject()
     }
     else {
-      this.props.settingsInput("","emailError")
+      this.errorHide(form.email, "emailError");
       resolve()
 
     }
   })
 } 
+componentDidMount(){
+  this._messageSucces.style.visibility="hidden"
+}
   componentWillMount(){
     this.props.settingsInput(this.props.user.first_name,"firstName")
     this.props.settingsInput(this.props.user.last_name,"lastName")
@@ -140,15 +153,22 @@ emailValidation(form){
     this.props.settingsInput("","firstNameError")
     this.props.settingsInput("","lastNameError")
     this.props.settingsInput("","emailError")
+   
   }
   componentWillReceiveProps({state}){
     if(state.status===201){
       this.props.settingStatus("")
+      this._messageSucces.style.visibility="visible"
+    }
+    else if(state.status===200){
+      this.props.settingStatus("")
+      this._messageSucces.style.visibility="visible"
     }
   }
 
     render() {
       const { firstName, lastName,email , image, firstNameError, lastNameError, emailError} = this.props.state;
+      const { toggleModal } = this.props;
 
       return (
         <div className="container_settings__profile">
@@ -178,10 +198,22 @@ emailValidation(form){
                   <input name="location" id="autocomplete" className="location__input" type="text"/>
                 </div>
             </div>
+             {/* <Cropper
+              ref='cropper'
+              src={` https://${image}`}
+              style={{height: 400, width: '100%'}}
+              // Cropper.js options
+              aspectRatio={16 / 9}
+              guides={false}
+              crop={this._crop.bind(this)} />  */}
             <div className="photo_upload">
               <div className="photo_upload__photo">
-                <img src={ this.props.state.photo || ` https://${image}` } alt="account"/>
+                <img 
+                  src={ this.props.state.photo || ` https://${image}` } 
+                  alt="account" 
+                  onClick={() => toggleModal()}/>
               </div>
+              
               <div className="photo_upload__details">
                 <label className="photo__label">Your&nbsp;Photo</label>
                 <div className="button_file">
@@ -195,6 +227,7 @@ emailValidation(form){
             
            
             <div className="save_block">
+            <span className="message_succes" ref={node=>{this._messageSucces=node}}>Profile updated successfully</span>
               <button 
                 className="save_block__button" 
                 type="submit"

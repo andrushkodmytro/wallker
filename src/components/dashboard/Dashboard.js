@@ -4,11 +4,10 @@ import {connect} from "react-redux";
 
 import Header from './header/Header';
 import Summary from './summary/Summary';
-import SettingsProfile from './settings/settingsProfile/SettingsProfile';
+import Settings from './settings/Settings';
 import Today from './today/Today';
 import TopHW from './topHappyWalkers/TopHW';
 import Footer from './footer/Footer';
-import SettingsPassword from './settings/settingsPassword/SettingsPassword';
 import {Route} from "react-router-dom";
 import {signInStatus} from "../../action/actions"
 // import axios from "axios"
@@ -41,8 +40,10 @@ import {signInStatus} from "../../action/actions"
         <Route exact path="/dashboard/settings" render= {()=><Summary text={ settings }/>}/>
         <Route exact path="/dashboard" render= {()=><Today data={ userData } user={ this.props.user }/>}/>
         <Route exact path="/dashboard" render= {()=><TopHW/>}/>
-        <Route exact path="/dashboard/settings" render= {()=><SettingsProfile user={ this.props.user }/>}/>
-        <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/>
+        {/* <Route exact path="/dashboard/settings" render= {()=><SettingsProfile user={ this.props.user }/>}/>
+        <Route exact path="/dashboard/settings" render= {()=><SettingsPassword/>}/> */}
+
+        <Route exact path="/dashboard/settings" render= {()=><Settings/>}/>
         
         <Footer />
       </div>

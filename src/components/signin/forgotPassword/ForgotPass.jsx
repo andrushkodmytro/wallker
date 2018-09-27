@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./ForgotPass.css";
 import {Link, Route} from "react-router-dom";
-import Error from "../errorSignUp/ErrorSignUp"
+import ErrorForgotPassword from "../errorForgotPassword/ErrorForgotPassword";
 import {validateEmail} from "../formHandler/formHandler"
 import {forgotPassword,forgotPassInput,forgotPassStatus,buttonForgotPass,showError} from "../../../action/forgotResetAction"
 import {connect} from "react-redux";
@@ -17,6 +17,7 @@ class ForgotPassword extends Component {
         e.preventDefault()
         if( validateEmail(this.props.state.email)){
             this.props.buttonForgotPass("SENDING PASSWORD...")
+            this._button.style.opacity=0.5
             this.props.forgotPassword({email:this.props.state.email})
         }
         else{
@@ -30,8 +31,10 @@ class ForgotPassword extends Component {
     }
     error(){
         this.props.showError(true)
-        let input=document.getElementsByClassName("email__input")
-        input[0].style.border="1px solid #d0021b"
+        console.log(this._email)
+        this._email.style.border="1px solid #d0021b"
+        
+
     }
     componentWillReceiveProps({state}){
        if(state.status===202){
@@ -54,7 +57,7 @@ class ForgotPassword extends Component {
     }
     render() {
         let {button,email,error}=this.props.state
-        const reset = <div>
+        const reset = <div >
             <p className="form__text">We have sent you an email with reset <br>
             </br> instructions. If the email does not arrive soon, <br></br> check your spam folder.</p>
         </div>;
@@ -63,11 +66,18 @@ class ForgotPassword extends Component {
                 <p className="form__text">Enter your email below to receive your <br></br>password instructions</p>
                 <div className="email_forgot_pass">
                     <label className="email__label">Email</label>
-                    <input className="email__input" type="email" value={email} maxLength="129" onChange={this.inputHandler}/>
-                    { error? <Error error="Enter correct email address."/>:""}
+                    <input className="email__input" ref={node=>{this._email=node}} type="email" value={email} maxLength="129" onChange={this.inputHandler}/>
+                    { error? <ErrorForgotPassword error="Enter correct email address."/>:""}
                 </div>
                 <div className="button">
-                <   input className="button__send" name="submit" type="submit" value={button}/>
+                <input className="button__send"
+                    name="submit"
+                    type="submit"
+                    ref={node=>{this._button=node}}
+                    value={button}
+                    disabled={!email}
+                
+                    />
                 </div>
             </div>
         )
@@ -75,10 +85,7 @@ class ForgotPassword extends Component {
             <form className="form_forgot" name="form" onSubmit={this.onSubmitHandler} noValidate>
                 <p className="form__title">Password reset</p>
                 <Route exact path="/forgot" render={()=>mainText}/>
-                <Route path="/forgot/reset" render={()=>reset}/>
-
-
-                    
+                <Route path="/forgot/reset" render={()=>reset}/> 
                 <Link  to="/signin" className="back_to">Back to Sign in</Link>
             </form>
       );
