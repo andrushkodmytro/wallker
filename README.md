@@ -1,5 +1,5 @@
 ### Open demo [Link](https://andrushkodmytro.github.io/wallker/).
-This is my first React project
+This is my first React project with mocked data and without backend
 
 ## Available Scripts
 
