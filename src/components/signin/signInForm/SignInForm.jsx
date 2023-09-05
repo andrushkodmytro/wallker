@@ -35,6 +35,8 @@ class Form extends Component {
                 
                 
               }
+
+              this.getDashboard()
         }
        
         this.errorShow=(name,error,textError)=>{
