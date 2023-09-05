@@ -2,6 +2,7 @@
   "name": "happy_walker",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://andrushkodmytro.github.io/wallker",
   "dependencies": {
     "axios": "^0.18.0",
     "node-fetch": "^2.2.0",
@@ -26,7 +27,12 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }

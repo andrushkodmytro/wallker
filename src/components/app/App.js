@@ -13,7 +13,7 @@ class App extends Component {
   render() {
 
     return (
-      <Router>
+      <Router basename='/wallker/'>
         <div>
           <Switch>
             <Route exact path="/" component={LandingPage}/>
